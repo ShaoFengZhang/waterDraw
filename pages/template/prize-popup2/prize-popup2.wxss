@@ -1,0 +1,51 @@
+.prize-popup2 {
+  background: #fff;
+  width: 700rpx;
+  height: 890rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -400rpx;
+  margin-left: -350rpx;
+}
+
+.prize-popup2-text {
+  color: #ddbc84;
+  font-size: 54rpx;
+  letter-spacing: 1px;
+  margin-top:120rpx;
+  margin-bottom: 100rpx;
+}
+
+.prize-popup2-center .text1 {
+  letter-spacing: 2px;
+  font-size: 50rpx;
+}
+.prize-popup2-center text{
+  font-size:46rpx;
+  line-height: 100rpx;
+  letter-spacing: 2px
+}
+.prize-popup2-center .text2 {
+  letter-spacing: 2px;
+  font-size: 50rpx;
+  margin-bottom: 150rpx;
+}
+
+.prize-popup2-img {
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+/* 
+.prize-popup-close {
+  padding: 50rpx;
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  animation: rotation 0.5s ease;
+  right: -50rpx;
+  top: -150rpx;
+} */

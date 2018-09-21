@@ -1,0 +1,56 @@
+page {
+  background: #eff2f9;
+  padding-bottom:30rpx
+}
+
+.nav {
+  margin-bottom: 40rpx;
+}
+
+.nav-item {
+  width: 50%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  letter-spacing: 1px;
+  background: #fff;
+}
+
+.nav-item.active {
+  background:#eff2f9
+}
+
+.prize-item {
+  padding: 30rpx 50rpx;
+  background: #fff;
+  margin-bottom: 25rpx;
+  height:140rpx;
+  line-height:40rpx;
+  width:100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.adress-btn {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size:30rpx;
+  color:#fff;
+  background:#169BD5;
+  border-radius: 10rpx;
+  text-align: center;
+  letter-spacing: 1rpx;
+  padding:0 10rpx
+}
+.delivery-text{
+  display: inline-block;
+  margin-right:20rpx;
+  height:32rpx;
+  line-height:30rpx;
+  padding:0 8rpx;
+  background:#999;
+  color:#fff;
+  font-size:20rpx;
+  vertical-align: middle;
+  margin-top:-5rpx
+}

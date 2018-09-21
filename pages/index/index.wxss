@@ -1,0 +1,29 @@
+@import "../template/prize-template/prize-template.wxss";
+@import "../template/swiper-template/swiper-template.wxss";
+@import "../template/bottom/bottomItem.wxss";
+page {
+  background: #eff2f9;
+}
+
+.top-side {
+  width: 700rpx;
+  height: 54rpx;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden
+}
+
+.share-img {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.prompt {
+  font-size: 20rpx;
+  color: #919191;
+  padding-bottom: 25rpx;
+}
+
+

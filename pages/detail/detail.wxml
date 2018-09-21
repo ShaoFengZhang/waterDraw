@@ -1,0 +1,308 @@
+<import src="../template/circle-template/circle-template.wxml" />
+<import src="../template/swiper-template/swiper-template.wxml" />
+<import src="../template/power-template/power-template.wxml" />
+<import src="../template/power-myself/power-myself.wxml" />
+<import src="../template/rule-template/rule-template.wxml" />
+<import src="../template/back-index/back-index.wxml" />
+<import src="../template/popup1/popup1.wxml" />
+<import src="../template/popup2/popup2.wxml" />
+<import src="../template/popup3/popup3.wxml" />
+<import src="../template/header/header.wxml" />
+<import src="../template/prize-popup/prize-popup.wxml" />
+<import src="../template/prize-popup2/prize-popup2.wxml" />
+
+<template is="headerItem" data="{{...header,statusBarHeight,backState}}" />
+
+<!-- 规则弹窗 -->
+<template is="rule-template" data='{{ruleState}}' />
+
+<!-- 回到首页 -->
+<template is="back-index" data='{{backState}}' />
+
+<!-- 弹窗1 -->
+<template is="popup1-template" data='{{shareState,shareBottom}}' />
+
+<!-- 中奖弹窗 -->
+<template is="popup2-template" data='{{winState,detailData,allDetail}}' />
+
+<!-- 未中奖弹窗 -->
+<template is="popup3-template" data='{{nowinState,prizeStatus,allDetail}}' />
+
+<!-- 新手指引-->
+<template is="prize-popup" data='{{newState,inviterInfo}}' />
+
+<!-- 新手指引2-->
+<template is="prize-popup2" data='{{newState2,gift}}' />
+<!-- <scroll-view scroll-y scroll-with-animation='true'  class='scroll' scroll-into-view="{{toView}}" > -->
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class='prize-info'>
+    <swiper class='prize-photo-swiper' interval='5000' indicatorDots='true' autoplay='true' duration='1000' circular='true'>
+      <block wx:for="{{detailData.banners}}" wx:for-item="item" wx:key="property">
+        <swiper-item class='prize-photo'>
+          <image src='{{item}}' class='prize-photo-img' catchtap='PreviewImg' data-img='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='prize-text'>
+      <view class='row-between'>
+        <view class='font36 '>
+          奖品：{{detailData.name}}
+        </view>
+        <view>
+          <text class='prize-des2 mgl10'>包邮</text>
+        </view>
+      </view>
+      <view class='row-between prize-num'>
+        <block wx:if='{{detailData.open_status==0}}'>
+          <view class='gray' wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</view>
+          <view class='gray' wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</view>
+        </block>
+        <block wx:if='{{detailData.open_status==1}}'>
+          <view class='gray'>开奖时间：{{detailData.opening_time}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 商品详情 -->
+
+  <view class='prize-main'>
+    <view class='prize-detail'>
+      <view class='prize-detail-text' id='part'>{{detailData.describes}}</view>
+    </view>
+    <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='prize-sponsors-box'>
+      <view class='sponsors-title row-between'>
+        <text class='bold'>赞助商</text>
+        <view class='row-start bold textGreen'>{{detailData.sponsor}}
+          <image src='https://tp.datikeji.com/a/15367239492513/lH4Aa2JSdFCG69NmJ7kWvpU5jxhKWXVPWHiievLO.png' class='sponsor-img'></image>
+          <text class='right-point black'></text>
+        </view>
+      </view>
+      <view class='sponsors-text-box'>
+        <view class='sponsors-text'>
+          {{detailData.sponsor_describe}}
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 规则开始 -->
+    <view class='prize-rule'>
+      <view class='prize-rule-title gray' catchtap='ruleTap'>
+        <block wx:if='{{prizeStatus == 4&&leftDirection2}}'></block>
+        <block wx:else>活动规则</block>
+      </view>
+      <!-- 未开奖 -->
+      <block wx:if='{{detailData.open_status==0}}'>
+
+        <view class='circle-vessel-part' wx:if='{{prizeStatus == 4}}'>
+          <template is="circle-template" data='{{leftDirection,rightDirection,leftDirection2,rightDirection2,goldState2,detailData,allDetail}}' />
+        </view>
+        <view class='circle-vessel' wx:if='{{prizeStatus == 5}}'>
+          <view class='ripples'>
+            <!-- 未授权时按钮 -->
+            <form bindsubmit="getForm" report-submit='true' wx:if='{{loginState}}'>
+              <button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" class='loginBtn' hover-class="btn-hover" form-type="submit"></button>
+            </form>
+            <!-- 未授权时按钮 -->
+            <form bindsubmit="drawTap" report-submit='true'>
+              <button form-type="submit" class='ripple-main' hover-class="btn-hover">
+                <view class='center column-center'>
+                  <view class='text'>参与</view>
+                  <view class='text'>抽奖</view>
+                </view>
+                <view class='pulse'></view>
+                <view class='pulse pulse2'></view>
+              </button>
+            </form>
+            <image src='https://tp.datikeji.com/a/15367536581651/ye4zAZWcT7nCZcXmuIUrSG67lyV4N3n0aJl6BQ4o.png' class='cursor-point-img' wx:if='{{toView=="part"}}'></image>
+          </view>
+        </view>
+        <view class='t_c prize-rule-text'>
+          <block wx:if='{{prizeStatus == 5}}'>
+            <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
+            <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
+          </block>
+          <block wx:if='{{prizeStatus == 4&&rightDirection}}'>
+            <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
+            <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
+          </block>
+          <block wx:if='{{prizeStatus == 4&&leftDirection || prizeStatus == 4&&rightDirection2 || prizeStatus == 4&&!leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>邀请好友来领新人红包</block>
+
+          <block wx:if='{{prizeStatus == 4&&leftDirection2}}'>试玩赞助商小程序加100个概率码</block>
+        </view>
+      </block>
+      <!-- 已开奖 -->
+      <block wx:if='{{detailData.open_status==1}}'>
+        <view class='column-center'>
+          <view class='after-win column-center'>
+            <!-- 参与中奖 -->
+            <block wx:if='{{prizeStatus==1}}'>
+              <view class='gray mgb50'>开奖时间：{{detailData.opening_time}}</view>
+              <view class='win-remind column-center-a mgb40'>
+                <text>恭喜</text>
+                <text>中奖</text>
+              </view>
+              <view class='prize-content'>
+                <view class='text'>奖品</view>
+                <view class='text'>
+                  {{winner_user.name}}</view>
+              </view>
+              <view class='after-win-btn'>
+                <view class='row-between'>
+                  <view class='return-btn bgred small' catchtap='addressTap' wx:if='{{allDetail.receive_or_not ==0}}'>请填写收货地址</view>
+                  <view class='return-btn bggray small' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==0}}'>奖品待发货</view>
+                  <view class='return-btn bggray small' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>奖品已发货</view>
+                  <button class='return-btn small' hover-class="btn-hover" open-type="share" wx:if='{{allDetail.receive_or_not ==0}}'>
+                    发给好友看看
+                  </button>
+                  <button class='return-btn bgred small' hover-class="btn-hover" open-type="share" wx:if='{{allDetail.receive_or_not ==1}}'>
+                    发给好友看看
+                  </button>
+                </view>
+                <view class='address-ems' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>{{allDetail.express_company}}:{{allDetail.courier_number}}</view>
+
+              </view>
+              <view class='return-btn mgb50' catchtap='jumpTap' data-type='6'>去首页，查看更多抽奖</view>
+            </block>
+            <!-- 参与未中奖 -->
+            <block wx:if='{{prizeStatus==2}}'>
+              <view class='gray mgb50'>开奖时间：{{detailData.opening_time}}</view>
+              <view class='win-remind gray-win-remind column-center-a mgb50'>
+                <text>未中奖</text>
+              </view>
+              <view class='gray'> 安慰奖：随机1-100个水滴币</view>
+              <view class='return-btn bgred short mgb50' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='exchangeTap'>抽取安慰奖</view>
+              <view class='return-btn bgred short mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>
+                提现我的水滴币
+              </view>
+              <view class='return-btn mgb50 short' catchtap='jumpTap' data-type='6'>去首页，查看更多抽奖</view>
+            </block>
+            <!-- 未参与未中奖 -->
+            <block wx:if='{{prizeStatus==3}}'>
+              <view class='gray mgb50'>开奖时间：{{detailData.opening_time}}</view>
+              <view class='win-remind gray-win-remind column-center-a mgb90'>
+                <text>已结束</text>
+              </view>
+              <view class='return-btn mgb50 bgred short' catchtap='jumpTap' data-type='6'>去首页，查看更多抽奖</view>
+              <view class='return-btn mgb50 short '>您未参与，无安慰奖</view>
+            </block>
+          </view>
+          <view class='winner-info column-center'>
+            <view class='winner-title'>
+              中奖人名单
+            </view>
+            <image src='{{winner_user.head_pic}}' class='winner-img mgb20'></image>
+            <text class='mgb20'>{{winner_user.nick_name}}</text>
+            <text class=''>分享了{{winner_user.total_invitation}}人，拥有{{winner_user.code_number}}个概率码</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 规则结束 -->
+    <view class='height25'></view>
+    <!-- 助力开始 -->
+    <view class='prize-power-list'>
+      <view class='power-list-title red t_c font36 bold'>好友助力榜</view>
+      <view class='power-code t_c'>本奖品，您拥有
+        <text class='red'><block wx:if='{{helpState==0}}'>{{powerData.code_number}}</block>
+      <block wx:if='{{helpState==1}}'>0</block></text>个概率码
+        <image src='https://tp.datikeji.com/a/15355139604269/l5UGn1iEkQ1at8jekCUmilsC0n9Bnrz7V4vtt6Lw.png' class='question-mark' catchtap='ruleTap'></image>
+      </view>
+      <view class='power-list-main'>
+        <block wx:if='{{prizeStatus ==1 || prizeStatus ==2 || prizeStatus ==4}}'>
+          <template is="power-myself" data='{{myHead,nick_name,powerData}}' />
+          <block wx:if='{{powerData.is_try_play==1}}'>
+            <template is="power-myself" data='{{powerData}}' />
+          </block>
+        </block>
+
+        <view wx:if='{{helpState==1 || powerData.childs.length<1}}' class='column-center'>
+          <view class='noHelp-text'>
+            <block wx:if='{{helpState==1}}'>您尚未参与抽奖，参与后可邀请好友助力</block>
+            <block wx:if='{{helpState==0&&detailData.open_status==0}}'>邀请好友一次，所有奖品永久助力</block>
+            <block wx:if='{{helpState==0&&detailData.open_status==1}}'>没有好友助力</block>
+          </view>
+          <form bindsubmit="getForm" report-submit='true'>
+            <button class='btn2 mgb10 out' hover-class="btn-hover" open-type="share" wx:if='{{helpState==0&&detailData.open_status==0}}' form-type="submit">邀请好友</button>
+          </form>
+        </view>
+
+        <block wx:for="{{powerData.childs}}" wx:for-item="item" wx:key="property" class='prize-list-info' wx:if='{{powerData.childs.length>0}}' wx:for-index="idx">
+          <template is="power-template" data='{{item,powerData,idx}}' />
+        </block>
+      </view>
+      <view class='t_c view-more' wx:if='{{powerData.total_pages>1}}' catchtap='jumpTap' data-type='4'>查看更多
+        <text class='right-point'></text>
+      </view>
+      <view wx:else class='pdb30'>
+      </view>
+    </view>
+    <!-- 助力结束 -->
+    <view class='height25'></view>
+    <!-- 参与开始 -->
+    <view class='prize-participate' wx:if='{{participant.length==0}}'>
+      <!-- 无人参加 -->
+      <view class='t_c'>
+        尚无人参与
+      </view>
+    </view>
+    <view class='prize-participate' catchtap='jumpTap' data-type='5' wx:if='{{participant.length>0}}'>
+      <!-- 有人参加 -->
+      <view class='row-between'>
+        <view class='row-start'>
+          <block wx:for="{{participant}}" wx:for-item="item" wx:key="property" wx:for-index="idx">
+            <image src='{{item.head_pic}}' class='head-img' wx:if='{{idx<6}}'></image>
+          </block>
+        </view>
+        <view class='prize-participate-right'>
+          <view class='part-num'>共{{total_people}}人参与</view>
+          <view class='view-all'>查看全部
+            <text class='right-point small-right-point'></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 参与结束 -->
+  </view>
+
+  <view class='height25' wx:if='{{prizesData.length>0}}'></view>
+
+  <!-- <view class='other-lottery' wx:if='{{prizesData.length>0}}'>
+    <view class='prize-detail-title t_c font34 mgb30'>-你还可以参加以下抽奖-</view>
+    <view class='clear'>
+      <view wx:for="{{prizesData}}" wx:for-item="item" wx:key="property" class='other-lottery-info' catchtap='jumpTap' data-type='7' data-rid='{{item.rid}}'>
+        <image src='{{item.pic_url}}' class='other-lottery-img mgb10'></image>
+        <view class='other-lottery-name'>奖品：{{item.name}}</view>
+      </view>
+    </view>
+    <view class='t_c font26 row-center-a other-more' wx:if='{{prizesData.length==4}}' catchtap='jumpTap' data-type='6'>查看更多奖品
+      <text class='right-point small-right-point black'></text>
+    </view>
+  </view> -->
+
+  <!-- 底部开始 -->
+  <view class='row-center bottom-link'>
+    <view class='link-address' catchtap='jumpTap' data-type='1'>历史抽奖
+      <text></text>
+    </view>
+    <view class='link-address' catchtap='jumpTap' data-type='2'>我的水滴币</view>
+  </view>
+  <!-- 底部结束 -->
+
+  <!-- 底部按钮开始 -->
+  <view class='prize-bottom row-between' wx:if='{{detailData.open_status==0}}'>
+    <form bindsubmit="getForm" report-submit='true'>
+      <button class='btn1 font30 right-btn1 ' hover-class="btn-hover" open-type="share" form-type="submit" style='width:200rpx;'>
+        分享到群</button>
+    </form>
+    <view class='btn1 font30' catchtap='jumpTap' data-type='3' style='width:420rpx;'>
+      <image src='https://tp.datikeji.com/a/15355147576982/xzNcrPDUfDxN6RRDBAud3iqyi4OOtjurMFznxLw2.png' class='bottom-img'></image>生成分享图，提高中奖率</view>
+  </view>
+  <view class='prize-bottom row-center-a' wx:if='{{detailData.open_status==1}}' catchtap='jumpTap' data-type='6'>
+    <form bindsubmit="getForm" report-submit='true'>
+      <button class='btn1 font34 out' hover-class="btn-hover" form-type="submit" style='width:700rpx'>
+        查看更多奖品</button>
+    </form>
+  </view>
+  <!-- 底部按钮结束 -->
+</view>
+<!-- </scroll-view> -->

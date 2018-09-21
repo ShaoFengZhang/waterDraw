@@ -1,0 +1,107 @@
+.popup-bg2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.popup1-main {
+  position: absolute;
+  width: 574rpx;
+  height: 574rpx;
+  top: 50%;
+  left: 50%;
+  margin-top: -300rpx;
+  margin-left: -287rpx;
+}
+
+.popup1-img2 {
+  width: 420rpx;
+  height: 64rpx;
+  animation: scaleBig 3s infinite linear;
+  background: #E44739;
+  color:#fff;
+  border-radius: 10rpx;
+  letter-spacing: 2px;
+  font-size:40rpx;
+  line-height:64rpx;
+}
+
+.popup-share-scale {
+  width: 574rpx;
+  height: 574rpx;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  border: 20rpx solid #e6e6e5;
+  border-radius: 100%;
+  animation: scalePopup 0.5s ease;
+}
+
+.popup1-img2-hover {
+color:#ccc
+}
+
+.close-popup-img {
+  padding: 50rpx;
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top: -60rpx;
+  right: -60rpx;
+  margin-left: -85rpx;
+  animation: rotation 0.5s ease;
+}
+
+.popup-bottom-envelope {
+  width: 574rpx;
+  height: 298rpx;
+  background: url('https://tp.datikeji.com/a/15354376065673/d97d5n6RsABTGBYeiiD2rVPhOjpK7OiYS93oBjYd.png');
+  background-size: 100% 100%;
+  margin-top: 30rpx;
+}
+
+.bottom-envelope-text1 {
+  font-size: 40rpx;
+  color: #ede3cb;
+  margin: 18rpx auto 30rpx;
+  letter-spacing: 2rpx
+}
+
+.bottom-envelope-img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.bottom-envelope-text2 {
+  font-size: 28rpx;
+  color: #ede3cb;
+}
+
+.share-img1 {
+  width: 46rpx;
+  height: 78rpx;
+}
+
+.share-img2 {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.share-text1 {
+  margin-top: 100rpx;
+  margin-bottom: 40rpx;
+}
+
+.share-text1 view, .share-text1 view text {
+  color: #000;
+  font-size: 40rpx;
+}
+.share-text2{
+  color:#3F3F3F;
+  font-size:34rpx;
+  margin:5rpx 0
+}

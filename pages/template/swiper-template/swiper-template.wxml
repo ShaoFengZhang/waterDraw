@@ -1,0 +1,9 @@
+<template name="swiper-template">
+  <swiper class='notice-box' vertical='true' circular='true' autoplay='true' interval='3000' duration='1000'>
+    <swiper-item wx:for="{{noticeData}}" wx:for-item="item" wx:key="property" class='notice-con'>
+      <view class='notice-info row-start'>
+        <image src='{{item.head_pic}}' class='notice-header-img'></image>{{item.nick_name+item.content}}
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

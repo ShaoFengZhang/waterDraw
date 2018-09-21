@@ -1,0 +1,22 @@
+<template name="rule-template">
+  <view class='rule-bg' wx:if='{{ruleState}}' catchtap='closeRuleTap'>
+    <view class='rule-box'>
+      <view class='rule-main ' catchtap='cancel'>
+        <view class='rule-title t_c'>抽奖规则</view>
+        <view class='rule-text'>
+          <view class='rule-cirle'>1</view>
+          你邀请的助力好友，每天上线参与抽奖，都会自动帮您助力加码。
+        </view>
+        <view class='rule-text'>
+          <view class='rule-cirle'>2</view>
+          中奖几率=您所拥有的概率码/该产品下所有的概率码数量。
+        </view>
+        <view class='rule-text'>
+          <view class='rule-cirle'>3</view>
+          好友越多，你的中奖概率越高！
+        </view>
+      </view>
+      <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='rule-close-img'></image>
+    </view>
+  </view>
+</template>

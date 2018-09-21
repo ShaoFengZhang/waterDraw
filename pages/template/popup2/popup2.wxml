@@ -1,0 +1,28 @@
+<template name="popup2-template">
+  <view class='popup-bg' wx:if='{{winState}}'>
+    <view class='popup-box column-center'>
+      <view class='column-center popup-scale'>
+        <view class='popup-new-title'>恭喜您，中奖啦！</view>
+        <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
+        <view class='popup-new-text'>奖品：{{detailData.name}}</view>
+        <view class='popup-text' >
+          <block wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>
+          {{allDetail.express_company}}:{{allDetail.courier_number}}
+          </block>
+        </view>
+        <form bindsubmit="addressTap" report-submit='true' wx:if='{{allDetail.receive_or_not ==0}}'>
+          <button form-type="submit" class='btn5 mgb50 bg' hover-class="btn-hover">填写收货地址</button>
+        </form>
+        <view class='btn5 mgb50' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==0}}'>等待赞助商发货</view>
+        <view class='btn5 mgb50' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>已发货</view>
+        <button class='btn5' hover-class="btn-hover" open-type="share" wx:if='{{allDetail.receive_or_not ==0}}'>
+          发给好友看看
+        </button>
+        <button class='btn5 bg' hover-class="btn-hover" open-type="share" wx:if='{{allDetail.receive_or_not ==1}}'>
+          发给好友看看
+        </button>
+      </view>
+      <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='close-img' catchtap='closeTap' data-type='2'></image>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,29 @@
+<import src="../template/prize-template/prize-template.wxml" />
+<import src="../template/header/header.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class='row-between nav'>
+    <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>进行中</view>
+    <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已结束</view>
+  </view>
+  <view class='main column-center'>
+    <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property" wx:if='{{category==0}}'>
+      <template is="prize-template" data='{{...item,category}}' />
+    </block>
+    <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property" wx:if='{{category==1}}'>
+      <view class='prize-item row-between'  catchtap='jumpTap' data-rid='{{item.rid}}'>
+        <view class='column-center-b'>
+          <text>奖品：{{item.name}}</text>
+        </view>
+        <view class='font24 gray'>{{item.opening_time}}
+          <text class='right-point gray small-right-point'></text>
+        </view>
+      </view>
+    </block>
+    <view class='gray font26' wx:if='{{total_pages == page&&prizeData.length>0}}' catchtap='toIndexTap'>没有了，快去参加其他抽奖吧</view>
+    <view wx:if='{{prizeData.length==0}}' class='column-center'>
+      <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
+      <view class='t_c font24' catchtap='toIndexTap'>您还没有抽奖记录，快去首页抽个奖吧</view>
+    </view>
+  </view>
+</view>

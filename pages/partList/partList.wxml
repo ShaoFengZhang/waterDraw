@@ -1,0 +1,38 @@
+<import src="../template/header/header.wxml" />
+<import src="../template/rule-template/rule-template.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<template is="rule-template" data='{{ruleState}}' />
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class='column-center part-top'>
+    <text class='text1'>共{{partData.total_people}}人参与</text>
+    <view class='text2'>拥有码数越多，中奖几率越高</view>
+    <view class='rule' catchtap='ruleTap'>抽奖规则</view>
+  </view>
+  <view class='part-main'>
+    <block wx:for="{{partData.participant}}" wx:for-item="item" wx:key="property" wx:for-index="idx">
+      <view class='row-between part-info {{idx==0&&myself?"first":""}}' catchtap='winNumberTap' data-num='{{item.winners_number}}'>
+        <view class='row-start'>
+          <image src='{{item.head_pic}}' class='partImg'></image>
+          <view>
+            <view class='part-name'>{{item.nick_name}}</view>
+            <view class='part-codeNum  row-start'>
+              <text class='font22 mgr15'>{{item.code_number}}个码 </text>
+              <block wx:if='{{item.winners_number>0}}'>
+                <block wx:for="{{item.winners_number}}" wx:for-item="item" wx:key="property" wx:for-index="idx">
+                  <image src='https://tp.datikeji.com/a/15367435939530/4UBoplM0AS834MdNxS72JINjaWW5KiZAYeTmHmXE.png' class='part-win-icon' wx:if='{{idx<6}}'></image>
+                </block>
+              </block>
+              <block wx:if='{{item.winners_number>5}}'>+++</block>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class='part-probability red'>
+            <image src='https://tp.datikeji.com/a/15329345093423/HwpIjYNnYH6n1oYq4VJMAMiWmfDaSTjPI8eTSwfK.png' class='point-img'></image>+{{item.add_award_rate}}</view>
+          <view class='part-des font22 t_r'>中奖概率提升</view>
+        </view>
+      </view>
+    </block>
+    <view class='t_c no-more' wx:if='{{page == partData.total_pages}}'>没有更多了哦~</view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<import src="../template/prize-template/prize-template.wxml" />
+<import src="../template/swiper-template/swiper-template.wxml" />
+<import src="../template/header/header.wxml" />
+<import src="../template/bottom/bottomItem.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<template is="bottomItem" data='{{bottomList,newDateNum}}' />
+<view class='container column-center' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
+  <view class='row-between top-side'>
+    <template is="swiper-template" data='{{noticeData,auto}}' />
+    <button class='share-btn' open-type="share" hover-class="btn-hover">分享给好友
+      <image src='https://tp.datikeji.com/b/15319183734117/mrkhlJKqWqmk7s8iAMnN4hp6v9Lr0fykyPou7Ug4.png' class='share-img'></image>
+    </button>
+  </view>
+  <view>
+    <block wx:for="{{prizes}}" wx:for-item="item" wx:key="property" wx:if='{{prizes.length>0}}'>
+      <template is="prize-template" data='{{...item}}' />
+    </block>
+    <view wx:if='{{prizes.length==0}}' class='column-center'>
+      <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
+      <view class='t_c font24'>大爷，今天抢完了，明天早上再来哦~</view>
+    </view>
+  </view>
+  <view class='prompt' wx:if='{{page==total_pages&&prizes.length>0}}'>到底了，明天早上出新奖品</view>
+</view>

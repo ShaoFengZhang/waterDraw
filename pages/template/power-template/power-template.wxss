@@ -1,0 +1,35 @@
+
+.prize-list-info{
+border-bottom: 1px solid #d6dae1;
+}
+.prize-list-info-top {
+  padding: 20rpx 0;
+  height: 82rpx;
+}
+
+.prize-list-info-bottom {
+  padding: 20rpx 0;
+  height: 72rpx;
+  padding-left: 130rpx;
+  border-top: 1px dashed #d6dae1;
+}
+
+.face-img {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 41rpx;
+  margin-left: 35rpx;
+  margin-right: 15rpx;
+}
+
+.face-img2 {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  margin-left: -30rpx;
+}
+
+.power-rank text{
+  font-size: 50rpx;
+}
+

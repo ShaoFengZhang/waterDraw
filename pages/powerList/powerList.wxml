@@ -1,0 +1,23 @@
+<import src="../template/power-template/power-template.wxml" />
+<import src="../template/power-myself/power-myself.wxml" />
+<import src="../template/rule-template/rule-template.wxml" />
+<import src="../template/header/header.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<template is="rule-template" data='{{ruleState}}' />
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class='column-center power-top'>
+    <view class='text1'>本奖品，您拥有{{powerData.code_number}}个概率码</view>
+    <view class='text2'>拥有码数越多，中奖几率越高</view>
+    <view class='rule' catchtap='ruleTap'>抽奖规则</view>
+  </view>
+  <view class='main'>
+    <template is="power-myself" data='{{myHead,nick_name,powerData}}' />
+    <block wx:if='{{powerData.is_try_play==1}}'>
+      <template is="power-myself" data='{{powerData}}' />
+    </block>
+    <block wx:for="{{powerData.childs}}" wx:for-item="item" wx:key="property" class='prize-list-info' wx:if='{{powerData.childs.length>0}}' wx:for-index="idx">
+      <template is="power-template" data='{{item,powerData,idx}}' />
+    </block>
+    <view class='t_c no-more' wx:if='{{page == powerData.total_pages}}'>没有更多了哦~</view>
+  </view>
+</view>

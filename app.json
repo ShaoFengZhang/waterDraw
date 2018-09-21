@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/powerList/powerList",
+    "pages/partList/partList",
+    "pages/myself/myself",
+    "pages/winRecord/winRecord",
+    "pages/drawRecord/drawRecord",
+    "pages/trading/trading",
+    "pages/posters/posters"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

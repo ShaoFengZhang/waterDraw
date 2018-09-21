@@ -1,0 +1,69 @@
+<import src="../template/header/header.wxml" />
+<import src="../template/bottom/bottomItem.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<template is="bottomItem" data='{{bottomList,newDateNum}}' />
+<view class="container"  style='padding-top:{{topHeight}};padding-bottom:120rpx'>
+  <image src='https://tp.datikeji.com/a/15356871826599/CBJYmrKoCaAVya51sUj9ozvj0r6Zn0hOOS9wkmSQ.png' class='guide-img'
+  wx:if='{{!hideState}}' catchtap='hideTap'></image>
+   <!-- <image src='https://tp.datikeji.com/a/15341319324583/CFvxG4fCNw7AdcYFWHHBQReVcZEyDCJThoEvQbDI.png' class='guide-img'
+  wx:if='{{!isIpx&&!hideState}}' catchtap='hideTap'></image> -->
+  <view class='column-center topCon'>
+    <view class='myTop column-center'>
+      <view class='column-center myTop-head'>
+        <image src='https://tp.datikeji.com/a/15330058954539/hOGrEupko9oAa0VvqF8rU6TOQpGqOYILKFvgDBqC.png' class='head-img'></image>
+        <view class='myHeader'>
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+      <view class='myName'>
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+      </view>
+    </view>
+    <view class='row-between link-row'>
+      <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
+        <text class='font36'>加红包群</text>
+        <text>点击我，回复1</text>
+      </button>
+      <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
+        <text class='font36'>关注公众号</text>
+        <text>点击我，回复2</text>
+      </button>
+    </view>
+    <view class='height25'></view>
+    <view class='row-between record-box'>
+      <view class='column-center-a record-list' catchtap='jumpTap' data-type='1' hover-class="active-hover">
+        <text class='font50'>{{myData.participate_number}}</text>
+        <text class='gray font26'>我参与的抽奖</text>
+      </view>
+      <view class='column-center-a record-list' catchtap='jumpTap' data-type='2' hover-class="active-hover">
+        <text class='font50'>{{myData.winners_number}}</text>
+        <text class='gray font26'>我的中奖纪录</text>
+      </view>
+    </view>
+  </view>
+  <view class='main-list'>
+    <view class='row-between main-item' catchtap='jumpTap' data-type='3' hover-class="active-hover">
+      <view class='row-start'>
+        <image src='https://tp.datikeji.com/a/15330212563604/40RUW6jiyOcUVVPGoOh92JI0JZbhbkYWP1At8mN7.png' class='icon-img'></image>
+        <text class='font34'>我的水滴币：{{myData.balance}}</text>
+      </view>
+      <view>
+        <text class='gray font26'>{{myData.paragraph}}</text>
+        <text class='right-point  gray'></text>
+      </view>
+    </view>
+    <view class='height25'></view>
+    <navigator target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{extraData}}" version="release">
+      <view class='row-between main-item'>
+        <view class='row-start'>
+          <image src='https://tp.datikeji.com/a/15330212851895/eluOsaMuWJ1tNjJ1dAOG0VSQIokiCjEW9Ft8I2If.png' class='icon-img'></image>
+          <text class='font34'>问题反馈</text>
+        </view>
+        <view>
+          <text class='right-point  gray'></text>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+</view>

@@ -1,0 +1,47 @@
+@import "../template/power-template/power-template.wxss";
+@import "../template/rule-template/rule-template.wxss";
+@import "../template/animation.wxss";
+.power-top {
+  padding-top: 20rpx;
+  position: relative;
+  padding-bottom:20rpx;
+ border-bottom:15rpx solid #EFF2F9
+}
+
+.power-top .text1 {
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: #f95959;
+}
+
+
+.power-top .text2 {
+  color: #818181;
+  font-size: 30rpx;
+  line-height: 80rpx;
+   height:80rpx;
+}
+
+.rule {
+  position: absolute;
+  width: 164rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  right:0;
+  top:90rpx;
+  border:1px solid #F95959;
+  color:#F95959;
+  border-top-left-radius:28rpx;
+  border-bottom-left-radius:28rpx;
+  border-right:none
+}
+.main{
+  padding:0 25rpx;
+}
+
+.no-more{
+  font-size:26rpx;
+  padding:30rpx 0;
+  color:#818181
+}

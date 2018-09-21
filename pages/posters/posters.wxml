@@ -1,0 +1,28 @@
+<import src="../template/header/header.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<view style='padding-top:{{topHeight}}'>
+  <canvas canvas-id="myCanvas" />
+  <view class='container'>
+    <view class='main' catchtap='imgTap'>
+      <image src='https://tp.datikeji.com/a/15360430623911/w8sadk4DglmaXwvZWo8uclS81fGxCdpzsf0dL5x7.png' class='guide-img'></image>
+      <image src='{{codeImg}}' class='codeImg'></image>
+      <image src='{{head_pic}}' class='head-img'></image>
+      <text class='nick_name'>{{nick_name}}喊你领红包</text>
+      <text class='post-help'>帮他助把力</text>
+      <image src='{{currentInfo.share_detail_pic}}' class='pic-img'></image>
+      <view class='prize-item'>
+        <view class='prize-name'>奖品：{{currentInfo.name}}</view>
+        <block wx:if='{{open_type == 0}}'>
+          <text class='opentime'>{{currentInfo.openTime}} 自动开奖</text>
+        </block>
+        <block wx:if='{{open_type == 1}}'>
+          <text class='opentime'>满{{currentInfo.award_number}}人 自动开奖</text>
+        </block>
+      </view>
+
+    </view>
+  </view>
+  <view class='bottom-btn' catchtap='imgTap' hover-class='red-hover'>
+    <image src='https://tp.datikeji.com/a/15355147576982/xzNcrPDUfDxN6RRDBAud3iqyi4OOtjurMFznxLw2.png' class='bottom-img'></image>
+    点击保存图片</view>
+</view>

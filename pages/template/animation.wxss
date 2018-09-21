@@ -1,0 +1,202 @@
+/*光晕  */
+
+@keyframes living {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes living {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/*放大缩小  */
+
+@keyframes magnify {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scalePopup {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleBig {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 向右运动 */
+
+@keyframes moveLeft {
+  0% {
+    left: 50rpx;
+  }
+
+  100% {
+    left: -308rpx;
+  }
+}
+
+@keyframes moveLeft2 {
+  0% {
+    left: -308rpx;
+  }
+
+  100% {
+    left: -650rpx;
+  }
+}
+
+/* 向左运动 */
+
+@keyframes moveRight {
+  0% {
+    left: -308rpx;
+  }
+
+  100% {
+    left: 50rpx;
+  }
+}
+
+@keyframes moveRight2 {
+  0% {
+    left: -650rpx;
+  }
+
+  100% {
+    left: -308rpx;
+  }
+}
+
+/* 向上运动 */
+
+@keyframes rising {
+  0% {
+    bottom: -140rpx;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+/*旋转一周 */
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(270deg);
+  }
+}
+
+/* 抖动 */
+
+@keyframes open {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+/* 左右运动 */
+
+@keyframes rotatex {
+  0% {
+    transform: translate(70rpx, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(70rpx, 0px);
+  }
+}
+
+/* 上下运动 */
+@keyframes rotateY{
+0% {
+    transform: translate(-30rpx, -30px);
+  }
+
+  50% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(-30rpx, -30px);
+  }
+}

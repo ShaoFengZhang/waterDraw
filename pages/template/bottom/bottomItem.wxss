@@ -1,0 +1,45 @@
+.bottomItem {
+  width: 100%;
+  position: fixed;
+  height: 112rpx;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 99;
+  border-top: 1px solid #d5d5d5;
+}
+
+.bottom-item {
+  width: 33.3%;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  font-size: 24rpx;
+}
+
+.bottom-item .img-box {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 8rpx;
+  margin-top: 12rpx;
+  position: relative;
+}
+
+.bottom-item .img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.bottom-item .circle-red {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  background: #fa413e;
+  right: -20rpx;
+  top: -5rpx;
+  font-size:20rpx;
+  color:#fff;
+  text-align: center;
+  line-height:40rpx
+}

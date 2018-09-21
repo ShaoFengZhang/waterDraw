@@ -1,0 +1,8 @@
+<template name="back-index">
+  <form bindsubmit="getForm" report-submit='true' wx:if='{{backState}}'>
+    <button form-type="submit" class='back-index' catchtap='jumpTap' data-type='6'  hover-class="btn2-hover">
+      <view>更多</view>
+      <view>奖品</view>
+    </button>
+  </form>
+</template>

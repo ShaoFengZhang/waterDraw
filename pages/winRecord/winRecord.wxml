@@ -1,0 +1,44 @@
+<import src="../template/header/header.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class='row-between nav'>
+    <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>待领取</view>
+    <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已领取</view>
+  </view>
+  <view class='main column-center'>
+    <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property" >
+      <view class='prize-item row-between' catchtap='jumpTap' data-rid='{{item.rid}}' >
+        <view class='column-center-b'>
+          <text>奖品：{{item.name}}</text>
+          <block wx:if='{{category==0}}'>
+            <text class='font24 gray'>{{item.opening_time}}</text>
+          </block>
+          <block wx:if='{{category==1}}'>
+            <view wx:if='{{item.delivery_or_not=="0"}}'>
+              <text class='delivery-text'>待发放</text>
+            </view>
+            <view wx:if='{{item.delivery_or_not=="1"}}'>
+              <text class='delivery-text'>已发放</text>
+              <text class='font22 gray'>{{item.express_company}}:{{item.courier_number}}</text>
+            </view>
+          </block>
+        </view>
+        <block wx:if='{{category==0}}'>
+          <form bindsubmit="addressTap" report-submit='true' data-rid='{{item.rid}}' >
+            <button form-type="submit" class='adress-btn' hover-class="btn-hover" catchtap='cancel'>填写收货地址</button>
+          </form>
+        </block>
+        <block wx:if='{{category==1}}'>
+          <view class='font24 gray'>{{item.opening_time}}
+            <text class='right-point gray small-right-point'></text>
+          </view>
+        </block>
+      </view>
+    </block>
+    <view class='gray font26' wx:if='{{total_pages == page&&prizeData.length>0}}' catchtap='toIndexTap'>没有了，快去参加其他抽奖吧</view>
+    <view wx:if='{{prizeData.length==0}}' class='column-center'>
+      <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
+      <view class='t_c font24' catchtap='toIndexTap'>您还没有中奖记录，快去首页抽个奖吧</view>
+    </view>
+  </view>
+</view>

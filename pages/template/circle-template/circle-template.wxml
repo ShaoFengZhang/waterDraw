@@ -1,0 +1,54 @@
+<template name="circle-template">
+  <view class='circle-box row-between {{leftDirection?"moveLeft":""}} {{rightDirection?"moveRight":""}} {{leftDirection2?"moveLeft2":""}} {{rightDirection2?"moveRight2":""}}' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <view class='ripples'>
+      <view class='center column-center'>
+        <view class='text light-gray'>等待</view>
+        <view class='text light-gray'>开奖</view>
+      </view>
+      <block wx:if='{{rightDirection}}'>
+        <view class='pulse'></view>
+        <view class='pulse pulse2'></view>
+      </block>
+    </view>
+    <view class='row-between circle-main'>
+      <view class='circle'></view>
+      <view class='circle circle2'></view>
+      <view class='circle circle3'></view>
+      <view class='circle circle4'></view>
+    </view>
+    <form bindsubmit="getForm" report-submit='true'>
+      <button class='ripples' hover-class="btn-hover" open-type="share" form-type="submit" data-type='5'>
+        <view class='center column-center invite-btn purpleCenter'>
+          <view class='text'>邀请</view>
+          <view class='text'>好友</view>
+        </view>
+        <block wx:if='{{leftDirection || rightDirection2 || !leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>
+          <view class='pulse pulse-purple'></view>
+          <view class='pulse pulse2 pulse-purple'></view>
+        </block>
+        <image src='https://tp.datikeji.com/a/15344876529619/317FWAjpIR1ThY7Pb8a3XGVfYmp1unuWmNCalT87.png' hidden='{{!goldState2}}' class='gold-img2' catchtap='jumpTap' data-type='2'></image>
+        <image src='https://tp.datikeji.com/a/15368201636654/nXmGsKA9hqV0Z765ucHsMPLjyDxdLgdQznYSTF3j.png' class='new-share-img'></image>
+      </button>
+    </form>
+    <view class='row-between circle-main'>
+      <view class='circle'></view>
+      <view class='circle circle2'></view>
+      <view class='circle circle3'></view>
+      <view class='circle circle4'></view>
+    </view>
+    <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='ripples' catchtap='tOtherProgram'>
+      <view class='center column-center greenCenter '>
+        <view class='text'>
+          <block wx:if='{{allDetail.is_try_play==0}}'>试玩</block>
+          <block wx:if='{{allDetail.is_try_play==1}}'>已经</block>
+        </view>
+        <view class='text'>加码</view>
+      </view>
+      <block wx:if='{{leftDirection2}}'>
+        <view class='pulse pulse-green'></view>
+        <view class='pulse pulse2 pulse-green'></view>
+      </block>
+      <image src='https://tp.datikeji.com/a/15368203871465/aFf3XRnwjYM7IfkmIsTluL6Ojg1c8Xrhi6OSRuRy.png' class='new-share-img'></image>
+    </navigator>
+  </view>
+</template>

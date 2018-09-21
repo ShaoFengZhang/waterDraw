@@ -1,0 +1,23 @@
+<template name="prize-template">
+  <view class='prize-info' catchtap='jumpTap' data-rid='{{rid}}' hover-class='prize-info-active'>
+    <image src='{{pic_url}}' class='prize-img'></image>
+    <view class='prize-main row-between'>
+      <view class='prize-con'>
+        <view class='prize-name'>奖品：{{name}}</view>
+        <view class='prize-time'>
+          <block wx:if='{{open_type==0}}'>
+            {{opening_time}}后 自动开奖
+          </block>
+          <block wx:if='{{open_type==1}}'>
+            满{{award_number}}人 自动开奖
+          </block>
+        </view>
+      </view>
+      <view class='prize-drawBtn {{have_involved=="no"?"":"active"}}' wx:if='{{category!=0}}'>
+        <block wx:if='{{have_involved=="no"}}'>立即抽奖</block>
+        <block wx:else>已参与</block>
+      </view>
+    </view>
+    <view class='prize-sponsors'>{{sponsor}}赞助</view>
+  </view>
+</template>

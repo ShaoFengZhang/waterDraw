@@ -1,0 +1,71 @@
+.popup-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.prize-popup {
+  width: 700rpx;
+  height: 890rpx; 
+  background: url('https://tp.datikeji.com/a/15353623775200/vqxCbUGoNuI2wP7SeXrMOeWgcJLvyIdV02iPfZmY.png');
+   background-color:#E05449;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -400rpx;
+  margin-left: -350rpx;
+}
+
+.switch {
+  width: 260rpx;
+  height: 260rpx;
+    animation:open .6s linear .3s infinite alternate;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    background:url('https://tp.datikeji.com/a/15353632212091/47OrnGiWRTd429WE0W6LTfKq0Y2A45aeJNn52JTs.png');
+    background-size:100% 100%
+}
+
+.prize-popup-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  border: 10rpx solid rgba(89, 89, 89, 0.1);
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+
+}
+
+.prize-popup-name {
+  color: #eff3d9;
+  font-size: 38rpx;
+  letter-spacing: 2px;
+}
+
+.prize-popup-text {
+  color: #eff3d9;
+  font-size: 56rpx;
+  margin: 100rpx auto 90rpx;
+  letter-spacing: 2px;
+}
+
+.prize-popup-close {
+  padding: 50rpx;
+  width: 170rpx;
+  height: 170rpx;
+  position: absolute;
+  animation: rotation 0.5s ease;
+  background:url('https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png') no-repeat center center;
+  background-size:70rpx 70rpx;
+  right:-50rpx;
+  top:-150rpx
+}
+.prize-popup-text text{
+  font-size:56rpx;
+  color:#EDE3CB;
+  line-height:100rpx;
+}

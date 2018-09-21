@@ -1,0 +1,17 @@
+<template name="rule2-template">
+  <view class='rule-bg' wx:if='{{ruleState}}' catchtap='closeRuleTap'>
+    <view class='rule-box'>
+      <view class='rule-main' catchtap='cancel'>
+        <view class='rule-title t_c'>段位规则</view>
+        <view class='rule-text'>
+          <view class='rule-cirle'>1</view>根据您的历史水滴币获得量，判断等级。倔强青铜、秩序白银、荣耀黄金、尊贵白金、永恒钻石、最强王者。
+        </view>
+        <view class='rule-text'>
+          <view class='rule-cirle'>2</view>
+          段位越高，享有的权益越多，如初始概率码数。具体待开发。
+        </view>
+      </view>
+      <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='rule-close-img'></image>
+    </view>
+  </view>
+</template>

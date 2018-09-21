@@ -1,0 +1,38 @@
+<template name="power-template">
+  <view class='prize-list-info'>
+    <view class='row-between prize-list-info-top'>
+      <view class='row-start'>
+        <view class='power-rank'>
+          <block wx:if='{{powerData.is_try_play==1}}'>
+            <text wx:if='{{idx<3}}' class='red'>{{idx+3}}</text>
+            <text wx:else>{{idx+3}}</text>
+          </block>
+          <block wx:if='{{powerData.is_try_play==0}}'>
+            <text wx:if='{{idx<3}}' class='red'>{{idx+2}}</text>
+            <text wx:else>{{idx+2}}</text>
+          </block>
+        </view>
+        <image src='{{item.head_pic}}' class='face-img'></image>
+        <view class='bold' style='width:400rpx'>{{item.nick_name}}
+          <block wx:if='{{item.is_new==0}}'> 【新用户】</block>
+          <block wx:if='{{item.is_new==1}}'> 【活跃】</block>
+        </view>
+      </view>
+      <view>
+        <text class='red'>+</text>
+        <text class='red'>{{item.add_code}}</text>个码</view>
+    </view>
+    <view class='row-between prize-list-info-bottom' wx:if='{{item.grandson.length>0}}'>
+      <view class='row-start'>
+        <view class='row-start mgr15'>
+          <block wx:for="{{grandsonItem}}" wx:for="{{item.grandson}}" wx:for-item="grandsonItem" wx:key="property" wx:for-index="idx">
+            <image src='{{grandsonItem.head_pic}}' class='face-img2' wx:if='{{idx<4}}'></image>
+          </block>
+        </view>
+        <text>{{item.nick_name}}带来{{item.grandson.length}}人</text>
+      </view>
+      <view>
+        <text class='red'>+{{item.grandson_count_codes}}</text>个码</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,26 @@
+<template name="popup1-template">
+  <view class='popup-bg2' wx:if='{{shareState}}'>
+    <view class='popup1-main'>
+      <view class='popup-share-scale column-center'>
+        <view class='column-center share-text1' style='margin-bottom:80rpx'>
+          <view style='font-size:60rpx;margin-bottom:20rpx'>发展下线</view>
+          <view class='row-center-a'>会
+            <text class='red'>永久</text>帮你 提升中奖率</view>
+        </view>
+        <form bindsubmit="getForm" report-submit='true'>
+          <button hover-class="popup1-img2-hover" open-type="share" form-type="submit" class='popup1-img2'>
+            分享好友群
+          </button>
+        </form>
+        <view class='share-text2'>分享立即获得20水滴币</view>
+        <!-- <image src='https://tp.datikeji.com/a/15356858715584/QAXrYdXq5GxiLxBN81xqGCH9U1q15PdmWGddimPM.png'  class='share-img2'></image> -->
+      </view>
+      <view class='popup-bottom-envelope column-center' wx:if='{{shareBottom}}' catchtap='jumpTap' data-type='8'>
+        <text class='bottom-envelope-text1'>分享好友后可领取</text>
+        <image src='https://tp.datikeji.com/a/15353632212091/47OrnGiWRTd429WE0W6LTfKq0Y2A45aeJNn52JTs.png' class='bottom-envelope-img'></image>
+        <!-- <text class='bottom-envelope-text2'>分享好友后可领取</text> -->
+      </view>
+      <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='close-popup-img' catchtap='closeTap' data-type='1'></image>
+    </view>
+  </view>
+</template>

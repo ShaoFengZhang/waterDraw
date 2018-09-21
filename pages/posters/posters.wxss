@@ -1,0 +1,124 @@
+page {
+  background: url('https://tp.datikeji.com/a/15332152163717/xjzQffi2JA7tDracD4xGTLzw96Z1Px51n4eyPknC.jpeg');
+  background-size: 100% 100%;
+}
+.container{
+  padding-bottom:150rpx
+}
+
+.bottom-btn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f75b5c;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 46rpx;
+  letter-spacing: 1px;
+}
+
+.red-hover {
+  background: #ff9899;
+}
+
+.main {
+  width: 700rpx;
+  height:965rpx;
+  margin: 110rpx auto 0;
+  background: url('https://tp.datikeji.com/a/15360417545635/3c7AaEbwRUtoYVTG15AxqA2XTZmc0My0KkYSjGUE.png');
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.codeImg {
+  width: 170rpx;
+  height: 170rpx;
+  position: absolute;
+  top: 750rpx;
+  right: 45rpx;
+}
+
+.head-img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+}
+
+.nick_name {
+  color: #fff;
+  font-size: 50rpx;
+  top: 40rpx;
+  left: 190rpx;
+  position: absolute;
+}
+.post-help{
+   color: #fff;
+  font-size: 50rpx;
+  top: 110rpx;
+  left:400rpx;
+  position: absolute;
+}
+
+.pic-img {
+  width: 682rpx;
+  height: 545rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 200rpx;
+}
+
+.prize-item {
+  position: absolute;
+  left: 30rpx;
+  top: 760rpx;
+}
+
+.prize-name {
+  color: #f95959;
+  font-size: 44rpx;
+  font-weight: bold;
+  width: 450rpx;
+  line-height: 60rpx;
+  height:120rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.opentime {
+  color: #818181;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
+canvas {
+  position: fixed;
+  width: 700rpx;
+  height:965rpx;
+  left: 0;
+  bottom: -200%;
+}
+
+.bottom-img {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20rpx;
+  margin-top: -6rpx;
+}
+.guide-img{
+  width:620rpx;
+  height:87rpx;
+  position: absolute;
+  left:40rpx;
+  top:-90rpx;
+}

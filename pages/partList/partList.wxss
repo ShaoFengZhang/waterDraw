@@ -1,0 +1,76 @@
+@import "../template/rule-template/rule-template.wxss";
+@import "../template/animation.wxss";
+.part-top {
+  padding-top: 20rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.part-top .text1 {
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: #f95959;
+}
+
+.part-top .text2 {
+  color: #818181;
+  font-size: 30rpx;
+  line-height: 80rpx;
+   height:80rpx;
+}
+
+.part-main {
+  padding: 0 24rpx;
+}
+
+.part-info {
+  border-bottom: 1px solid #D9D9D9;
+  padding: 22rpx 24rpx;
+  line-height: 41rpx;
+}
+
+.part-info.first {
+  border-bottom: none;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 0px 20rpx rgba(0, 0, 0, 0.2);
+}
+
+.partImg {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 100%;
+  margin-right: 15rpx;
+}
+
+.point-img {
+  width: 24rpx;
+  height: 24rpx;
+  display: inline-block;
+  margin-right: 5rpx;
+}
+
+.no-more {
+  font-size: 26rpx;
+  padding: 30rpx 0;
+  color: #818181;
+}
+
+.rule {
+  position: absolute;
+  width: 164rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  right:0;
+  top:90rpx;
+  border:1px solid #F95959;
+  color:#F95959;
+  border-top-left-radius:28rpx;
+  border-bottom-left-radius:28rpx;
+  border-right:none
+}
+.part-win-icon{
+  width:40rpx;
+  height:40rpx;
+  
+}

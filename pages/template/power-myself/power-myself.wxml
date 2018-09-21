@@ -1,0 +1,30 @@
+<template name="power-myself">
+  <view class='prize-list-info' wx:if='{{myHead}}'>
+    <view class='row-between prize-list-info-top'>
+      <view class='row-start'>
+        <view class='power-rank'>
+          <text class='red'>1</text>
+        </view>
+        <image src='{{myHead}}' class='face-img'></image>
+        <view class='bold' style='width:400rpx'>{{nick_name}}</view>
+      </view>
+      <view>
+        <text class='red'>+</text>
+        <text class='red'>{{powerData.initial_code}}</text>个码</view>
+    </view>
+  </view>
+  <view class='prize-list-info' wx:if='{{!myHead}}'>
+    <view class='row-between prize-list-info-top'>
+      <view class='row-start'>
+        <view class='power-rank'>
+          <text class='red'>2</text>
+        </view>
+        <image src='{{powerData.sponsor_logo}}' class='face-img'></image>
+        <view class='bold'>赞助商试玩</view>
+      </view>
+      <view>
+        <text class='red'>+</text>
+        <text class='red'>{{powerData.add_code_number}}</text>个码</view>
+    </view>
+  </view>
+</template>

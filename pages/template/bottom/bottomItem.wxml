@@ -1,0 +1,15 @@
+<template name="bottomItem">
+  <view class='bottomItem row-between'>
+    <block wx:for="{{bottomList}}" wx:for-item="item" wx:key="property" wx:for-index="idx">
+      <view class='bottom-item column-center' catchtap='bottomSwitch' style='{{item.done?"color:#C4433B":"color:#939393"}}' data-idx='{{idx}}'>
+        <view class='img-box'>
+          <image src='{{item.activeImg}}' class='img' wx:if='{{item.done}}'></image>
+          <image src='{{item.img}}' class='img' wx:else></image>
+          <view class='circle-red' wx:if='{{idx==1&&newDateNum>0}}'>{{newDateNum}}</view>
+        </view>
+        {{item.text}}
+
+      </view>
+    </block>
+  </view>
+</template>

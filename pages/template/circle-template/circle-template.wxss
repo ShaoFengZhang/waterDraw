@@ -1,0 +1,175 @@
+.circle-box {
+  position: absolute;
+  left: -308rpx;
+  top: 0rpx;
+  padding: 60rpx 250rpx 60rpx;
+  height:300rpx;
+   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background:#fff
+}
+
+.moveLeft {
+  animation: moveLeft 0.5s;
+   left: -308rpx;
+}
+
+.moveLeft2 {
+  animation: moveLeft2 0.5s;
+  left: -650rpx;
+}
+
+.moveRight {
+  animation: moveRight 0.5s;
+  left: 50rpx;
+}
+
+.moveRight2 {
+  animation: moveRight2 0.5s;
+  left:-308rpx;
+}
+
+.circle-main {
+  margin: 0 38rpx;
+}
+
+.circle {
+  width: 18rpx;
+  height: 18rpx;
+  background: #EFF2F9;
+  border-radius: 100%;
+  animation: magnify 3s ease-out;
+  animation-iteration-count: infinite;
+  margin: 0 4rpx;
+}
+
+.circle2 {
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+}
+
+.circle3 {
+  animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+}
+
+.circle4 {
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+}
+
+.circle5 {
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+}
+
+/* 产生动画（向外扩散变大）的圆圈  */
+
+.ripples {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  left: 0;
+  top: 0;
+  background: #f95959;
+  border-radius: 100%;
+  z-index: 99;
+  padding-top: 30rpx;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: 5px;
+}
+
+.center.purpleCenter{
+  background:#F90087
+}
+.center.greenCenter{
+  background:#2AA344
+}
+.center .text {
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+
+.pulse {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  left: 0;
+  top: 0;
+  background: #f95959;
+  border-radius: 100%;
+  z-index: 1;
+  animation: living 2s linear infinite;
+  -webkit-animation: living 2s linear infinite;
+}
+
+.pulse.pulse2 {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+
+.pulse-green {
+  background: #2AA344;
+}
+.pulse-purple{
+  background: #F90087
+}
+
+.invitation-text {
+  font-size: 25rpx;
+  color: #ff0844;
+  position: absolute;
+  left: -180rpx;
+  top: -80rpx;
+}
+
+.gold-exchange {
+  font-size: 25rpx;
+  position: absolute;
+  left: -180rpx;
+  top: -80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  color: #f95959;
+  padding: 0 15rpx;
+  border: 1px solid #f95959;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gold-img {
+  position: absolute;
+  width: 88rpx;
+  height: 88rpx;
+  left: -120rpx;
+  top: -20rpx;
+  animation: scalePopup 0.5s ease;
+}
+
+.gold-img2 {
+  position: absolute;
+  width: 88rpx;
+  height: 88rpx;
+  right: -120rpx;
+  top: -20rpx;
+  animation: scalePopup 0.5s ease;
+}
+
+.new-share-img{
+  width:320rpx;
+  height:72rpx;
+  position: absolute;
+  left:-70rpx;
+  top:-90rpx;
+}

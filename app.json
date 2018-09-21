@@ -8,7 +8,8 @@
     "pages/winRecord/winRecord",
     "pages/drawRecord/drawRecord",
     "pages/trading/trading",
-    "pages/posters/posters"
+    "pages/posters/posters",
+    "pages/jump/jump"
   ],
   "window": {
     "backgroundTextStyle": "light",

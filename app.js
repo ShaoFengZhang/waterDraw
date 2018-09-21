@@ -1,8 +1,8 @@
 const ald = require('./utils/ald-stat.js')
 App({
   data: {
-    //api: 'https://xcx6.datikeji.com/', 线上
-    api:'https://xcx11.datikeji.com/',
+    api: 'https://xcx6.datikeji.com/', //线上
+    // api:'https://xcx11.datikeji.com/',
     currentInfo: '',
     bottomImg: [{
         img: "https://tp.datikeji.com/a/15354603904865/nqOEcMlQK6L2VUWAjw970Pp8kqtctbxoJVysTBRz.png",

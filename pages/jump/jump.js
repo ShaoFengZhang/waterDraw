@@ -19,7 +19,7 @@ Page({
                 content: '参数传递不正确',
                 showCancel: false,
                 success: function() {
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: `../pages/index/index`
                     })
                 }
@@ -54,7 +54,7 @@ Page({
                     let ridList = res.data.data.prizes;
                     let random = Math.floor(Math.random() * ridList.length);
                     _this.rid = ridList[random].rid;
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: `../detail/detail?uid=${_this.uid}&rid=${_this.rid}`
                     })
                 } else {
@@ -63,7 +63,7 @@ Page({
                         content: '当前没有正在抽奖的奖品',
                         showCancel: false,
                         success: function() {
-                            wx.navigateTo({
+                            wx.redirectTo({
                                 url: `../pages/index/index`
                             })
                         }

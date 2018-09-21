@@ -33,13 +33,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "详情页",
 					"pathName": "pages/detail/detail",
-					"query": "rid=289"
+					"query": "rid=TG&uid=438"
 				},
 				{
 					"id": -1,

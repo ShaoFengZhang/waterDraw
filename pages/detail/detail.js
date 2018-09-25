@@ -55,6 +55,9 @@ Page({
           function(res) {
             if (res.data.status == 0) {
               util.noData(res.data.msg);
+                setTimeout(function () {
+                    btnBgm.play()
+                }, 500)
               //详情
               that.detailRender(that.data.user_id)
               //助力
@@ -338,7 +341,7 @@ Page({
           })
           if (util.getNowFormatDate(app.data.oldDate)) {
             that.setData({
-              shareState: true
+            //   shareState: true
             })
           }
         }
@@ -535,7 +538,7 @@ Page({
             console.log(res)
             if (res.data.status == 0) {
               if (that.data.is_new == 0) {
-                util.noData(res.data.msg, 3000)
+                util.noData('分享成功', 3000)
                 setTimeout(function() {
                   btnBgm.play()
                 }, 500)
@@ -545,10 +548,10 @@ Page({
                   })
                 }, 1000)
               } else {
-                util.noData(res.data.msg, 3000)
+                  util.noData('分享成功', 3000)
                 setTimeout(function() {
                   btnBgm.play()
-                }, 1000)
+                }, 500)
                 if (type == 5 && that.data.shareFirst) {
                   that.setData({
                     shareFirst: false
@@ -582,6 +585,9 @@ Page({
                 }, 1000)
               }
               util.success('分享成功');
+                setTimeout(function () {
+                    btnBgm.play()
+                }, 500)
               if (type == 5 && that.data.shareFirst) {
                 that.setData({
                   shareFirst: false
@@ -852,7 +858,7 @@ Page({
                 newState: false,
                 newState2: true,
                 gift: gift,
-                shareBottom: true
+                // shareBottom: true
               })
             } else {
               util.noData(res.data.msg)
@@ -884,7 +890,7 @@ Page({
               newState: false,
               newState2: true,
               gift: gift,
-              shareBottom: true
+            //   shareBottom: true
             })
           } else {
             util.noData(res.data.msg)

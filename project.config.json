@@ -39,7 +39,7 @@
 					"id": 0,
 					"name": "详情页",
 					"pathName": "pages/detail/detail",
-					"query": "rid=TG&uid=438"
+					"query": "rid=369&uid=438"
 				},
 				{
 					"id": -1,

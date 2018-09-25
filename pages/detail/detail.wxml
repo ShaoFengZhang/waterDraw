@@ -20,7 +20,7 @@
 <template is="back-index" data='{{backState}}' />
 
 <!-- 弹窗1 -->
-<template is="popup1-template" data='{{shareState,shareBottom}}' />
+<!-- <template is="popup1-template" data='{{shareState,shareBottom}}' /> -->
 
 <!-- 中奖弹窗 -->
 <template is="popup2-template" data='{{winState,detailData,allDetail}}' />
@@ -86,7 +86,7 @@
 
     <!-- 规则开始 -->
     <view class='prize-rule'>
-      <view class='prize-rule-title gray' catchtap='ruleTap'>
+      <view class='prize-rule-title gray' >
         <block wx:if='{{prizeStatus == 4&&leftDirection2}}'></block>
         <block wx:else>活动规则</block>
       </view>
@@ -125,7 +125,7 @@
             <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
             <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
           </block>
-          <block wx:if='{{prizeStatus == 4&&leftDirection || prizeStatus == 4&&rightDirection2 || prizeStatus == 4&&!leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>邀请好友来领新人红包</block>
+          <block wx:if='{{prizeStatus == 4&&leftDirection || prizeStatus == 4&&rightDirection2 || prizeStatus == 4&&!leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>邀请好友一起来抽奖</block>
 
           <block wx:if='{{prizeStatus == 4&&leftDirection2}}'>试玩赞助商小程序加100个概率码</block>
         </view>
@@ -200,7 +200,7 @@
     <!-- 规则结束 -->
     <view class='height25'></view>
     <!-- 助力开始 -->
-    <view class='prize-power-list'>
+    <!-- <view class='prize-power-list'>
       <view class='power-list-title red t_c font36 bold'>好友助力榜</view>
       <view class='power-code t_c'>本奖品，您拥有
         <text class='red'><block wx:if='{{helpState==0}}'>{{powerData.code_number}}</block>
@@ -235,7 +235,7 @@
       </view>
       <view wx:else class='pdb30'>
       </view>
-    </view>
+    </view> -->
     <!-- 助力结束 -->
     <view class='height25'></view>
     <!-- 参与开始 -->
@@ -295,7 +295,7 @@
         分享到群</button>
     </form>
     <view class='btn1 font30' catchtap='jumpTap' data-type='3' style='width:420rpx;'>
-      <image src='https://tp.datikeji.com/a/15355147576982/xzNcrPDUfDxN6RRDBAud3iqyi4OOtjurMFznxLw2.png' class='bottom-img'></image>生成分享图，提高中奖率</view>
+      <image src='https://tp.datikeji.com/a/15355147576982/xzNcrPDUfDxN6RRDBAud3iqyi4OOtjurMFznxLw2.png' class='bottom-img'></image>生成分享图</view>
   </view>
   <view class='prize-bottom row-center-a' wx:if='{{detailData.open_status==1}}' catchtap='jumpTap' data-type='6'>
     <form bindsubmit="getForm" report-submit='true'>

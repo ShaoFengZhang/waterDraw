@@ -6,7 +6,7 @@
   <view class='column-center part-top'>
     <text class='text1'>共{{partData.total_people}}人参与</text>
     <view class='text2'>拥有码数越多，中奖几率越高</view>
-    <view class='rule' catchtap='ruleTap'>抽奖规则</view>
+    <!-- <view class='rule' catchtap='ruleTap'>抽奖规则</view> -->
   </view>
   <view class='part-main'>
     <block wx:for="{{partData.participant}}" wx:for-item="item" wx:key="property" wx:for-index="idx">

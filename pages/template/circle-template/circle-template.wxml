@@ -27,7 +27,7 @@
           <view class='pulse pulse2 pulse-purple'></view>
         </block>
         <image src='https://tp.datikeji.com/a/15344876529619/317FWAjpIR1ThY7Pb8a3XGVfYmp1unuWmNCalT87.png' hidden='{{!goldState2}}' class='gold-img2' catchtap='jumpTap' data-type='2'></image>
-        <image src='https://tp.datikeji.com/a/15368201636654/nXmGsKA9hqV0Z765ucHsMPLjyDxdLgdQznYSTF3j.png' class='new-share-img'></image>
+        <!-- <image src='https://tp.datikeji.com/a/15368201636654/nXmGsKA9hqV0Z765ucHsMPLjyDxdLgdQznYSTF3j.png' class='new-share-img'></image> -->
       </button>
     </form>
     <view class='row-between circle-main'>
@@ -48,7 +48,7 @@
         <view class='pulse pulse-green'></view>
         <view class='pulse pulse2 pulse-green'></view>
       </block>
-      <image src='https://tp.datikeji.com/a/15368203871465/aFf3XRnwjYM7IfkmIsTluL6Ojg1c8Xrhi6OSRuRy.png' class='new-share-img'></image>
+      <!-- <image src='https://tp.datikeji.com/a/15368203871465/aFf3XRnwjYM7IfkmIsTluL6Ojg1c8Xrhi6OSRuRy.png' class='new-share-img'></image> -->
     </navigator>
   </view>
 </template>

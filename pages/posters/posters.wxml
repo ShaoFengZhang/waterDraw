@@ -4,7 +4,7 @@
   <canvas canvas-id="myCanvas" />
   <view class='container'>
     <view class='main' catchtap='imgTap'>
-      <image src='https://tp.datikeji.com/a/15360430623911/w8sadk4DglmaXwvZWo8uclS81fGxCdpzsf0dL5x7.png' class='guide-img'></image>
+      <!-- <image src='https://tp.datikeji.com/a/15360430623911/w8sadk4DglmaXwvZWo8uclS81fGxCdpzsf0dL5x7.png' class='guide-img'></image> -->
       <image src='{{codeImg}}' class='codeImg'></image>
       <image src='{{head_pic}}' class='head-img'></image>
       <text class='nick_name'>{{nick_name}}喊你领红包</text>

@@ -1,22 +1,25 @@
 <template name="popup3-template">
-  <view class='popup-bg' wx:if='{{nowinState}}'>
-    <view class='popup-box column-center'>
-      <view class='column-center popup-scale white-popup-scale'>
-        <view class='popup-con column-center'>
-          <view class='popup-new-title'>再接再厉</view>
-          <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
-          <view class='popup-new-text'>只要坚持，终有幸运</view>
-          <view class='popup-text'>
-            安慰奖：随机1-100个水滴币
-          </view>
-          <view class='btn6 bg mgb50' catchtap='exchangeTap' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
-          <view class='btn6 mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>提现水滴币</view>
-        </view>
+    <view class='popup-bg' wx:if='{{nowinState}}'>
+        <view class='popup-box column-center'>
+            <view class='column-center popup-scale white-popup-scale'>
+                <view class='popup-con column-center'>
+                    <view class='popup-new-title'>再接再厉</view>
+                    <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
+                    <view class='popup-new-text'>只要坚持，终有幸运</view>
+                    <view class='popup-text'>
+                        安慰奖：随机1-100个水滴币
+                    </view>
+                    <view class='btn6 bg mgb50' catchtap='exchangeTap' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
+                    <view class='btn6 mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>提现水滴币</view>
+                </view>
 
-        <view class='btn6' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==0}}'>查看更多抽奖</view>
-        <view class='btn6 bg' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>查看更多抽奖</view>
-      </view>
-      <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='close-img' catchtap='closeTap' data-type='3'></image>
+                <view class='btn6' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==0}}'>点我，再来一个抽奖</view>
+                <view class='btn6 bg mobile' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>
+                <image class='handicon' src='/assets/handicon.png' />
+                    点我，再来一个抽奖
+                </view>
+            </view>
+            <image src='https://tp.datikeji.com/a/15337984319420/bEwYTrJgNuD5dKmZe8StmSFXksD8fBprv3bWuu6V.png' class='close-img' catchtap='closeTap' data-type='3'></image>
+        </view>
     </view>
-  </view>
 </template>

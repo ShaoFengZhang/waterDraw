@@ -39,10 +39,10 @@
     <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='ripples' catchtap='tOtherProgram'>
       <view class='center column-center greenCenter '>
         <view class='text'>
-          <block wx:if='{{allDetail.is_try_play==0}}'>试玩</block>
-          <block wx:if='{{allDetail.is_try_play==1}}'>已经</block>
+          <block wx:if='{{allDetail.is_try_play==0}}'>试玩加</block>
+          <block wx:if='{{allDetail.is_try_play==1}}'>已经加</block>
         </view>
-        <view class='text'>加码</view>
+        <view class='text'>100码</view>
       </view>
       <block wx:if='{{leftDirection2}}'>
         <view class='pulse pulse-green'></view>

@@ -11,512 +11,535 @@
 @import "../template/animation.wxss";
 
 page {
-  background: #eff2f9;
+    background: #eff2f9;
 }
 
 .container {
-  padding-bottom: 112rpx;
+    padding-bottom: 112rpx;
 }
 
 /* 通知 */
 
 .top-notice {
-  position: fixed;
-  left: 10rpx;
-  top: 10rpx;
-  z-index: 999;
-  height: 100rpx;
-  display: flex;
+    position: fixed;
+    left: 10rpx;
+    top: 10rpx;
+    z-index: 999;
+    height: 100rpx;
+    display: flex;
 }
 
 .top-notice-main {
-  height: 75rpx;
-  overflow: hidden;
+    height: 75rpx;
+    overflow: hidden;
 }
 
 /* banner */
 
 .prize-photo-swiper {
-  width: 100%;
-  height: 300rpx;
+    width: 100%;
+    height: 300rpx;
 }
 
 .prize-photo-img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* 奖品介绍 */
 
 .prize-text {
-  width: 100%;
-  background: #fff;
-  padding: 10rpx 20rpx 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  line-height: 55rpx;
+    width: 100%;
+    background: #fff;
+    padding: 10rpx 20rpx 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 55rpx;
 }
 
 .prize-des {
-  display: inline-block;
-  height: 30rpx;
-  line-height: 30rpx;
-  background: #f95959;
-  border-radius: 15rpx;
-  color: #fff;
-  font-size: 20rpx;
-  letter-spacing: 1px;
-  padding: 0 10rpx;
-  vertical-align: middle;
-  margin-top: -5rpx;
+    display: inline-block;
+    height: 30rpx;
+    line-height: 30rpx;
+    background: #f95959;
+    border-radius: 15rpx;
+    color: #fff;
+    font-size: 20rpx;
+    letter-spacing: 1px;
+    padding: 0 10rpx;
+    vertical-align: middle;
+    margin-top: -5rpx;
 }
 
 .prize-des2 {
-  display: inline-block;
-  height: 28rpx;
-  line-height: 28rpx;
-  color: #747474;
-  border: 1px solid #747474;
-  font-size: 20rpx;
-  letter-spacing: 1px;
-  padding: 0 10rpx;
-  vertical-align: middle;
-  margin-top: -5rpx;
+    display: inline-block;
+    height: 28rpx;
+    line-height: 28rpx;
+    color: #747474;
+    border: 1px solid #747474;
+    font-size: 20rpx;
+    letter-spacing: 1px;
+    padding: 0 10rpx;
+    vertical-align: middle;
+    margin-top: -5rpx;
 }
 
 .share-img {
-  width: 36rpx;
-  height: 36rpx;
-  padding: 10rpx 20rpx;
+    width: 36rpx;
+    height: 36rpx;
+    padding: 10rpx 20rpx;
 }
 
 .prize-num text {
-  font-size: 25rpx;
-  color: #818181;
+    font-size: 25rpx;
+    color: #818181;
 }
 
 .prize-num  .prize-des {
-  font-size: 20rpx;
-  color: #fff;
+    font-size: 20rpx;
+    color: #fff;
 }
 
 .prize-num  .prize-des2 {
-  font-size: 20rpx;
-  color: #f95959;
+    font-size: 20rpx;
+    color: #f95959;
 }
 
 .prize-num view {
-  font-size: 25rpx;
-  color: #818181;
+    font-size: 25rpx;
+    color: #818181;
 }
 
 .prize-price {
-  text-decoration: line-through;
-  text-decoration-color: #f95959;
+    text-decoration: line-through;
+    text-decoration-color: #f95959;
 }
 
 /* 赞助商 */
 
 .prize-sponsors-box {
-  background: #fff;
-  padding: 20rpx;
-  border-bottom: 1px solid #eff2f9;
+    background: #fff;
+    padding: 20rpx 20rpx 0 20rpx;
+    border-bottom: 12rpx solid #eff2f9;
 }
 
 .sponsors-title {
-  font-size: 36rpx;
-  padding-left: 20rpx;
-  line-height: 60rpx;
-  color: #000;
-  border-left: 10rpx solid #ccc;
+    font-size: 36rpx;
+    /* padding-left: 20rpx; */
+    line-height: 60rpx;
+    color: #000;
+    /* border-left: 10rpx solid #ccc; */
+    border-bottom: 2rpx solid #eff2f9;
 }
 
 .sponsor-img {
-  width: 38rpx;
-  height: 38rpx;
-  margin-left: 18rpx;
-  margin-right: 13rpx;
+    width: 38rpx;
+    height: 38rpx;
+    margin-left: 18rpx;
+    margin-right: 13rpx;
+    border-radius: 50%;
 }
 
 .sponsors-text {
-  padding-left: 20rpx;
-  font-size: 30rpx;
-  line-height: 50rpx;
-  color: #000;
-  border-left: 10rpx solid #ccc;
+    padding-left: 20rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    color: #000;
+    /* border-left: 10rpx solid #ccc; */
 }
 
 /* 商品详情 */
 
 .prize-main {
-  width: 100%;
-  background: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .prize-detail {
-  padding: 10rpx 20rpx;
-  border-bottom: 1px solid #eff2f9;
+    padding: 10rpx;
+    border-bottom: 1px solid #eff2f9;
+    background-color: #eff2f9;
 }
 
 .prize-detail-title {
-  color: #818181;
-  margin: 10rpx auto;
-  font-size: 26rpx;
+    color: #818181;
+    margin: 10rpx auto;
+    font-size: 26rpx;
 }
 
 .prize-detail-text {
-  line-height: 50rpx;
+    padding: 0 24rpx;
+    line-height: 50rpx;
+    background-color: #fff;
 }
 
 .prize-detial-img {
-  width: 100%;
-  margin-bottom: 20rpx;
+    width: 100%;
+    margin-bottom: 20rpx;
 }
 
 /* 活动规则 */
 
 .prize-rule {
-  padding: 25rpx 0 60rpx;
-  width: 100%;
-  overflow: hidden;
+    padding: 25rpx 0 60rpx;
+    width: 100%;
+    overflow: hidden;
 }
 
 .prize-rule-title {
-  text-align: left;
-  padding: 0 35rpx;
-  font-size: 25rpx;
-  height:30rpx;
-  line-height:30rpx
+    text-align: left;
+    padding: 0 35rpx;
+    font-size: 25rpx;
+    height: 30rpx;
+    line-height: 30rpx;
 }
 
 .prize-rule-text {
-  color: #818181;
-  font-size: 30rpx;
+    color: #818181;
+    font-size: 30rpx;
 }
 
 .circle-vessel {
-  position: relative;
-  height: 180rpx;
-  padding: 80rpx 0 60rpx;
+    position: relative;
+    height: 180rpx;
+    padding: 80rpx 0 60rpx;
 }
 
 .circle-vessel-part {
-  position: relative;
-  height: 300rpx;
+    position: relative;
+    height: 300rpx;
 }
 
 .loginBtn {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
 }
 
 .ripple-main {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 /* 助力榜 */
 
 .prize-power-list {
-  background: #fff;
-  padding: 40rpx 0 25rpx;
+    background: #fff;
+    padding: 40rpx 0 25rpx;
 }
 
 .power-list-main {
-  padding: 0 25rpx;
+    padding: 0 25rpx;
 }
 
 .power-code {
-  color: #818181;
-  padding: 20rpx 0;
+    color: #818181;
+    padding: 20rpx 0;
 }
 
 .view-more {
-  padding: 30rpx 0;
-  color: #00aeff;
+    padding: 30rpx 0;
+    color: #00aeff;
 }
 
 .noHelp-text {
-  padding-top: 50rpx;
-  padding-bottom: 30rpx;
-  color: #919191;
+    padding-top: 50rpx;
+    padding-bottom: 30rpx;
+    color: #919191;
 }
 
 /* 参与榜 */
 
 .prize-participate {
-  width: 100%;
-  padding: 50rpx 25rpx 30rpx;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #fff;
+    width: 100%;
+    padding: 50rpx 25rpx 30rpx;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
 }
 
 .part-num {
-  font-size: 25rpx;
-  color: #818181;
+    font-size: 25rpx;
+    color: #818181;
 }
 
 .view-all {
-  font-size: 25rpx;
-  color: #00aeff;
+    font-size: 25rpx;
+    color: #00aeff;
 }
 
 .prize-participate-right {
-  line-height: 38rpx;
+    line-height: 38rpx;
 }
 
 .head-img {
-  width: 75rpx;
-  height: 75rpx;
-  margin-right: 14rpx;
+    width: 75rpx;
+    height: 75rpx;
+    margin-right: 14rpx;
 }
 
 /* 详情链接 */
 
 .bottom-link {
-  padding: 60rpx 0;
+    padding: 60rpx 0;
 }
 
 .link-address {
-  height: 60rpx;
-  line-height: 60rpx;
-  padding: 0 60rpx;
-  color: #818181;
-  font-size: 28rpx;
-  position: relative;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0 60rpx;
+    color: #818181;
+    font-size: 28rpx;
+    position: relative;
 }
 
 .link-address text {
-  position: absolute;
-  right: 0;
-  top: 10rpx;
-  height: 40rpx;
-  width: 1px;
-  background: #aeaeae;
+    position: absolute;
+    right: 0;
+    top: 10rpx;
+    height: 40rpx;
+    width: 1px;
+    background: #aeaeae;
 }
 
 /* 详情底部 */
 
 .prize-bottom {
-  width: 100%;
-  height: 112rpx;
-  background: #fff;
-  box-shadow: 0 0 35rpx rgba(0, 0, 0, 0.2);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  padding: 0 45rpx;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  animation: rising 1s;
-  z-index: 99;
+    width: 100%;
+    height: 112rpx;
+    background: #fff;
+    box-shadow: 0 0 35rpx rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 0 45rpx;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    animation: rising 1s;
+    z-index: 99;
 }
 
 .bottom-img {
-  width: 40rpx;
-  height: 40rpx;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10rpx;
-  margin-top: -6rpx;
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10rpx;
+    margin-top: -6rpx;
 }
 
 .right-btn1 {
-  background: none;
-  border: 1rpx solid #818181;
-  color: #2a2a2a;
-  line-height: 62rpx;
+    background: none;
+    border: 1rpx solid #818181;
+    color: #2a2a2a;
+    line-height: 62rpx;
 }
 
 .right-btn1 {
-  background: none;
-  border: 1rpx solid #818181;
-  color: #2a2a2a;
-  line-height: 62rpx;
+    background: none;
+    border: 1rpx solid #818181;
+    color: #2a2a2a;
+    line-height: 62rpx;
 }
 
 /* 开奖后 */
 
 .return-btn {
-  width: 700rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  border: 1px solid #f95959;
-  border-radius: 10rpx;
-  color: #f95959;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    width: 700rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border: 1px solid #f95959;
+    border-radius: 10rpx;
+    color: #f95959;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .return-btn.short {
-  width: 420rpx;
+    width: 420rpx;
 }
 
 .return-btn.small {
-  width: 300rpx;
+    width: 300rpx;
 }
 
 .return-btn.bgred {
-  background: #f95959;
-  color: #fff;
+    background: #f95959;
+    color: #fff;
 }
 
 .return-btn.bggray {
-  background: #b0b0b0;
-  color: #fff;
-  border: none;
+    background: #b0b0b0;
+    color: #fff;
+    border: none;
 }
 
 /* 中奖者信息 */
 
 .winner-info {
-  width: 700rpx;
-  border-top: 1px solid #aeaeae;
+    width: 700rpx;
+    border-top: 1px solid #aeaeae;
 }
 
 .winner-title {
-  width: 180rpx;
-  height: 60rpx;
-  text-align: center;
-  margin-top: -30rpx;
-  line-height: 60rpx;
-  background: #fff;
-  margin-bottom: 30rpx;
-  color: #818181;
+    width: 180rpx;
+    height: 60rpx;
+    text-align: center;
+    margin-top: -30rpx;
+    line-height: 60rpx;
+    background: #fff;
+    margin-bottom: 30rpx;
+    color: #818181;
 }
 
 .winner-img {
-  width: 112rpx;
-  height: 112rpx;
-  border-radius: 100%;
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 100%;
 }
 
 .prize-content {
-  width: 540rpx;
-  height: 135rpx;
-  line-height: 60rpx;
-  background: #fff4d6;
-  text-align: center;
-  padding-top: 15rpx;
+    width: 540rpx;
+    height: 135rpx;
+    line-height: 60rpx;
+    background: #fff4d6;
+    text-align: center;
+    padding-top: 15rpx;
 }
 
 .prize-content .text {
-  font-size: 40rpx;
-  color: #f95959;
+    font-size: 40rpx;
+    color: #f95959;
 }
 
 .after-win {
-  padding: 20rpx 0 50rpx;
+    padding: 20rpx 0 50rpx;
 }
 
 .after-win-btn {
-  width: 700rpx;
-  margin: 50rpx auto;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    width: 700rpx;
+    margin: 50rpx auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .win-remind {
-  width: 210rpx;
-  height: 210rpx;
-  background: #f95959;
-  border-radius: 100%;
-  margin-bottom: 35rpx;
+    width: 210rpx;
+    height: 210rpx;
+    background: #f95959;
+    border-radius: 100%;
+    margin-bottom: 35rpx;
 }
 
 .win-remind text {
-  color: #fff;
-  font-size: 40rpx;
-  line-height: 70rpx;
-  letter-spacing: 10rpx;
+    color: #fff;
+    font-size: 40rpx;
+    line-height: 70rpx;
+    letter-spacing: 10rpx;
 }
 
 .gray-win-remind {
-  background: #b0b0b0;
+    background: #b0b0b0;
 }
 
 /* 关闭按钮 */
 
 .close-img {
-  padding: 50rpx;
-  width: 70rpx;
-  height: 70rpx;
-  position: absolute;
-  bottom: -50rpx;
-  left: 50%;
-  margin-left: -85rpx;
-  animation: rotation 0.5s ease;
+    padding: 50rpx;
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    bottom: -50rpx;
+    left: 50%;
+    margin-left: -85rpx;
+    animation: rotation 0.5s ease;
 }
 
 .address-ems {
-  text-align: center;
-  color: #818181;
-  margin-top: 10rpx;
+    text-align: center;
+    color: #818181;
+    margin-top: 10rpx;
 }
 
 .other-lottery {
-  padding: 30rpx 50rpx 30rpx;
-  background: #fff;
+    padding: 30rpx 50rpx 30rpx;
+    background: #fff;
 }
 
 .other-more {
-  line-height: 50rpx;
+    line-height: 50rpx;
 }
 
 .other-more .right-point {
-  vertical-align: middle;
-  margin-top: 1px;
+    vertical-align: middle;
+    margin-top: 1px;
 }
 
 .other-lottery-info {
-  width: 300rpx;
-  float: left;
-  margin-bottom: 30rpx;
+    width: 300rpx;
+    float: left;
+    margin-bottom: 30rpx;
 }
 
 .other-lottery-info:nth-child(odd) {
-  margin-right: 50rpx;
+    margin-right: 50rpx;
 }
 
 .other-lottery-img {
-  width: 300rpx;
-  height: 165rpx;
+    width: 300rpx;
+    height: 165rpx;
 }
 
 .other-lottery-name {
-  width: 300rpx;
-  font-size: 26rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    width: 300rpx;
+    font-size: 26rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 问号 */
 
 .question-mark {
-  width: 50rpx;
-  height: 50rpx;
-  display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
 }
 
 .cursor-point-img {
-  width: 128rpx;
-  height: 128rpx;
-  position: absolute;
-  right: -45rpx;
-  bottom: -60rpx;
-  z-index: 99;
-  animation: rotateY 2s infinite linear;
+    width: 128rpx;
+    height: 128rpx;
+    position: absolute;
+    right: -45rpx;
+    bottom: -60rpx;
+    z-index: 99;
+    animation: rotateY 2s infinite linear;
 }
 
 .scroll {
-  height: 100%;
+    height: 100%;
+}
+
+.zxLogo {
+    display: inline-block;
+    width: 38rpx;
+    height: 38rpx;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.font40 {
+    color: #000;
+    font-size: 40rpx !important;
+}
+
+.baoyou{
+    width: 101rpx;
+    height: 44rpx;
 }

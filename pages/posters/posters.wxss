@@ -1,6 +1,7 @@
 page {
-  background: url('https://tp.datikeji.com/a/15332152163717/xjzQffi2JA7tDracD4xGTLzw96Z1Px51n4eyPknC.jpeg');
+  /* background: url('https://tp.datikeji.com/a/15332152163717/xjzQffi2JA7tDracD4xGTLzw96Z1Px51n4eyPknC.jpeg'); */
   background-size: 100% 100%;
+  background-color: #EFF2F9;
 }
 .container{
   padding-bottom:150rpx
@@ -27,7 +28,7 @@ page {
 .main {
   width: 700rpx;
   height:965rpx;
-  margin: 110rpx auto 0;
+  margin: 70rpx auto 0;
   background: url('https://tp.datikeji.com/a/15360417545635/3c7AaEbwRUtoYVTG15AxqA2XTZmc0My0KkYSjGUE.png');
   background-size: 100% 100%;
   position: relative;

@@ -389,7 +389,7 @@ image {
   background: #959595 !important;
 }
 .textGreen{
-  color:#2AA344 !important;
+  color:#4D4D4D !important;
 }
 
 /* 空空如也 */

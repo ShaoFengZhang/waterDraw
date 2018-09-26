@@ -64,3 +64,58 @@
 .white-popup-scale .popup-text{
   color:#8C8989
 }
+
+.handicon{
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+    vertical-align: middle;
+}
+
+.mobile{
+    animation: mobile 1.4s ease-in-out 1s infinite;
+}
+
+@keyframes mobile{
+    0%{
+        transform: translateX(-8px);
+    }
+
+    10%{
+        transform: translateX(8px);
+    }
+
+    20%{
+        transform: translateX(-8px);
+    }
+
+    30%{
+        transform: translateX(8px);
+    }
+
+    40%{
+        transform: translateX(-8px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+
+    60%{
+        transform: translateX(0px);
+    }
+    70%{
+        transform: translateX(0px);
+    }
+
+    80%{
+        transform: translateX(0px);
+    }
+
+    90%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}

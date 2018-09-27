@@ -12,7 +12,7 @@
 <template is="prize-popup" data='{{newState,inviterInfo,tradeState}}' />
 
 <!-- 新手指引2-->
-<template is="prize-popup2" data='{{newState2,gift,tradeState}}' />
+<template is="prize-popup2" data='{{newState2,gift,tradeState,redbao}}' />
 
 <!-- 规则弹窗 -->
 <template is="rule2-template" data='{{ruleState}}' />

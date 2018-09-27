@@ -34,7 +34,8 @@ Page({
       title: '水滴币商城'
     },
     first: true,
-    tradeState: true
+	// redbao: 4,
+	// tradeState:true,
   },
   onShow() {
     var that = this;

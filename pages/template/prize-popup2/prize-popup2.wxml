@@ -17,10 +17,11 @@
             </form>
         </view>
 
-        <view class='prize-popup2 column-center' wx:if="{{redba0==1 || redba0==3}}">
-            <text class='prize-popup2-text' wx:if='{{!tradeState&&redbao==1}}'>已打开第一个红包 获得￥{{gift}}元</text>
-            <text class='prize-popup2-text' wx:if='{{tradeState&&redbao==3}}' style='font-size:67rpx;'>试玩加码成功 获得￥{{gift}}元</text>
-            <view class='column-center prize-popup2-center' wx:if='{{tradeState&&redbao==4}}' style='margin-bottom:80rpx'>
+        <view class='prize-popup2 column-center' wx:if="{{redbao==1 || redbao==3 ||redbao==4}}">
+            <text class='prize-popup2-text' wx:if='{{!tradeState && redbao==1}}'>已打开第一个红包 获得￥{{gift}}元</text>
+            <text class='prize-popup2-text' wx:if='{{!tradeState && redbao==3}}'>分享好友，红包翻倍 获得￥{{gift}}元</text>
+            <text class='prize-popup2-text' wx:if='{{tradeState && redbao==4}}' style='font-size:67rpx;'>试玩加码成功 获得￥{{gift}}元</text>
+            <view class='column-center prize-popup2-center' wx:if='{{tradeState && redbao==4}}' style='margin-bottom:80rpx'>
                 <text>红包已进入</text>
                 <text>您的水滴币账户</text>
             </view>

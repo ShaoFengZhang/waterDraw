@@ -24,8 +24,8 @@ Page({
         firstState: true,
         newState: false,
         newState2: false,
-		redbao:3,
-		tradeState:false,
+        redbao: 3,
+        tradeState: false,
         shareBottom: false,
         shareFirst: true,
         toView: '',
@@ -628,7 +628,7 @@ Page({
                     }
                 );
                 if (e.target && e.target.id == "doubleShare") {
-                    that.exchangeTap(that.doubleShareData,1)
+                    that.exchangeTap(that.doubleShareData, 1)
                 }
             },
             fail: function(res) {
@@ -676,7 +676,7 @@ Page({
                 newState2: false,
                 toView: 'part'
             })
-		}
+        }
     },
     // 阻止向下捕捉
     cancel() {
@@ -693,7 +693,7 @@ Page({
         })
     },
     // 兑换金币
-    exchangeTap(e,type) {
+    exchangeTap(e, type) {
         var that = this;
         var type = e.currentTarget.dataset.type;
         if (type == 2) {
@@ -705,14 +705,14 @@ Page({
                 'api/currency_exchange', {
                     user_id: that.data.user_id,
                     rid: that.data.rid,
-					type: type,
-					water_coin: that.data.comforNum
+                    type: type,
+                    water_coin: that.data.comforNum
                 },
                 function(res) {
                     util.hideLoad();
-					that.setData({
-						comfortShow: false,
-					})
+                    that.setData({
+                        comfortShow: false,
+                    })
                     if (res.data.status == 0) {
                         util.noData(res.data.msg, 3000);
                         that.data.allDetail.convertible_or_not = 1;
@@ -731,9 +731,9 @@ Page({
     watercoin() {
         let _this = this;
         util.loading('兑换金币中');
-		util.postHttp('api/water_coin', {}, function(res) {
+        util.postHttp('api/water_coin', {}, function(res) {
             util.hideLoad();
-			console.log(res);
+            console.log(res);
             _this.setData({
                 comfortShow: true,
                 comforNum: res.data.data.water_coin,
@@ -955,7 +955,7 @@ Page({
     },
 
     hideComfort(e) {
-        this.exchangeTap(e,2)
+        this.exchangeTap(e, 2)
         this.setData({
             comfortShow: false,
         })

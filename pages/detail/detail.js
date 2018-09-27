@@ -24,7 +24,7 @@ Page({
         firstState: true,
         newState: false,
         newState2: false,
-        redbao: 3,
+        redbao: 1,
         tradeState: false,
         shareBottom: false,
         shareFirst: true,

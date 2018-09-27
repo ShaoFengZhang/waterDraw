@@ -1,13 +1,15 @@
 <import src="../template/header/header.wxml" />
 <template is="headerItem" data="{{...header,statusBarHeight}}" />
 <view class='container' style='padding-top:{{topHeight}}'>
-  <view class='row-between nav'>
-    <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>待领取</view>
-    <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已领取</view>
+  <view class=' nav'>
+    <view class='row-between white-bg nav-menu'>
+      <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>待领取</view>
+      <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已领取</view>
+    </view>
   </view>
   <view class='main column-center'>
-    <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property" >
-      <view class='prize-item row-between' catchtap='jumpTap' data-rid='{{item.rid}}' >
+    <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property">
+      <view class='prize-item row-between' catchtap='jumpTap' data-rid='{{item.rid}}'>
         <view class='column-center-b'>
           <text>奖品：{{item.name}}</text>
           <block wx:if='{{category==0}}'>
@@ -24,7 +26,7 @@
           </block>
         </view>
         <block wx:if='{{category==0}}'>
-          <form bindsubmit="addressTap" report-submit='true' data-rid='{{item.rid}}' >
+          <form bindsubmit="addressTap" report-submit='true' data-rid='{{item.rid}}'>
             <button form-type="submit" class='adress-btn' hover-class="btn-hover" catchtap='cancel'>填写收货地址</button>
           </form>
         </block>

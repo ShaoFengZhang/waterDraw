@@ -1,7 +1,6 @@
 page {
-  /* background: url('https://tp.datikeji.com/a/15332152163717/xjzQffi2JA7tDracD4xGTLzw96Z1Px51n4eyPknC.jpeg'); */
   background-size: 100% 100%;
-  background-color: #EFF2F9;
+  background-color: #F0F0F0;
 }
 .container{
   padding-bottom:150rpx
@@ -11,25 +10,25 @@ page {
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
-  background: #f75b5c;
+  background: #FDDD4A;
   position: fixed;
   left: 0;
   bottom: 0;
   text-align: center;
-  color: #fff;
-  font-size: 46rpx;
+  color: #000;
+  font-size: 40rpx;
   letter-spacing: 1px;
 }
 
 .red-hover {
-  background: #ff9899;
+  background:#deb80c
 }
 
 .main {
   width: 700rpx;
   height:965rpx;
-  margin: 70rpx auto 0;
-  background: url('https://tp.datikeji.com/a/15360417545635/3c7AaEbwRUtoYVTG15AxqA2XTZmc0My0KkYSjGUE.png');
+  margin: 45rpx auto 0;
+  background: url('https://tp.datikeji.com/a/15380359464609/rDolDTRNu0t92g9KrECvKMjujHFpZ22289VfzMHr.png');
   background-size: 100% 100%;
   position: relative;
 }
@@ -52,14 +51,14 @@ page {
 }
 
 .nick_name {
-  color: #fff;
+  color: #000;
   font-size: 50rpx;
   top: 40rpx;
   left: 190rpx;
   position: absolute;
 }
 .post-help{
-   color: #fff;
+   color: #000;
   font-size: 50rpx;
   top: 110rpx;
   left:400rpx;
@@ -81,9 +80,8 @@ page {
 }
 
 .prize-name {
-  color: #f95959;
+  color: #353535;
   font-size: 44rpx;
-  font-weight: bold;
   width: 450rpx;
   line-height: 60rpx;
   height:120rpx;
@@ -95,7 +93,7 @@ page {
 }
 
 .opentime {
-  color: #818181;
+  color: #353535;
   font-size: 26rpx;
   line-height: 60rpx;
 }

@@ -2,15 +2,24 @@
 @import "../template/swiper-template/swiper-template.wxss";
 @import "../template/bottom/bottomItem.wxss";
 page {
-  background: #eff2f9;
+  background: #F1F1F1;
 }
-
+.top-side-box{
+  padding:22rpx 25rpx;
+  width:700rpx;
+  background:#E5E5E5;
+  margin-bottom: 25rpx;
+}
 .top-side {
   width: 700rpx;
   height: 54rpx;
-  margin-top: 25rpx;
-  margin-bottom: 20rpx;
   overflow: hidden
+}
+
+.share-btn{
+  width:180rpx;
+  font-size:28rpx;
+  color:#000
 }
 
 .share-img {

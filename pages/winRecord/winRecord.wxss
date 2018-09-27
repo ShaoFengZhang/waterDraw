@@ -1,23 +1,31 @@
 page {
-  background: #eff2f9;
+  background: #F1F1F1;
   padding-bottom:30rpx
 }
 
 .nav {
-  margin-bottom: 40rpx;
+  padding:40rpx 70rpx;
+  background:#E5E5E5;
 }
 
 .nav-item {
   width: 50%;
   text-align: center;
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 76rpx;
+  line-height: 76rpx;
   letter-spacing: 1px;
-  background: #fff;
+  color:#353535;
+  font-size:32rpx;
+}
+.nav-menu{
+  border-radius: 38rpx;
+  overflow: hidden
 }
 
 .nav-item.active {
-  background:#eff2f9
+  background:#FDDD4A;
+  color:#000;
+  border-radius: 38rpx;
 }
 
 .prize-item {

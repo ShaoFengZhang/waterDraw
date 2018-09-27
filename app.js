@@ -1,24 +1,21 @@
 const ald = require('./utils/ald-stat.js')
 App({
   data: {
-    api: 'https://xcx6.datikeji.com/', 
-    // api:'https://xcx11.datikeji.com/', //目前线上
+    // api: 'https://xcx6.datikeji.com/',//目前线上
+    api: 'https://xcx11.datikeji.com/',
     currentInfo: '',
     bottomImg: [{
-        img: "https://tp.datikeji.com/a/15354603904865/nqOEcMlQK6L2VUWAjw970Pp8kqtctbxoJVysTBRz.png",
-        activeImg: 'https://tp.datikeji.com/a/15355081078817/MIfoNJCBl2cxwOnzw1bU27OUqq9OnLQH27nJRfPG.png',
-        text: '水滴抽奖',
+        img: "../../images/a9.png",
+        text: '首页',
         done: false
       },
       {
-        img: "https://tp.datikeji.com/a/15354604066923/4UbQfWLng9EmrnS6hB7xurb6GUSaUrZr6mGnjIXv.png",
-        activeImg: "https://tp.datikeji.com/a/15355081274715/0hesjyQSVConxAIRUiyAPwrcld8DACH4il0ZmGgD.png",
-        text: '水滴币商城',
+        img: "../../images/a4.png",
+        text: '水滴商城',
         done: false
       },
       {
-        img: "https://tp.datikeji.com/a/15354604176366/LwImuZIsnyBIKvM7QE6XZAd2dCkbjVEDNDdcm3T2.png",
-        activeImg: 'https://tp.datikeji.com/a/15355081577006/kW0AocKeAH6oK2smEJV0Lak8Z9WTYFME7S7INvPF.png',
+        img: "../../images/a6.png",
         text: '我的',
         done: false
       }

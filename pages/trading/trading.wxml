@@ -17,37 +17,20 @@
 <!-- 规则弹窗 -->
 <template is="rule2-template" data='{{ruleState}}' />
 <view class='container' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
-  <view class='row-between-a balance'>
-    <view class='row-start-a height50 font40'>
-      <image src='https://tp.datikeji.com/a/15330212563604/40RUW6jiyOcUVVPGoOh92JI0JZbhbkYWP1At8mN7.png' class='icon-img'></image>
-      水滴币：{{myData.balance}}
-    </view>
-    <view class='column-center'>
-      <view class='btn3 bigBtn mgb10' catchtap='withdrawalTap'>提现</view>
-      <text class='font20 gray'>300水滴币即可提现0.3元</text>
-    </view>
+  <view class='column-center balance'>
+    <text class='font28 mgb30'>水滴币</text>
+    <text class='money mgb40'>{{myData.balance}}</text>
+    <image src='../../images/a11.png' catchtap='withdrawalTap' class='draw-img mgb30'></image>
+    <text class='newBlack font24'>300水滴币即可提现0.3元</text>
   </view>
-  <view class='height25'></view>
-  <view class='row-between grading' catchtap='ruleTap'  hover-class="active-hover">
-    <text>当前段位：{{myData.paragraph}}</text>
-    <text class='gray font22' >段位规则</text>
-  </view>
-  <!-- <view class='height25'></view>
-  <view class='reward-list row-between'>
-    <view wx:for="{{prizeList}}" wx:for-item="item" wx:key="property" class='column-center-a reward-item' catchtap='remindTap'>
-      <image src='{{item.pic}}' class='reward-img'></image>
-      <text class='reward-name'>{{item.name}}</text>
-      <text class='reward-value gray'>{{item.value}}</text>
-    </view>
-  </view> -->
-  <view class='bill'>账单</view>
+  <view class='newheight25'></view>
   <view class='bill-main'>
     <view wx:for="{{transaction}}" wx:for-item="item" wx:key="property" class='column-center-a bill-item'>
       <image src='{{item.pic_url}}' class='bill-img'></image>
       <view class='row-between bill-right'>
         <view class='column-center-b bill-info'>
-          <text>{{item.incentive_reasons}}</text>
-          <text class='gray font22'>{{item.reward_time}}</text>
+          <text class='font40 newBlack'>{{item.incentive_reasons}}</text>
+          <text class='newGray2 font24'>{{item.reward_time}}</text>
         </view>
         <text class='font40 {{item.symbol=="+"?"yellow":""}}'>{{item.symbol}}{{item.gold_amount}}</text>
       </view>
@@ -55,7 +38,7 @@
   </view>
   <view class='gray font26 t_c pdb30' wx:if='{{total_pages == page}}'>到底了</view>
   <view wx:if='{{transaction.length==0}}' class='column-center'>
-      <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
-      <view class='t_c font24 '>大爷，今天抢完了，明天再来哦！</view>
-    </view>
+    <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
+    <view class='t_c font24 '>大爷，今天抢完了，明天再来哦！</view>
+  </view>
 </view>

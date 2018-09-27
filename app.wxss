@@ -156,10 +156,15 @@ image {
 .font26 {
   font-size: 26rpx !important;
 }
+.font28 {
+  font-size: 28rpx !important;
+}
 .font30 {
   font-size: 30rpx !important;
 }
-
+.font32 {
+  font-size: 32rpx !important;
+}
 .font34 {
   font-size: 34rpx !important;
 }
@@ -180,6 +185,11 @@ image {
   width: 100%;
   height: 25rpx;
   background: #eff2f9;
+}
+.newheight25 {
+  width: 100%;
+  height: 22rpx;
+  background: #F1F1F1;
 }
 
 .height50 {
@@ -385,12 +395,29 @@ image {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
+.white-bg {
+  background: #fff !important;
+}
+
 .gray-bg {
   background: #959595 !important;
 }
 .textGreen{
   color:#4D4D4D !important;
 }
+.newGray{
+  color:#555 !important
+}
+.newGray2{
+  color:#666 !important
+}
+.newBlack{
+  color:#353535 !important 
+}
+.newClor{
+   color:#4D4D4D !important 
+}
+
 
 /* 空空如也 */
 
@@ -408,7 +435,7 @@ image {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
+  background: #FDDD4A;
   z-index: 999;
   height: 44px;
   line-height: 44px;

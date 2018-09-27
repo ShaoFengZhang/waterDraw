@@ -2,9 +2,11 @@
 <import src="../template/header/header.wxml" />
 <template is="headerItem" data="{{...header,statusBarHeight}}" />
 <view class='container' style='padding-top:{{topHeight}}'>
-  <view class='row-between nav'>
-    <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>进行中</view>
-    <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已结束</view>
+  <view class=' nav'>
+    <view class='row-between white-bg nav-menu'>
+      <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>待领取</view>
+      <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>已领取</view>
+    </view>
   </view>
   <view class='main column-center'>
     <block wx:for="{{prizeData}}" wx:for-item="item" wx:key="property" wx:if='{{category==0}}'>

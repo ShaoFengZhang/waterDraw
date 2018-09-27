@@ -48,7 +48,7 @@ Page({
       codeImg: codeImg,
       currentInfo: currentInfo,
       widthRate: 750 / app.data.screenWidth,
-      backImg: 'https://tp.datikeji.com/a/15360417545635/3c7AaEbwRUtoYVTG15AxqA2XTZmc0My0KkYSjGUE.png'
+      backImg: 'https://tp.datikeji.com/a/15380359464609/rDolDTRNu0t92g9KrECvKMjujHFpZ22289VfzMHr.png'
     })
 
   },
@@ -60,14 +60,14 @@ Page({
       url: that.data.backImg,
       success: function(bgRes) {
         ctx.drawImage(bgRes.tempFilePath, 0, 0, 700 / that.data.widthRate,965 / that.data.widthRate);
-        ctx.setFillStyle('#fff')
+        ctx.setFillStyle('#000')
         ctx.setFontSize(50 / that.data.widthRate)
         ctx.fillText(that.data.nick_name + '喊你领红包', 190 / that.data.widthRate, 80 / that.data.widthRate);
 
         ctx.setFontSize(50 / that.data.widthRate)
         ctx.fillText('帮他助把力',400 / that.data.widthRate, 160 / that.data.widthRate);
 
-        ctx.setFillStyle('#F95959')
+        ctx.setFillStyle('#353535')
         ctx.setFontSize(44 / that.data.widthRate)
         if (that.data.currentInfo.name.length > 7 && that.data.currentInfo.name.length < 17) {
           var infoName1 = that.data.currentInfo.name.substring(0, 7)

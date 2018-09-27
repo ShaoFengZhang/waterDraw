@@ -31,7 +31,7 @@ Page({
         toView: '',
         is_new: 1,
         header: {
-            title: '奖品详情2',
+            title: '奖品详情',
             navBack: true
         },
         timeClock: null,

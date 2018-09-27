@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 12,
 			"list": [
 				{
 					"id": 0,
@@ -111,7 +111,7 @@
 					"id": 12,
 					"name": "详情",
 					"pathName": "pages/detail/detail",
-					"query": "rid=19&&uid=10"
+					"query": "rid=414&&uid=18"
 				},
 				{
 					"id": 13,

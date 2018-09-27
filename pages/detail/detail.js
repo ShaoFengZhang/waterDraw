@@ -49,7 +49,7 @@ Page({
                 util.noData('需试玩超过20秒才能加码', 5000)
             }
             if (that.data.timeNum > 20) {
-                util.loading('加码中')
+                util.loading('加码中');
                 util.postHttp(
                     'api/is_played', {
                         user_id: that.data.user_id,
@@ -62,12 +62,24 @@ Page({
                                 btnBgm.play()
                             }, 500)
                             //详情
-                            that.detailRender(that.data.user_id)
+                            that.detailRender(that.data.user_id);
                             //助力
-                            that.powerRender(that.data.user_id)
+                            that.powerRender(that.data.user_id);
+							
+							if (that.data.is_new == 0) {
+								that.setData({
+									newState: false,
+									newState2: false,
+									redbao: 1,
+								});
+								wx.navigateTo({
+									url: `../trading/trading?isnewuser=1`,
+								})
+							}
                         }
                     }
-                )
+                );
+				
             }
             that.setData({
                 tOhterSatus: false,
@@ -175,7 +187,7 @@ Page({
                         //助力
                         that.powerRender(uid)
                     }
-                }
+				}, options.uid
             )
         } else {
             that.setData({
@@ -323,7 +335,33 @@ Page({
                     }
                 }
             )
-        }
+        };
+		if(this.data.is_new==0){
+			var token = util.md5Toke(that.data.user_id)
+			util.postHttp(
+				'api/new_big_gift', {
+					user_id: that.data.user_id,
+					type: 2,
+					token: token,
+					parent_id: that.data.otherUid
+				},
+				function (res) {
+					if (res.data.status == 0) {
+						btnBgm.play();
+						util.hideLoad();
+						var gift = res.data.data.gift
+						that.setData({
+							gift: gift,
+							redbao:2,
+							newState2: true,
+							tradeState: false,
+						})
+					} else {
+						util.noData(res.data.msg)
+					}
+				}
+			)
+		}
     },
     // 详情接口
     detailRender(user, use) {
@@ -562,11 +600,11 @@ Page({
                                 setTimeout(function() {
                                     btnBgm.play()
                                 }, 500)
-                                setTimeout(function() {
-                                    wx.redirectTo({
-                                        url: '../trading/trading?shareUid=' + that.data.otherUid
-                                    })
-                                }, 1000)
+                                // setTimeout(function() {
+                                //     wx.redirectTo({
+                                //         url: '../trading/trading?shareUid=' + that.data.otherUid
+                                //     })
+                                // }, 1000)
                             } else {
                                 util.noData('分享成功', 3000)
                                 setTimeout(function() {
@@ -598,11 +636,11 @@ Page({
                                 setTimeout(function() {
                                     btnBgm.play()
                                 }, 500)
-                                setTimeout(function() {
-                                    wx.redirectTo({
-                                        url: '../trading/trading?shareUid=' + that.data.otherUid
-                                    })
-                                }, 1000)
+                                // setTimeout(function() {
+                                //     wx.redirectTo({
+                                //         url: '../trading/trading?shareUid=' + that.data.otherUid
+                                //     })
+                                // }, 1000)
                             }
                             util.success('分享成功');
                             setTimeout(function() {
@@ -629,7 +667,32 @@ Page({
                 );
                 if (e.target && e.target.id == "doubleShare") {
                     that.exchangeTap(that.doubleShareData, 1)
-                }
+                };
+				if (that.newUserShareDoubleRedBao&&that.data.is_new==0){
+					that.newUserShareDoubleRedBao=false;
+					util.postHttp(
+						'api/newer_share', {
+							user_id: that.data.user_id,
+							type: 1,
+						},
+						function (res) {
+							if (res.data.status == 0) {
+								btnBgm.play()
+								util.hideLoad();
+								var gift = res.data.data.gift
+								that.setData({
+									gift: gift,
+									redbao:3,
+									newState2: true,
+									tradeState: false,
+								})
+							} else {
+								util.noData(res.data.msg)
+							}
+						}
+					)
+				}
+				
             },
             fail: function(res) {
                 // 转发失败
@@ -653,6 +716,7 @@ Page({
     closeTap(e) {
         var that = this;
         var type = e.currentTarget.dataset.type;
+		console.log('??????????????',type);
         if (type == 1) {
             that.setData({
                 shareState: false
@@ -676,7 +740,15 @@ Page({
                 newState2: false,
                 toView: 'part'
             })
-        }
+		} else if (type == 6) {
+			that.getForm(e);
+			that.setData({
+				newState2: true,
+				redbao: 3,
+				tradeState: false,
+			});
+			that.newUserShareDoubleRedBao=true;
+		}
     },
     // 阻止向下捕捉
     cancel() {

@@ -2,16 +2,22 @@
     <view wx:if='{{newState2}}' class='popup-bg'>
 
         <view class='prize-popup2 column-center' wx:if="{{redbao==2}}">
-            <text class='prize-popup2-text' style='margin-top:280rpx;'>已打开第二个红包 获得￥{{gift}}元</text>
-            <form bindsubmit="closeTap" report-submit='true' data-type='5'>
-                <button open-type='share' id='friendDouble' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;margin-top:100rpx;'>
-                    分享好友,红包翻倍
+            <text class='prize-popup2-text' style='margin-bottom:40rpx;'>已打开第二个红包 获得￥{{gift}}元</text>
+			<view class='column-center prize-popup2-center' wx:if='{{!tradeState}}'>
+                <view class='text1'>点击
+                    <image src='/assets/friendshare.png' class='prize-popup2-img'></image>
+                    后</view>
+                <view class='text2'>再送你下一个红包</view>
+            </view>
+            <form bindsubmit="closeTap" report-submit='true' data-type='6'>
+                <button  id='friendDouble' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
+                    好的
                 </button>
             </form>
 
-			<view bindtap='closeTap' data-type='5'  class='giveUpDouble' style='margin-top:40rpx;'>放弃翻倍机会</view>
+			<view bindtap='closeTap' data-type='6'  class='giveUpDouble' style='margin-top:40rpx;'>放弃这个红包</view>
 			<view class='fullzerothree'>满0.3元即可提现</view>
-			<form bindsubmit="closeTap" report-submit='true' data-type='5'>
+			<form bindsubmit="closeTap" report-submit='true' data-type='6'>
                 <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
                 </button>
             </form>

@@ -1,45 +1,57 @@
 .bottomItem {
-  width: 100%;
+  width: 702rpx;
   position: fixed;
-  height: 112rpx;
-  left: 0;
+  height: 98rpx;
+  left: 24rpx;
   bottom: 0;
-  background: #fff;
+  background: #fddd4a;
   z-index: 99;
-  border-top: 1px solid #d5d5d5;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
 }
 
 .bottom-item {
   width: 33.3%;
-  text-align: center;
   height: 100%;
+}
+
+.bottom-con {
   position: relative;
-  font-size: 24rpx;
+  font-size: 30rpx;
+  color: #000;
+  text-align: center;
+}
+
+.bottomActive {
+  width: 210rpx;
+  height: 64rpx;
+  background: #fccf00;
+  border-radius: 32rpx;
+  box-shadow:0 5rpx 10rpx rgba(0, 0, 0, 0.3) inset; 
 }
 
 .bottom-item .img-box {
-  width: 50rpx;
-  height: 50rpx;
-  margin-bottom: 8rpx;
-  margin-top: 12rpx;
   position: relative;
 }
 
 .bottom-item .img {
-  width: 50rpx;
-  height: 50rpx;
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-top: -3rpx;
+  margin-right: 15rpx;
 }
 
 .bottom-item .circle-red {
   position: absolute;
-  width: 40rpx;
-  height: 40rpx;
+  width: 34rpx;
+  height: 34rpx;
   border-radius: 100%;
   background: #fa413e;
-  right: -20rpx;
-  top: -5rpx;
-  font-size:20rpx;
-  color:#fff;
+  left: 20rpx;
+  top: -15rpx;
+  font-size: 24rpx;
+  color: #fff;
   text-align: center;
-  line-height:40rpx
+  line-height: 34rpx;
 }

@@ -15,9 +15,9 @@
   line-height:50rpx;
   border-radius: 25rpx;
   padding-right:10rpx;
-  background:rgba(119,123,126,0.8);
+  background:#BDBDBD;
   color:#fff;
-  font-size:25rpx;
+  font-size:24rpx;
   letter-spacing: 1px;
   text-overflow:ellipsis;
   overflow: hidden;

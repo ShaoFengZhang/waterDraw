@@ -14,7 +14,7 @@
         </view>
       </view>
       <view class='prize-drawBtn {{have_involved=="no"?"":"active"}}' wx:if='{{category!=0}}'>
-        <block wx:if='{{have_involved=="no"}}'>立即抽奖</block>
+        <block wx:if='{{have_involved=="no"}}'>免费抽奖</block>
         <block wx:else>已参与</block>
       </view>
     </view>

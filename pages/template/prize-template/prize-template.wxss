@@ -1,6 +1,6 @@
 .prize-info {
   width: 700rpx;
-  border-radius: 30rpx;
+  border-radius: 8rpx;
   overflow: hidden;
   margin-bottom: 40rpx;
   box-shadow: 0 0 18rpx rgba(0, 0, 0, 0.26);
@@ -17,36 +17,36 @@
 }
 
 .prize-main {
-  height: 120rpx;
+  height: 140rpx;
   padding: 0 25rpx;
   background: #fff;
 }
 
 .prize-name {
-  font-size: 34rpx;
+  font-size: 40rpx;
+  color:#1B1B1B
 }
 
 .prize-time {
-  font-size: 24rpx;
-  color: #818181;
-  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 60rpx;
 }
 
 .prize-drawBtn {
-  width: 136rpx;
-  height: 54rpx;
-  line-height: 54rpx;
-  background: #f95959;
-  border-radius: 27rpx;
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #F92D17;
+  border-radius: 25rpx;
   color: #fff;
-  font-size: 25rpx;
+  font-size: 32rpx;
   text-align: center;
   letter-spacing: 1px;
 }
 
 .prize-drawBtn.active {
-  color: #000;
-  background: #ffd3ad;
+  background: #66C47A
 }
 
 .prize-sponsors {
@@ -61,6 +61,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  border-bottom-left-radius: 30rpx;
-  border-top-right-radius: 30rpx;
+  border-bottom-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
 }

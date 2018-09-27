@@ -5,11 +5,13 @@
 <template is="headerItem" data="{{...header,statusBarHeight}}" />
 <template is="bottomItem" data='{{bottomList,newDateNum}}' />
 <view class='container column-center' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
-  <view class='row-between top-side'>
-    <template is="swiper-template" data='{{noticeData,auto}}' />
-    <button class='share-btn' open-type="share" hover-class="btn-hover">分享给好友
-      <image src='https://tp.datikeji.com/b/15319183734117/mrkhlJKqWqmk7s8iAMnN4hp6v9Lr0fykyPou7Ug4.png' class='share-img'></image>
-    </button>
+  <view class='top-side-box'>
+    <view class='row-between top-side'>
+      <template is="swiper-template" data='{{noticeData,auto}}' />
+      <button class='share-btn' open-type="share" hover-class="btn-hover">分享给好友
+        <view class='right-point black'></view>
+      </button>
+    </view>
   </view>
   <view>
     <block wx:for="{{prizes}}" wx:for-item="item" wx:key="property" wx:if='{{prizes.length>0}}'>

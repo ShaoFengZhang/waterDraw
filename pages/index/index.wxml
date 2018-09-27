@@ -22,5 +22,20 @@
       <view class='t_c font24'>大爷，今天抢完了，明天早上再来哦~</view>
     </view>
   </view>
-  <view class='prompt' wx:if='{{page==total_pages&&prizes.length>0}}'>到底了，明天早上出新奖品</view>
+
+
+  <!-- banner广告，按需引入 -->
+  <view class="xm_banner mgb20" style="width:100%">
+    <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
+    </xm-ad>
+  </view>
+
+  <ad unit-id="adunit-bb3d2310e0e98a9d"></ad>
+
+  <view class='prompt' wx:if='{{page==total_pages&&prizes.length>0}}'>稍后会有新奖品上架</view>
+  <!-- 悬浮窗广告，按需引入 -->
+  <!-- <view class="xm_fixed">
+    <xm-ad data-id="{{xmad.ad.fixed}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
+    </xm-ad>
+  </view> -->
 </view>

@@ -1,13 +1,14 @@
 .bottomItem {
-  width: 702rpx;
+  width: 750rpx;
   position: fixed;
   height: 98rpx;
-  left: 24rpx;
+  left: 0;
   bottom: 0;
-  background: #fddd4a;
+  background: #fff;
   z-index: 99;
   border-top-left-radius: 8rpx;
   border-top-right-radius: 8rpx;
+  box-shadow: 0px -1rpx 14rpx 0px rgba(0, 0, 0, 0.08);
 }
 
 .bottom-item {
@@ -23,7 +24,7 @@
 }
 
 .bottomActive {
-  width: 210rpx;
+  width: 220rpx;
   height: 64rpx;
   background: #fccf00;
   border-radius: 32rpx;

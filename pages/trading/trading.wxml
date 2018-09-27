@@ -18,21 +18,22 @@
 <template is="rule2-template" data='{{ruleState}}' />
 <view class='container' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
   <view class='column-center balance'>
-    <text class='font28 mgb30'>水滴币</text>
-    <text class='money mgb40'>{{myData.balance}}</text>
-    <image src='../../images/a11.png' catchtap='withdrawalTap' class='draw-img mgb30'></image>
-    <text class='newBlack font24'>300水滴币即可提现0.3元</text>
+    <text class='font40 mgb20'>水滴币</text>
+    <view class='money mgb20'>{{myData.balance}}</view>
+    <image src='../../images/a11.png' catchtap='withdrawalTap' class='draw-img mgb20'></image>
+    <view class='newGray2 font22 mgb10 t_c'>1000水滴币=1元,初次满300水滴即可提现</view>
+    <view class='newGray2 font22 t_c'>后续提现需要满3000水滴币,每天提现限额10000币</view>
   </view>
-  <view class='newheight25'></view>
+  <ad unit-id="adunit-16dbcecf1e91a164"></ad>
   <view class='bill-main'>
     <view wx:for="{{transaction}}" wx:for-item="item" wx:key="property" class='column-center-a bill-item'>
       <image src='{{item.pic_url}}' class='bill-img'></image>
       <view class='row-between bill-right'>
         <view class='column-center-b bill-info'>
-          <text class='font40 newBlack'>{{item.incentive_reasons}}</text>
+          <text class='font26 newBlack'>{{item.incentive_reasons}}</text>
           <text class='newGray2 font24'>{{item.reward_time}}</text>
         </view>
-        <text class='font40 {{item.symbol=="+"?"yellow":""}}'>{{item.symbol}}{{item.gold_amount}}</text>
+        <text class='font30 {{item.symbol=="+"?"yellow":""}}'>{{item.symbol}}{{item.gold_amount}}</text>
       </view>
     </view>
   </view>

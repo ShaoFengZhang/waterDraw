@@ -1,21 +1,22 @@
 const ald = require('./utils/ald-stat.js')
+var App = require('./utils/xmadx_sdk.min.js').xmad(App, 'App').xmApp;
 App({
   data: {
     // api: 'https://xcx6.datikeji.com/',//目前线上
     api: 'https://xcx11.datikeji.com/',
     currentInfo: '',
     bottomImg: [{
-        img: "../../images/a9.png",
+        img: "https://tp.datikeji.com/a/15380441446103/et2IusRgglcVKcYFYV7gastM46Ystn0oAW42EG8i.png",
         text: '首页',
         done: false
       },
       {
-        img: "../../images/a4.png",
+        img: "https://tp.datikeji.com/a/15380442229350/waQwhw8A47yWS5tHNmuEr55JpesxHDxNld3CDvhJ.png",
         text: '水滴商城',
         done: false
       },
       {
-        img: "../../images/a6.png",
+        img: "https://tp.datikeji.com/a/15380442346021/A4UVujeGsm6blPlx2mriRTHoCSPUIZ6kk3J2bzY7.png",
         text: '我的',
         done: false
       }

@@ -93,6 +93,7 @@ image {
 .mgb40 {
   margin-bottom: 40rpx !important;
 }
+
 .mgb50 {
   margin-bottom: 50rpx !important;
 }
@@ -156,15 +157,19 @@ image {
 .font26 {
   font-size: 26rpx !important;
 }
+
 .font28 {
   font-size: 28rpx !important;
 }
+
 .font30 {
   font-size: 30rpx !important;
 }
+
 .font32 {
   font-size: 32rpx !important;
 }
+
 .font34 {
   font-size: 34rpx !important;
 }
@@ -186,10 +191,11 @@ image {
   height: 25rpx;
   background: #eff2f9;
 }
+
 .newheight25 {
   width: 100%;
   height: 22rpx;
-  background: #F1F1F1;
+  background: #f1f1f1;
 }
 
 .height50 {
@@ -208,7 +214,7 @@ image {
   display: flex;
   flex-direction: row;
   justify-content: center;
-   align-items: center; /*垂直居中*/
+  align-items: center; /*垂直居中*/
 }
 
 .row-start {
@@ -281,10 +287,11 @@ image {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.btn1.out{
-  background:none;
-  border:1px solid #f95959;
-  color:#f95959
+
+.btn1.out {
+  background: none;
+  border: 1px solid #f95959;
+  color: #f95959;
 }
 
 .btn2 {
@@ -295,13 +302,14 @@ image {
   background: #f95959;
   border-radius: 30rpx;
   color: #fff;
-   -webkit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.btn2.out{
-  background:none;
-  border:1px solid #f95959;
-  color:#f95959
+
+.btn2.out {
+  background: none;
+  border: 1px solid #f95959;
+  color: #f95959;
 }
 
 .btn3 {
@@ -314,11 +322,13 @@ image {
   color: #fff;
   letter-spacing: 1px;
 }
-.btn3.bigBtn{
+
+.btn3.bigBtn {
   width: 220rpx;
   height: 60rpx;
   line-height: 60rpx;
 }
+
 .btn4 {
   height: 70rpx;
   line-height: 70rpx;
@@ -329,40 +339,42 @@ image {
   padding: 0 25rpx;
 }
 
-.btn5{
+.btn5 {
   width: 468rpx;
   height: 72rpx;
   line-height: 72rpx;
-  border: 1px solid #FFF9D9;
+  border: 1px solid #fff9d9;
   border-radius: 10rpx;
   text-align: center;
-  color: #FFF9D9;
+  color: #fff9d9;
   letter-spacing: 2px;
-  font-size:36rpx;
+  font-size: 36rpx;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-.btn5.bg{
-  background:#FFF9D9;
-  color:#2a2a2a
 }
 
-.btn6{
+.btn5.bg {
+  background: #fff9d9;
+  color: #2a2a2a;
+}
+
+.btn6 {
   width: 468rpx;
   height: 72rpx;
   line-height: 72rpx;
-  border: 1px solid #F16855;
+  border: 1px solid #f16855;
   border-radius: 10rpx;
   text-align: center;
   letter-spacing: 2px;
-  font-size:36rpx;
+  font-size: 36rpx;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color:#F16855
+  color: #f16855;
 }
-.btn6.bg{
-  background:#E05449;
-  color:#fff
+
+.btn6.bg {
+  background: #e05449;
+  color: #fff;
 }
 
 /* 颜色样式 */
@@ -402,22 +414,26 @@ image {
 .gray-bg {
   background: #959595 !important;
 }
-.textGreen{
-  color:#4D4D4D !important;
-}
-.newGray{
-  color:#555 !important
-}
-.newGray2{
-  color:#666 !important
-}
-.newBlack{
-  color:#353535 !important 
-}
-.newClor{
-   color:#4D4D4D !important 
+
+.textGreen {
+  color: #4d4d4d !important;
 }
 
+.newGray {
+  color: #555 !important;
+}
+
+.newGray2 {
+  color: #666 !important;
+}
+
+.newBlack {
+  color: #353535 !important;
+}
+
+.newClor {
+  color: #4d4d4d !important;
+}
 
 /* 空空如也 */
 
@@ -435,20 +451,20 @@ image {
   top: 0;
   left: 0;
   width: 100%;
-  background: #FDDD4A;
+  background: #fddd4a;
   z-index: 999;
   height: 44px;
   line-height: 44px;
 }
 
 .header .title {
-  font-size: 16px;
+  font-size: 18px;
   color: #2d2d2d;
   width: 100%;
   text-align: center;
   display: block;
   letter-spacing: 1px;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .navBack {
@@ -466,17 +482,18 @@ image {
   position: absolute;
   bottom: 0;
   left: 0;
-  background:url('https://tp.datikeji.com/a/15338825205331/3eywXHysimF5F7ySEtYmyY9e4CHzOzjJw6MKMnrx.png') no-repeat;
+  background: url('https://tp.datikeji.com/a/15338825205331/3eywXHysimF5F7ySEtYmyY9e4CHzOzjJw6MKMnrx.png') no-repeat;
   background-size: 28px 28px;
-  background-position:center center
+  background-position: center center;
 }
-.toIndex image{
+
+.toIndex image {
   width: 28px;
   height: 28px;
 }
 
-
 /* 点击色 */
-.active-hover{
-  background:#eff2f9
+
+.active-hover {
+  background: #eff2f9;
 }

@@ -38,7 +38,9 @@ page {
 }
 
 .myName {
-color:#FA483E
+color:#FA483E;
+height:40rpx;
+line-height:40rpx;
 }
 
 .link-row {

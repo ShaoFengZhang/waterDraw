@@ -1,25 +1,26 @@
 @import "../template/prize-template/prize-template.wxss";
 @import "../template/swiper-template/swiper-template.wxss";
 @import "../template/bottom/bottomItem.wxss";
+
 page {
-  background: #F1F1F1;
-}
-.top-side-box{
-  padding:22rpx 25rpx;
-  width:700rpx;
-  background:#E5E5E5;
-  margin-bottom: 25rpx;
-}
-.top-side {
-  width: 700rpx;
-  height: 54rpx;
-  overflow: hidden
+  background: #fff;
 }
 
-.share-btn{
-  width:180rpx;
-  font-size:28rpx;
-  color:#000
+.top-side-box {
+  padding: 15rpx 25rpx;
+  width: 700rpx;
+}
+
+.top-side {
+  width: 700rpx;
+  height: 50rpx;
+  overflow: hidden;
+}
+
+.share-btn {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #000;
 }
 
 .share-img {
@@ -30,9 +31,9 @@ page {
 }
 
 .prompt {
-  font-size: 20rpx;
+  font-size: 28rpx;
   color: #919191;
-  padding-bottom: 25rpx;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx
 }
-
 

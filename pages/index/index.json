@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "抽奖助手",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "xm-ad": "/components/xmAD/xmAD"
+  }
 }

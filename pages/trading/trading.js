@@ -31,7 +31,7 @@ Page({
       }
     ],
     header: {
-      title: '水滴币商城'
+      title: '水滴商城'
     },
     first: true,
 	// redbao: 4,

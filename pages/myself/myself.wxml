@@ -16,26 +16,26 @@
     </view>
     <view class='row-between record-box'>
       <view class='column-center-a record-list' catchtap='jumpTap' data-type='1' hover-class="active-hover">
-        <text class='newBlack'>{{myData.participate_number}}</text>
-        <text class='newGray2 font24'>我参与的抽奖</text>
+        <text class='newBlack font40 bold'>{{myData.participate_number}}</text>
+        <text class='newGray2 font28'>我参与的抽奖</text>
       </view>
       <view class='column-center-a record-list' catchtap='jumpTap' data-type='2' hover-class="active-hover">
-        <text class='newBlack'>{{myData.winners_number}}</text>
-        <text class='newGray2 font24'>我的中奖纪录</text>
+        <text class='newBlack font40 bold'>{{myData.winners_number}}</text>
+        <text class='newGray2 font28'>我的中奖纪录</text>
       </view>
     </view>
   </view>
   <view class='row-between link-row mgb20'>
     <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
       <image src='../../images/a5.png' class='link-row-img'></image>
-      <text class='font26'>加红包群</text>
-      <text class='font24'>点击我，回复1</text>
+      <text class='font28'>加红包群</text>
+      <text class='font28'>点击我，回复1</text>
       <view class='link-row-line'></view>
     </button>
     <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
       <image src='../../images/a2.png' class='link-row-img'></image>
-      <text class='font26'>关注公众号</text>
-      <text class='font24'>点击我，回复2</text>
+      <text class='font28'>关注公众号</text>
+      <text class='font28'>点击我，回复2</text>
     </button>
   </view>
 
@@ -46,12 +46,11 @@
         <text class='font32 newBlack'>我的水滴币：{{myData.balance}}</text>
       </view>
       <view>
-        <text class='newGray'>{{myData.paragraph}}</text>
         <text class='right-point  gray'></text>
       </view>
     </view>
     <navigator target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{extraData}}" version="release">
-      <view class='row-between main-item'>
+      <view class='row-between main-item mgb20'>
         <view class='row-start'>
           <image src='../../images/a1.png' class='icon-img'></image>
           <text class='font32 newBlack'>问题反馈</text>
@@ -61,6 +60,6 @@
         </view>
       </view>
     </navigator>
-
+    <ad unit-id="adunit-15c74523dfcd6678"></ad>
   </view>
 </view>

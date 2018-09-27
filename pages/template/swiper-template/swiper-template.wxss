@@ -1,6 +1,6 @@
 .notice-box{
   width:500rpx;
-  height:100rpx;
+  height:80rpx;
 }
 .notice-con{
   height:50rpx;
@@ -11,7 +11,7 @@
   position: relative;
   padding-left:10rpx;
   height:50rpx;
-  margin-top:25rpx;
+  margin-top:15rpx;
   line-height:50rpx;
   border-radius: 25rpx;
   padding-right:10rpx;

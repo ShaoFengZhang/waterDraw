@@ -22,6 +22,7 @@
 .prize-popup2-center .text1 {
     letter-spacing: 2px;
     font-size: 66rpx;
+	font-weight: 700;
 }
 
 .prize-popup2-center text {
@@ -35,6 +36,7 @@
     letter-spacing: 2px;
     font-size: 66rpx;
     margin-bottom: 80rpx;
+	font-weight: 700;
 }
 
 .prize-popup2-img {

@@ -2,8 +2,8 @@ const ald = require('./utils/ald-stat.js')
 var App = require('./utils/xmadx_sdk.min.js').xmad(App, 'App').xmApp;
 App({
   data: {
-    // api: 'https://xcx6.datikeji.com/',//目前线上
-    api: 'https://xcx11.datikeji.com/',
+    api: 'https://xcx6.datikeji.com/',
+	//   api: 'https://xcx11.datikeji.com/', //目前线上
     currentInfo: '',
     bottomImg: [{
         img: "https://tp.datikeji.com/a/15380441446103/et2IusRgglcVKcYFYV7gastM46Ystn0oAW42EG8i.png",

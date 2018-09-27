@@ -316,7 +316,7 @@
 <!-- 领取双倍安慰奖的弹窗 -->
 <view class='comfortMask' wx:if="{{comfortShow}}">
     <view class='comforBody'>
-        <view class='modleTxt'>你获得{{comforNum || 0}}个水滴币 分享到群可以翻倍</view>
+        <view class='modleTxt'>你抽到{{comforNum || 0}}个水滴币 分享到群可以翻倍</view>
         <view class='maskbtn'>
             <view data-type='1' class='giveUptxt' bindtap='hideComfort'>放弃</view>
             <view style='background-color:#2AA341;'>

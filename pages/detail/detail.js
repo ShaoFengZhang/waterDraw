@@ -33,6 +33,7 @@ Page({
     header: {
       title: '奖品详情',
       navBack: true
+
     },
     timeClock: null,
     timeNum: 0,

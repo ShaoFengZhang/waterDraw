@@ -22,7 +22,7 @@ Page({
         winState: false,
         nowinState: false,
         firstState: true,
-        newState: true,
+        newState: false,
         newState2: false,
 		redbao:3,
 		tradeState:false,

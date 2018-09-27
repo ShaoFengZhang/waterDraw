@@ -257,8 +257,10 @@ Page({
 		var that = this;
 		btnBgm.play()
 		var token = util.md5Fun(that.data.rid, that.data.user_id, that.data.detailData.open_type)
-		console.log(token)
+		console.log(token);
+		console.log('??????????????', app.data.nick_name);
 		if (!app.data.nick_name) {
+			console.log('LLLLLLLLLLLLLLLL')
 			wx.getUserInfo({
 				success: function (res) {
 					util.author(res,
@@ -288,6 +290,8 @@ Page({
 										that.detailRender(that.data.user_id, 'draw')
 										//助力
 										that.powerRender(that.data.user_id)
+
+										that.choujiangfenxiang();
 									} else {
 										util.noData(res.data.msg);
 										//详情
@@ -301,6 +305,7 @@ Page({
 				}
 			})
 		} else {
+			console.log('>>>>>>>>>>>>>>')
 			if (e) {
 				var formId = e.detail.formId;
 			} else {
@@ -326,6 +331,8 @@ Page({
 						that.detailRender(that.data.user_id, 'draw')
 						//助力
 						that.powerRender(that.data.user_id)
+
+						that.choujiangfenxiang();
 					} else {
 						util.noData(res.data.msg);
 						//详情
@@ -336,32 +343,7 @@ Page({
 				}
 			)
 		};
-		if (this.data.is_new == 0) {
-			var token = util.md5Toke(that.data.user_id)
-			util.postHttp(
-				'api/new_big_gift', {
-					user_id: that.data.user_id,
-					type: 2,
-					token: token,
-					parent_id: that.data.otherUid
-				},
-				function (res) {
-					if (res.data.status == 0) {
-						btnBgm.play();
-						util.hideLoad();
-						var gift = res.data.data.gift
-						that.setData({
-							gift: gift,
-							redbao: 2,
-							newState2: true,
-							tradeState: false,
-						})
-					} else {
-						util.noData(res.data.msg)
-					}
-				}
-			)
-		}
+		
 	},
 	// 详情接口
 	detailRender(user, use) {
@@ -476,6 +458,36 @@ Page({
 
 			}
 		)
+	},
+
+	choujiangfenxiang(){
+		let that=this;
+		if (that.data.is_new == 0) {
+			var token = util.md5Toke(that.data.user_id)
+			util.postHttp(
+				'api/new_big_gift', {
+					user_id: that.data.user_id,
+					type: 2,
+					token: token,
+					parent_id: that.data.otherUid
+				},
+				function (res) {
+					if (res.data.status == 0) {
+						btnBgm.play();
+						util.hideLoad();
+						var gift = res.data.data.gift
+						that.setData({
+							gift: gift,
+							redbao: 2,
+							newState2: true,
+							tradeState: false,
+						})
+					} else {
+						util.noData(res.data.msg)
+					}
+				}
+			)
+		}
 	},
 	// 助力榜
 	powerRender(user) {
@@ -746,7 +758,15 @@ Page({
 				newState2: true,
 				redbao: 3,
 				tradeState: false,
+				noshareFriend:true
 			});
+		} else if (type == 7) {
+			that.getForm(e)
+			that.setData({
+				newState2: false,
+				toView: 'part',
+				newUserShareDoubleRedBao:true,
+			})
 			that.newUserShareDoubleRedBao = true;
 		}
 	},

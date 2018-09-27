@@ -348,7 +348,7 @@ Page({
 		let _this=this;
 		util.postHttp(
 			'api/newer_share', {
-				user_id: that.data.user_id,
+				user_id: app.data.user_id,
 				type: 2,
 			},
 			function (res) {

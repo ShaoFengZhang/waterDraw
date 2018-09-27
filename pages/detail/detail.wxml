@@ -32,7 +32,10 @@
 <template is="prize-popup" data='{{newState,inviterInfo}}' />
 
 <!-- 新手指引2-->
-<template is="prize-popup2" data='{{newState2,gift}}' />
+<template is="prize-popup2" data='{{newState2,gift,tradeState,redbao}}' />
+
+
+
 <!-- <scroll-view scroll-y scroll-with-animation='true'  class='scroll' scroll-into-view="{{toView}}" > -->
 <view class='container' style='padding-top:{{topHeight}}'>
     <view class='prize-info'>
@@ -74,8 +77,7 @@
             <view class='sponsors-title row-between'>
                 <text class='bold'>赞助商</text>
                 <view class='row-start bold textGreen'>
-                    <image class='sponsor-img' src='{{detailData.sponsor_logo}}' />
-                    {{detailData.sponsor}}
+                    <image class='sponsor-img' src='{{detailData.sponsor_logo}}' /> {{detailData.sponsor}}
                     <image src='/assets/logo.png' class='sponsor-img'></image>
                     <text class='right-point black'></text>
                 </view>
@@ -130,7 +132,8 @@
                     </block>
                     <block wx:if='{{prizeStatus == 4&&leftDirection || prizeStatus == 4&&rightDirection2 || prizeStatus == 4&&!leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>邀请好友一起来抽奖</block>
 
-                    <block wx:if='{{prizeStatus == 4&&leftDirection2}}'>赞助商小程序： <image class='zxLogo' src='{{detailData.sponsor_logo}}' /> {{detailData.sponsor}}</block>
+                    <block wx:if='{{prizeStatus == 4&&leftDirection2}}'>赞助商小程序：
+                        <image class='zxLogo' src='{{detailData.sponsor_logo}}' /> {{detailData.sponsor}}</block>
                 </view>
             </block>
             <!-- 已开奖 -->
@@ -173,7 +176,7 @@
                                 <text>未中奖</text>
                             </view>
                             <view class='gray'> 安慰奖：随机1-100个水滴币</view>
-                            <view class='return-btn bgred short mgb50' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='exchangeTap'>抽取安慰奖</view>
+                            <view class='return-btn bgred short mgb50' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='watercoin'>抽取安慰奖</view>
                             <view class='return-btn bgred short mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>
                                 提现我的水滴币
                             </view>
@@ -309,3 +312,20 @@
     <!-- 底部按钮结束 -->
 </view>
 <!-- </scroll-view> -->
+
+<!-- 领取双倍安慰奖的弹窗 -->
+<view class='comfortMask' wx:if="{{comfortShow}}">
+    <view class='comforBody'>
+        <view class='modleTxt'>你获得{{comforNum || 0}}个水滴币 分享到群可以翻倍</view>
+        <view class='maskbtn'>
+            <view data-type='1' class='giveUptxt' bindtap='hideComfort'>放弃</view>
+            <view style='background-color:#2AA341;'>
+			<form report-submit bindsubmit='doubleShare' data-type='1'>
+				<button  id='doubleShare' open-type='share' formType="submit">分享翻倍</button>
+			</form>
+                
+            </view>
+        </view>
+
+    </view>
+</view>

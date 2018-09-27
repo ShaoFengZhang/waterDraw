@@ -8,7 +8,7 @@ Page({
     ruleState: false,
     page: 1,
     newState: false,
-    newState2: false,
+    newState2: true,
     prizeList: [{
         pic: 'https://tp.datikeji.com/a/15330303036545/66PBEoyMJYG7DTDgwfL2vNYP4Hk2kTfpMp6sXS02.png',
         name: '话费1元',
@@ -34,7 +34,7 @@ Page({
       title: '水滴币商城'
     },
     first: true,
-    tradeState: false
+    tradeState: true
   },
   onShow() {
     var that = this;

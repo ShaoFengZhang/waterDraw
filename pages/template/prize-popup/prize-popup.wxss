@@ -69,3 +69,12 @@
   color:#EDE3CB;
   line-height:100rpx;
 }
+
+.newTxt{
+	width:100%;
+	text-align: center;
+	font-size: 25rpx;
+	color: #EDE3CB;
+	position: absolute;
+	bottom: 20rpx;
+}

@@ -9,7 +9,7 @@
                     <view class='popup-text'>
                         安慰奖：随机1-100个水滴币
                     </view>
-                    <view class='btn6 bg mgb50' catchtap='exchangeTap' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
+                    <view class='btn6 bg mgb50' catchtap='watercoin' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
                     <view class='btn6 mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>提现水滴币</view>
                 </view>
 

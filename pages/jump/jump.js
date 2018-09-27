@@ -20,7 +20,7 @@ Page({
                 showCancel: false,
                 success: function() {
                     wx.redirectTo({
-                        url: `../pages/index/index`
+                        url: `../index/index`
                     })
                 }
             })
@@ -64,7 +64,7 @@ Page({
                         showCancel: false,
                         success: function() {
                             wx.redirectTo({
-                                url: `../pages/index/index`
+                                url: `../index/index`
                             })
                         }
                     })

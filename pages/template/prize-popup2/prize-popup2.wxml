@@ -1,32 +1,62 @@
 <template name="prize-popup2">
-  <view wx:if='{{newState2}}' class='popup-bg'>
-    <view class='prize-popup2 column-center'>
-      <text class='prize-popup2-text'>获得￥{{gift}}元</text>
-      <view class='column-center prize-popup2-center' wx:if='{{tradeState}}' style='margin-bottom:150rpx'>
-        <text>红包已进入您的水滴币账户</text>
-        <text>满300币即可提现0.3元</text>
-      </view>
-      <view class='column-center prize-popup2-center' wx:if='{{!tradeState}}'>
-        <view class='text1'>帮我
-          <image src='https://tp.datikeji.com/a/15353717649693/GMnsAdVvjtWkDEiAzBJknHcvQA3LTzeEGUqPcw1W.png' class='prize-popup2-img'></image>后</view>
-        <view class='text2'>再送你一个红包</view>
-      </view>
-      <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{tradeState}}'>
-        <button hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
-          立即查看
-        </button>
-      </form>
-      <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{!tradeState}}'>
-        <button hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
-          好的
-        </button>
-      </form>
+    <view wx:if='{{newState2}}' class='popup-bg'>
 
-      <form bindsubmit="closeTap" report-submit='true' data-type='5'>
-        <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
-        </button>
-      </form>
+        <view class='prize-popup2 column-center' wx:if="{{redbao==2}}">
+            <text class='prize-popup2-text' style='margin-top:280rpx;'>已打开第二个红包 获得￥{{gift}}元</text>
+            <form bindsubmit="closeTap" report-submit='true' data-type='5'>
+                <button open-type='share' id='friendDouble' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;margin-top:100rpx;'>
+                    分享好友,红包翻倍
+                </button>
+            </form>
 
+			<view bindtap='closeTap' data-type='5'  class='giveUpDouble' style='margin-top:40rpx;'>放弃翻倍机会</view>
+			<view class='fullzerothree'>满0.3元即可提现</view>
+			<form bindsubmit="closeTap" report-submit='true' data-type='5'>
+                <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
+                </button>
+            </form>
+        </view>
+
+        <view class='prize-popup2 column-center' wx:if="{{redba0==1 || redba0==3}}">
+            <text class='prize-popup2-text' wx:if='{{!tradeState&&redbao==1}}'>已打开第一个红包 获得￥{{gift}}元</text>
+            <text class='prize-popup2-text' wx:if='{{tradeState&&redbao==3}}' style='font-size:67rpx;'>试玩加码成功 获得￥{{gift}}元</text>
+            <view class='column-center prize-popup2-center' wx:if='{{tradeState&&redbao==4}}' style='margin-bottom:80rpx'>
+                <text>红包已进入</text>
+                <text>您的水滴币账户</text>
+            </view>
+            <view class='column-center prize-popup2-center' wx:if='{{!tradeState}}'>
+                <view class='text1'>点击
+                    <image src='/assets/nocoin.png' class='prize-popup2-img' wx:if='{{!tradeState&&redbao==1}}'></image>
+                    <image src='/assets/add100.png' class='prize-popup2-img' wx:if='{{!tradeState&&redbao==3}}'></image>
+                    后</view>
+                <view class='text2'>再送你下一个红包</view>
+            </view>
+            <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{tradeState}}'>
+                <button hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
+                    立即查看
+                </button>
+            </form>
+            <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{!tradeState}}'>
+                <button wx:if='{{!tradeState&&redbao==1}}' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:54rpx;'>
+                    去抽奖
+                </button>
+                <button wx:if='{{!tradeState&&redbao==3}}' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:54rpx;'>
+                    去试玩
+                </button>
+            </form>
+
+            <form bindsubmit="closeTap" report-submit='true' data-type='5'>
+                <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
+                </button>
+            </form>
+
+
+
+
+
+
+            <view class='fullzerothree'>满0.3元即可提现</view>
+        </view>
     </view>
-  </view>
+
 </template>

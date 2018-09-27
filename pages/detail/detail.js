@@ -23,7 +23,8 @@ Page({
         nowinState: false,
         firstState: true,
         newState: false,
-        newState2: false,
+        newState2: true,
+		redbao:3,
         shareBottom: false,
         shareFirst: true,
         toView: '',
@@ -184,7 +185,9 @@ Page({
             //助力
             that.powerRender(that.data.user_id)
         }
-
+        wx.showShareMenu({
+            withShareTicket: true,
+        })
     },
     bindGetUserInfo(res) {
         var that = this;
@@ -420,12 +423,12 @@ Page({
                     participant: participant,
                     total_people: total_people,
                 });
-                if (res.data.data.status == 3 || res.data.data.status==5) {
+                if (res.data.data.status == 3 || res.data.data.status == 5) {
                     that.setData({
                         showbottombtn: false,
-                        
+
                     })
-                }else{
+                } else {
                     that.setData({
                         showbottombtn: true,
                     })
@@ -622,7 +625,10 @@ Page({
                             }
                         }
                     }
-                )
+                );
+                if (e.target && e.target.id == "doubleShare") {
+                    that.exchangeTap(that.doubleShareData,1)
+                }
             },
             fail: function(res) {
                 // 转发失败
@@ -669,7 +675,7 @@ Page({
                 newState2: false,
                 toView: 'part'
             })
-        }
+		}
     },
     // 阻止向下捕捉
     cancel() {
@@ -686,7 +692,7 @@ Page({
         })
     },
     // 兑换金币
-    exchangeTap(e) {
+    exchangeTap(e,type) {
         var that = this;
         var type = e.currentTarget.dataset.type;
         if (type == 2) {
@@ -697,22 +703,41 @@ Page({
             util.postHttp(
                 'api/currency_exchange', {
                     user_id: that.data.user_id,
-                    rid: that.data.rid
+                    rid: that.data.rid,
+					type: type,
+					water_coin: that.data.comforNum
                 },
                 function(res) {
                     util.hideLoad();
+					that.setData({
+						comfortShow: false,
+					})
                     if (res.data.status == 0) {
                         util.noData(res.data.msg, 3000);
                         that.data.allDetail.convertible_or_not = 1;
                         that.setData({
-                            allDetail: that.data.allDetail
+                            allDetail: that.data.allDetail,
                         })
                     } else {
                         util.noData(res.data.msg, 3000);
-                    }
+                    };
+
                 }
             )
         }
+    },
+    //水币数额
+    watercoin() {
+        let _this = this;
+        util.loading('兑换金币中');
+		util.postHttp('api/water_coin', {}, function(res) {
+            util.hideLoad();
+			console.log(res);
+            _this.setData({
+                comfortShow: true,
+                comforNum: res.data.data.water_coin,
+            });
+        })
     },
     // 填写收货地址
     addressTap(e) {
@@ -915,5 +940,23 @@ Page({
             )
 
         }
+    },
+
+    // 领取双倍安慰奖按钮收集formId
+    doubleShare(e) {
+        console.log(e);
+        let formId = e.detail.formId;
+        console.log(formId);
+        if (formId && parseInt(formId) > 0) {
+            this.getForm(e);
+        };
+        this.doubleShareData = e;
+    },
+
+    hideComfort(e) {
+        this.exchangeTap(e,2)
+        this.setData({
+            comfortShow: false,
+        })
     }
 })

@@ -539,7 +539,65 @@ page {
     font-size: 40rpx !important;
 }
 
-.baoyou{
+/* zhang */
+
+.baoyou {
     width: 101rpx;
     height: 44rpx;
 }
+
+.comfortMask {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+	overflow: hidden;
+}
+
+.comforBody {
+    width: 700rpx;
+    height: 450rpx;
+    margin: 40vh auto;
+    background-color: #f9ecec;
+    position: relative;
+	overflow: hidden;
+}
+
+.modleTxt {
+    width: 520rpx;
+    margin: 100rpx auto 0;
+    font-size: 58rpx;
+    color: #21211f;
+    text-align: center;
+	line-height: 90rpx;
+}
+
+.maskbtn {
+    width: 100%;
+    height: 100rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.maskbtn view,.maskbtn view button {
+    width: 50%;
+    height: 100rpx;
+    text-align: center;
+	line-height: 100rpx;
+	font-size: 40rpx;
+}
+
+
+.maskbtn view button {
+	width: 100%;
+    color: white;
+}
+
+/* 第三个红包 */

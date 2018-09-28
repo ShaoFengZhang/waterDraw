@@ -9,9 +9,11 @@
 @import "../template/prize-popup/prize-popup.wxss";
 @import "../template/prize-popup2/prize-popup2.wxss";
 @import "../template/animation.wxss";
-
+.header{
+  background:#fff
+}
 page {
-  background: #eff2f9;
+  background: #f1f1f1;
 }
 
 .container {
@@ -51,7 +53,7 @@ page {
 .prize-text {
   width: 100%;
   background: #fff;
-  padding: 10rpx 20rpx;
+  padding: 10rpx 20rpx 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 55rpx;
@@ -125,33 +127,36 @@ page {
 /* 赞助商 */
 
 .prize-sponsors-box {
-  background: #fff;
+  background: #fff6e5;
   padding: 0 20rpx;
-  border-bottom: 12rpx solid #eff2f9;
+  margin-bottom: 20rpx
 }
 
 .sponsors-title {
   line-height: 80rpx;
   color: #000;
-  border-bottom: 1rpx dashed #c2c2c2;
+  background:url('https://tp.datikeji.com/a/15381219666175/7zkHfwZkYLoPqHbOC5vP142wXKZbBFehjZgb2rgB.png') repeat-x bottom;
 }
 
 .sponsor-logo-img {
-  width: 30rpx;
-  height: 30rpx;
-  margin-left: 15rpx;
-  margin-right: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
 }
 
 .sponsor-img {
   width: 48rpx;
   height: 48rpx;
   margin-right: 15rpx;
-  border-radius: 50%;
 }
 
+.sponsor-img2 {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+  margin-left:15rpx
+}
 .sponsors-text {
-  padding-left: 20rpx;
   font-size: 28rpx;
   line-height: 80rpx;
   color: #4d4d4d;
@@ -161,13 +166,12 @@ page {
 
 .prize-main {
   width: 100%;
-  background: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .prize-detail {
-  padding: 20rpx 0;
+  padding: 0 0 20rpx;
   background: #f1f1f1;
 }
 
@@ -178,7 +182,7 @@ page {
 }
 
 .prize-detail-text {
-  padding: 10rpx 40rpx;
+  padding: 0 20rpx 10rpx;
   color: #4d4d4d;
   line-height: 50rpx;
   background-color: #fff;
@@ -192,33 +196,28 @@ page {
 /* 活动规则 */
 
 .prize-rule {
-  padding: 25rpx 0 60rpx;
   width: 100%;
-  overflow: hidden;
+  padding: 0 0 10rpx;
+  margin-bottom: 20rpx;
+  background:#fff
 }
 
-.prize-rule-title {
-  text-align: left;
-  padding: 0 35rpx;
-  font-size: 25rpx;
-  height: 30rpx;
-  line-height: 30rpx;
-}
 
 .prize-rule-text {
   color: #818181;
   font-size: 30rpx;
+  height:60rpx;
+  line-height:60rpx;
+  margin-top:30rpx;
 }
 
 .circle-vessel {
   position: relative;
-  height: 180rpx;
-  padding: 80rpx 0 60rpx;
+  padding-top: 110rpx;
+  height:280rpx;
 }
-
-.circle-vessel-part {
-  position: relative;
-  height: 300rpx;
+.ripples-box{
+  width:100%;
 }
 
 .loginBtn {
@@ -531,6 +530,16 @@ page {
   animation: rotateY 2s infinite linear;
 }
 
+.point-top-img1{
+  width: 320rpx;
+  height: 72rpx;
+  position: absolute;
+  left: -70rpx;
+  top: -80rpx;
+  z-index: 99;
+   animation: rotateYA 1s infinite linear;
+}
+
 .scroll {
   height: 100%;
 }
@@ -539,7 +548,6 @@ page {
   width: 38rpx;
   height: 38rpx;
   vertical-align: middle;
-  border-radius: 50%;
   margin:0 10rpx
 }
 

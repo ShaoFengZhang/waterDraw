@@ -1,8 +1,3 @@
-var touchDot = 0; //触摸时的原点
-var time = 0; //  时间记录，用于滑动时且时间小于1s则执行左右滑动
-var interval = ""; // 记录/清理 时间记录
-var tmpFlag = true; // 判断左右华东超出菜单最大值时不再执行滑动事件
-var flag = true;
 let btnBgm = wx.createInnerAudioContext();
 btnBgm.src = "https://tp.datikeji.com/a/15351009376616/brf2xixGd14JpSRTIq3ujdBif0k9pVZzujw2HOws.mpga";
 btnBgm.volume = 1;
@@ -18,10 +13,6 @@ Page({
         banner: "xm2fd1dd84691b8eaa5427ee1b3144c4", // 按需引入
       }
     },
-    leftDirection: false,
-    leftDirection2: false,
-    rightDirection: false,
-    rightDirection2: false,
     loginState: false,
     ruleState: false,
     goldState2: false,
@@ -46,6 +37,7 @@ Page({
     timeNum: 0,
     tOhterSatus: false,
     showbottombtn: false,
+    currentTab:1
   },
   onShow() {
     var that = this;
@@ -266,10 +258,7 @@ Page({
     var that = this;
     btnBgm.play()
     var token = util.md5Fun(that.data.rid, that.data.user_id, that.data.detailData.open_type)
-    console.log(token);
-    console.log('??????????????', app.data.nick_name);
     if (!app.data.nick_name) {
-      console.log('LLLLLLLLLLLLLLLL')
       wx.getUserInfo({
         success: function(res) {
           util.author(res,
@@ -314,7 +303,6 @@ Page({
         }
       })
     } else {
-      console.log('>>>>>>>>>>>>>>')
       if (e) {
         var formId = e.detail.formId;
       } else {
@@ -376,9 +364,6 @@ Page({
         }
 
         if (use == 'draw') {
-          that.setData({
-            leftDirection: true
-          })
           if (util.getNowFormatDate(app.data.oldDate)) {
             that.setData({
               //   shareState: true
@@ -418,8 +403,9 @@ Page({
             head_pic: app.data.head_pic
           })
         }
-        // 测试数据
 
+        // 测试数据
+        //  prizeStatus = 5 
         //测试数据
 
         if (prizeStatus == 1) {
@@ -525,76 +511,6 @@ Page({
       }
     )
   },
-  // 触摸开始事件
-  touchStart: function(e) {
-    touchDot = e.touches[0].pageX; // 获取触摸时的原点
-    // 使用js计时器记录时间    
-    interval = setInterval(function() {
-      time++;
-    }, 100);
-  },
-  // 触摸移动事件
-  touchMove: function(e) {
-    var that = this;
-    var touchMove = e.touches[0].pageX;
-    if (!flag) {
-      return
-    }
-    // 向左滑动   
-    if (touchMove - touchDot <= -25 && time < 10) {
-      console.log('左滑')
-      flag = false;
-      if (that.data.leftDirection2) {
-        return
-      }
-
-      if (that.data.rightDirection) {
-        that.setData({
-          leftDirection: true,
-          rightDirection: false,
-          leftDirection2: false,
-          rightDirection2: false
-        })
-      } else {
-        that.setData({
-          leftDirection: false,
-          rightDirection: false,
-          leftDirection2: true,
-          rightDirection2: false
-        })
-      }
-    }
-    // 向右滑动
-    if (touchMove - touchDot >= 25 && time < 10) {
-      console.log('右滑')
-      flag = false;
-      if (that.data.rightDirection) {
-        return
-      }
-      if (that.data.leftDirection2) {
-        that.setData({
-          leftDirection: false,
-          rightDirection: false,
-          leftDirection2: false,
-          rightDirection2: true
-        })
-      } else {
-        that.setData({
-          leftDirection: false,
-          rightDirection: true,
-          leftDirection2: false,
-          rightDirection2: false
-        })
-      }
-    }
-  },
-  // 触摸结束事件
-  touchEnd: function(e) {
-    clearInterval(interval); // 清除setInterval
-    time = 0;
-    tmpFlag = true; // 回复滑动事件
-    flag = true
-  },
   onShareAppMessage: function(e) {
     //分享页面
     var that = this;
@@ -635,17 +551,6 @@ Page({
                   that.setData({
                     shareFirst: false
                   })
-                  if (that.data.leftDirection || that.data.rightDirection2 || !that.data.leftDirection && !that.data.leftDirection2 && !that.data.rightDirection && !that.data.rightDirection2) {
-                    setTimeout(function() {
-                      console.log('好了')
-                      that.setData({
-                        leftDirection: false,
-                        rightDirection: false,
-                        leftDirection2: true,
-                        rightDirection2: false
-                      })
-                    }, 500)
-                  }
                 }
                 that.setData({
                   goldState2: true
@@ -657,11 +562,6 @@ Page({
                 setTimeout(function() {
                   btnBgm.play()
                 }, 500)
-                // setTimeout(function() {
-                //     wx.redirectTo({
-                //         url: '../trading/trading?shareUid=' + that.data.otherUid
-                //     })
-                // }, 1000)
               }
               util.success('分享成功');
               setTimeout(function() {
@@ -671,17 +571,6 @@ Page({
                 that.setData({
                   shareFirst: false
                 })
-                if (that.data.leftDirection || that.data.rightDirection2 || !that.data.leftDirection && !that.data.leftDirection2 && !that.data.rightDirection && !that.data.rightDirection2) {
-                  setTimeout(function() {
-                    console.log('好了')
-                    that.setData({
-                      leftDirection: false,
-                      rightDirection: false,
-                      leftDirection2: true,
-                      rightDirection2: false
-                    })
-                  }, 500)
-                }
               }
             }
           }

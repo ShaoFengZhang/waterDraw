@@ -44,7 +44,7 @@ Page({
     util.loading('数据加载中')
     that.notice();
 
-    if (!app.data.user_id) {
+    if (!app.data.user_id || !util.checkNumber(app.data.user_id)) {
       util.login(
         function(res) {
           that.indexRender(res, 'hide')

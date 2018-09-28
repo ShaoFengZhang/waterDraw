@@ -13,8 +13,8 @@
                     <view class='btn6 mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>提现水滴币</view>
                 </view>
 
-                <view class='btn6' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==0}}'>点我，再来一个抽奖</view>
-                <view class='btn6 bg mobile' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>
+                <view class='btn6' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==0}}'>点我，再来一个抽奖</view>
+                <view class='btn6 bg mobile' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==1}}'>
                 <image class='handicon' src='/assets/handicon.png' />
                     点我，再来一个抽奖
                 </view>

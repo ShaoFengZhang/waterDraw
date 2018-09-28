@@ -7,6 +7,7 @@ Page({
     },
 
     onLoad: function(options) {
+      console.log(options)
         if (options && options.uid) {
             wx.showLoading({
                 title: '正在跳转',

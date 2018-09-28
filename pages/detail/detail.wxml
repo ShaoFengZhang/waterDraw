@@ -120,7 +120,7 @@
             <image src='https://tp.datikeji.com/a/15367536581651/ye4zAZWcT7nCZcXmuIUrSG67lyV4N3n0aJl6BQ4o.png' class='cursor-point-img' wx:if='{{toView=="part"}}'></image>
           </view>
         </view>
-        <view class='t_c prize-rule-text'>
+        <view class='t_c prize-rule-text row-center-a'>
           <block wx:if='{{prizeStatus == 5}}'>
             <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
             <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>

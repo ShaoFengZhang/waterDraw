@@ -309,9 +309,9 @@
   <view class='comforBody column-center'>
     <image src='../../images/a13.png' class='comforImg mgb40 mgt30'></image>
     <view class='modleTxt mgb20'>你抽到{{comforNum || 0}}个水滴币</view>
-    <view class='modleTxt mgb70'>分享到群翻倍</view>
+    <view class='modleTxt mgb70'>分享翻倍</view>
     <view class='maskbtn row-between'>
-      <view data-type='1' class='giveUptxt' bindtap='hideComfort'>领取</view>
+      <view data-type='1' class='giveUptxt' bindtap='hideComfort'>残忍放弃</view>
       <form report-submit bindsubmit='doubleShare' data-type='2'>
         <button id='doubleShare' open-type='share' formType="submit" class='giveUptxt double-btn'>翻倍领取</button>
       </form>

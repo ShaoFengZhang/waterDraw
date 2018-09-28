@@ -43,3 +43,21 @@
     <view class='t_c font24 '>大爷，今天抢完了，明天再来哦！</view>
   </view>
 </view>
+
+<view class='focusOnMask' wx:if="{{ifShowFocusMask}}">
+
+	<view class='focusBody'>
+		<view class='focusBodyTxtOne txt'>需要关注公众号才可以提现</view>
+		<view class='focusBodyTxTwo txt'>在客服会话中回复2给客服</view>
+		<view class='focusBodyTxtThree txt'>获得公众号二维码</view>
+		<view class='focusBodyTxtFour'>示意图</view>
+		<view class='foucsBig'>
+			<image wx:if="{{foucssessionShow}}" bindload='foucssessionEvent' class='foucssession' src='/assets/foucssession.png' />
+			<image wx:if="{{foucsQrShow}}" bindload='foucsQrEvent' class='foucsQr' src='/assets/foucsQr.png' />
+			<view class='foucstxtnum' wx:if="{{foucstxtnumShow}}">1</view>
+		</view>
+		<view class='foucsBtnOk' bindtap='closeFocusOnMask'><button style='height:80rpx;background-color:rgba(253,221,74,1);font-size:40rpx;line-height:80rpx;' open-type='contact'>好的</button></view>
+		<view class='foucsBtnError' bindtap='closeFocusOnMask'>取消</view>
+	</view>
+
+</view>

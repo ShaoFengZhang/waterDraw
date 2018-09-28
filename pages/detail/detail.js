@@ -8,8 +8,16 @@ btnBgm.src = "https://tp.datikeji.com/a/15351009376616/brf2xixGd14JpSRTIq3ujdBif
 btnBgm.volume = 1;
 var app = getApp();
 let util = require('../../utils/util');
+var Page = require('../../utils/xmadx_sdk.min.js').xmad(Page).xmPage;
 Page({
 	data: {
+		// 需在xmadID中配置广告位ID，多个ID之间用英文逗号隔开
+		xmad: {
+			adData: {},
+			ad: {
+				banner: "xm2fd1dd84691b8eaa5427ee1b3144c4", // 按需引入
+			}
+		},
 		leftDirection: false,
 		leftDirection2: false,
 		rightDirection: false,
@@ -679,7 +687,7 @@ Page({
 					}
 				);
 				if (e.target && e.target.id == "doubleShare") {
-					that.exchangeTap(that.doubleShareData, 1)
+					that.exchangeTap(that.doubleShareData)
 				};
 				if (that.newUserShareDoubleRedBao && that.data.is_new == 0) {
 					that.newUserShareDoubleRedBao = false;
@@ -795,12 +803,9 @@ Page({
 		})
 	},
 	// 兑换金币
-	exchangeTap(e, type) {
+	exchangeTap(e) {
 		var that = this;
 		var type = e.currentTarget.dataset.type;
-		if (type == 2) {
-			util.noData('您已领取')
-		} else {
 			btnBgm.play();
 			util.loading('兑换金币中');
 			util.postHttp(
@@ -824,23 +829,19 @@ Page({
 					} else {
 						util.noData(res.data.msg, 3000);
 					};
-
+					if(type==1){
+						that.setData({
+							comfortShow: true,
+							comforNum: res.data.data.water_coin,
+						});
+					}
 				}
 			)
-		}
+		
 	},
 	//水币数额
-	watercoin() {
-		let _this = this;
-		util.loading('兑换金币中');
-		util.postHttp('api/water_coin', {}, function (res) {
-			util.hideLoad();
-			console.log(res);
-			_this.setData({
-				comfortShow: true,
-				comforNum: res.data.data.water_coin,
-			});
-		})
+	watercoin(e) {
+		this.exchangeTap(e)
 	},
 	// 填写收货地址
 	addressTap(e) {
@@ -1059,7 +1060,6 @@ Page({
 	},
 
 	hideComfort(e) {
-		this.exchangeTap(e, 2)
 		this.setData({
 			comfortShow: false,
 		})

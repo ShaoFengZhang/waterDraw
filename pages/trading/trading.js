@@ -42,7 +42,13 @@ Page({
     if (!that.data.first) {
       that.dataRender(that.data.user_id)
       that.goldRender(that.data.user_id)
-    }
+    };
+	this.setData({
+		foucsQrShow: false,
+		foucssessionShow:false,
+		ifShowFocusMask: false,
+		foucstxtnumShow:true,
+	})
   },
   onLoad: function(options) {
     var that = this;
@@ -124,7 +130,8 @@ Page({
             ...data
           }
           that.setData({
-            myData: myData
+            myData: myData,
+			  is_put_forward: res.data.data.is_put_forward
           })
         }
       }
@@ -200,9 +207,24 @@ Page({
   //提现
   withdrawalTap() {
     var that = this;
+	  
+	  
     if (that.data.myData.balance < 300) {
-      util.noData('微信官方限制必须大于3毛（300水滴币）才能提现', 3000)
+      util.noData('微信官方限制必须大于3毛（300水滴币）才能提现', 3000);
+	  return;
     } else {
+		if (this.data.is_put_forward == 1) {
+			this.setData({
+				ifShowFocusMask: true
+			});
+			setTimeout(function () {
+				that.setData({
+					foucssessionShow: true,
+					foucstxtnumShow: false,
+				})
+			}, 800)
+			return;
+		};
       wx.showModal({
         title: '请确认提现？',
         confirmText: "确定",
@@ -365,5 +387,31 @@ Page({
         }
       }
     )
-  }
+  },
+	// 关闭关注公众号弹窗
+	closeFocusOnMask(){
+		this.setData({
+			ifShowFocusMask: !this.data.ifShowFocusMask,
+			foucsQrShow: false,
+			foucssessionShow: false,
+			foucstxtnumShow:true,
+		})
+	},
+	foucssessionEvent(e){
+		let _this=this;
+		setTimeout(function(){
+			_this.setData({
+				foucsQrShow: true,
+			})
+		},1200)
+		
+	},
+	foucsQrEvent(e){
+		let _this=this;
+		setTimeout(function () {
+			_this.setData({
+				foucstxtnumShow: true,
+			})
+		}, 1200)
+	}
 })

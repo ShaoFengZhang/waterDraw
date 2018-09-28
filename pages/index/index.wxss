@@ -13,7 +13,7 @@ page {
 
 .top-side {
   width: 700rpx;
-  height: 50rpx;
+  height: 54rpx;
   overflow: hidden;
 }
 

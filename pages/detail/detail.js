@@ -8,8 +8,16 @@ btnBgm.src = "https://tp.datikeji.com/a/15351009376616/brf2xixGd14JpSRTIq3ujdBif
 btnBgm.volume = 1;
 var app = getApp();
 let util = require('../../utils/util');
+var Page = require('../../utils/xmadx_sdk.min.js').xmad(Page).xmPage;
 Page({
   data: {
+    // 需在xmadID中配置广告位ID，多个ID之间用英文逗号隔开
+    xmad: {
+      adData: {},
+      ad: {
+        banner: "xm2fd1dd84691b8eaa5427ee1b3144c4", // 按需引入
+      }
+    },
     leftDirection: false,
     leftDirection2: false,
     rightDirection: false,

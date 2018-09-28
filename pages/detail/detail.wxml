@@ -269,8 +269,12 @@
     <!-- 参与结束 -->
   </view>
 
-  <view class='height25' wx:if='{{prizesData.length>0}}'></view>
-
+    <!-- banner广告，按需引入 -->
+  <view class="xm_banner" style="width:100%">
+    <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
+    </xm-ad>
+  </view>
+  <ad unit-id="adunit-936cbb7cb6c6d420"></ad>
   <!-- 底部开始 -->
   <view class='row-center bottom-link'>
     <view class='link-address' catchtap='jumpTap' data-type='1'>历史抽奖
@@ -279,6 +283,8 @@
     <view class='link-address' catchtap='jumpTap' data-type='2'>我的水滴币</view>
   </view>
   <!-- 底部结束 -->
+
+ 
 
   <!-- 底部按钮开始 -->
   <view class='prize-bottom row-between' wx:if='{{detailData.open_status==0 && showbottombtn}}'>

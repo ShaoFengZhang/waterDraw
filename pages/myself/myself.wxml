@@ -63,3 +63,9 @@
     <ad unit-id="adunit-15c74523dfcd6678"></ad>
   </view>
 </view>
+
+<!-- 引导弹窗 -->
+<view class='water_guide' wx:if="{{ifShowWater_guide}}" style='margin-top:{{guideTop}}'>
+	<view class='guide_zhiyin'><image src='/assets/zhiyin.png' /></view>
+	<view bindtap='closeGuide' class='guide_btn'><image src='/assets/IKnow.png' /></view>
+</view>

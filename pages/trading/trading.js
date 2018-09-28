@@ -9,6 +9,7 @@ Page({
     page: 1,
     newState: false,
     newState2: false,
+	  ifShowWater_guide:false,
     prizeList: [{
         pic: 'https://tp.datikeji.com/a/15330303036545/66PBEoyMJYG7DTDgwfL2vNYP4Hk2kTfpMp6sXS02.png',
         name: '话费1元',
@@ -48,7 +49,23 @@ Page({
 		foucssessionShow:false,
 		ifShowFocusMask: false,
 		foucstxtnumShow:true,
-	})
+		guideTop: wx.getStorageSync('topHeight'),
+	});
+	  
+	  if (wx.getStorageSync('water_guide')){
+		  this.setData({
+			  ifShowWater_guide: false,  
+		  })
+	  }else{
+		  wx.setStorage({
+			  key: 'water_guide',
+			  data: '1',
+		  });
+		  this.setData({
+			  ifShowWater_guide: true,
+		  })
+	  }
+
   },
   onLoad: function(options) {
     var that = this;
@@ -413,5 +430,10 @@ Page({
 				foucstxtnumShow: true,
 			})
 		}, 1200)
+	},
+	closeGuide(){
+		this.setData({
+			ifShowWater_guide:false,
+		})
 	}
 })

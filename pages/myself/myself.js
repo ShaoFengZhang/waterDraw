@@ -3,6 +3,7 @@ let util = require('../../utils/util');
 Page({
   data: {
     first: true,
+	  ifShowWater_guide: false,
     extraData: {
       id: '33866'
     },
@@ -37,6 +38,19 @@ Page({
       that.dataRender()
       that.newData()
     }
+	  if (wx.getStorageSync('water_guide')) {
+		  this.setData({
+			  ifShowWater_guide: false,
+		  })
+	  } else {
+		  wx.setStorage({
+			  key: 'water_guide',
+			  data: '1',
+		  });
+		  this.setData({
+			  ifShowWater_guide: true,
+		  })
+	  }
   },
   newData() {
     var that = this;
@@ -136,5 +150,11 @@ Page({
         })
       }
     }
-  }
+  },
+
+	closeGuide() {
+		this.setData({
+			ifShowWater_guide: false,
+		})
+	}
 })

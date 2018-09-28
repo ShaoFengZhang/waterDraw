@@ -148,7 +148,8 @@ Page({
     }
     that.userInfo()
     util.loading('数据加载中')
-    if (!app.data.user_id) {
+
+    if (!app.data.user_id || !util.checkNumber(app.data.user_id)) {
       util.login(
         function(uid, is_new) {
           if (app.data.head_pic && app.data.nick_name) {
@@ -728,7 +729,6 @@ Page({
   closeTap(e) {
     var that = this;
     var type = e.currentTarget.dataset.type;
-    console.log('??????????????', type);
     if (type == 1) {
       that.setData({
         shareState: false
@@ -743,8 +743,18 @@ Page({
       })
     } else if (type == 4) {
       that.getForm(e)
-      that.setData({
-        newState: false
+      wx.showModal({
+        title: '您确定放弃四个红包吗？',
+        confirmText: "确定",
+        content: '机会只有一次',
+        showCancel: true,
+        success: function(res) {
+          if (res.confirm) {
+            that.setData({
+              newState: false
+            })
+          }
+        }
       })
     } else if (type == 5) {
       that.getForm(e)
@@ -946,6 +956,8 @@ Page({
         util.noData('需要分享好友后，才能领红包')
       }
 
+    } else if (type == 9) {
+      that.jumpNewDetail()
     }
   },
   onPullDownRefresh: function() {
@@ -1051,5 +1063,56 @@ Page({
     this.setData({
       comfortShow: false,
     })
+  },
+  jumpNewDetail(){
+    var _this = this;
+    util.postHttp(
+      'api/prizes_list', {
+        user_id: app.data.user_id,
+        page: 1,
+        per_page: 50,
+        type: 1
+      },
+      function (res) {
+        wx.hideLoading();
+        if (res.data.status == 0) {
+          let ridList = res.data.data.prizes;
+          var arr = [];
+          var arr2 = [];
+          ridList.forEach(function(item){
+            if (item.have_involved == "no"){
+              arr.push(item)
+            }else{
+              arr2.push(item)
+            }    
+          })
+          if (arr.length>0){
+            let random = Math.floor(Math.random() * arr.length);
+            _this.rid = arr[random].rid;
+            wx.redirectTo({
+              url: `../detail/detail?uid=${_this.uid}&rid=${_this.rid}`
+            })
+          }else{
+            let random = Math.floor(Math.random() * arr2.length);
+            _this.rid = arr2[random].rid;
+            wx.redirectTo({
+              url: `../detail/detail?uid=${_this.uid}&rid=${_this.rid}`
+            })
+          }
+          
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '当前没有正在抽奖的奖品',
+            showCancel: false,
+            success: function () {
+              wx.redirectTo({
+                url: `../index/index`
+              })
+            }
+          })
+        }
+      }
+    )
   }
 })

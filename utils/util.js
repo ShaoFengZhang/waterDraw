@@ -16,7 +16,7 @@ function login(callback, parentid) {
                 },
                 success: function(firstRes) {
                     var firstData = firstRes.data.data;
-                    //测试
+                
                     app.data.user_id = firstData.user_id;
 
                     app.data.nick_name = firstData.nick_name;
@@ -25,9 +25,13 @@ function login(callback, parentid) {
                     // app.data.share_pic = firstData.share_pic;
 
                     wx.setStorageSync('app.data', app.data);
-                    //firstData.is_new = 0;
-                    var is_new = firstData.is_new;
+                  //测试
+
+                    // firstData.is_new = 0;
+
                     //测试
+                    var is_new = firstData.is_new;
+                    
                     if (callback) {
                         callback(firstData.user_id, is_new)
                     }
@@ -35,6 +39,14 @@ function login(callback, parentid) {
             })
         }
     })
+}
+
+function checkNumber(num){
+  if (isNaN(num)){
+    return true
+  }else{
+    return false
+  }
 }
 
 // 授权
@@ -303,5 +315,6 @@ module.exports = {
     md5Fun: md5Fun,
     md5Toke: md5Toke,
     filterStr: filterStr,
-    getNowFormatDate
+    getNowFormatDate,
+  checkNumber
 }

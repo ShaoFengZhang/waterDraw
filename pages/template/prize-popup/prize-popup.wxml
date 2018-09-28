@@ -1,22 +1,22 @@
 <template name="prize-popup">
-    <view hidden='{{!newState}}' class='popup-bg'>
-        <view class='prize-popup column-center'>
-            <image src='{{inviterInfo.head_pic}}' class='prize-popup-img'></image>
-            <text class='prize-popup-name'>{{inviterInfo.nick_name}}</text>
-            <view class='prize-popup-text column-center' wx:if='{{tradeState}}' style='margin-bottom:0;margin-top:80rpx'>
-                <text>谢谢你帮我完成助力 </text>
-                <text>再送你一个红包</text>
-            </view>
-            <text class='prize-popup-text' wx:if='{{!tradeState}}'>送了你一个红包</text>
-            <view wx:if='{{tradeState}}' class='switch' catchtap='swichTap'></view>
-            <form bindsubmit="getForm" report-submit='true' wx:if='{{!tradeState}}'>
-                <button bindgetuserinfo="switchTap" open-type="getUserInfo" class='switch' hover-class="btn-hover" form-type="submit"></button>
-            </form>
-            <form bindsubmit="closeTap" report-submit='true' data-type='4'>
-                <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
-                </button>
-            </form>
-			<view class='newTxt'>水滴抽奖是完全免费，不会向你收取任何费用</view>
-        </view>
+  <view hidden='{{!newState}}' class='popup-bg'>
+    <view class='prize-popup column-center'>
+      <image src='{{inviterInfo.head_pic}}' class='prize-popup-img'></image>
+      <text class='prize-popup-name'>{{inviterInfo.nick_name}}</text>
+      <view class='prize-popup-text column-center' wx:if='{{tradeState}}' style='margin-bottom:0;margin-top:80rpx'>
+        <text>谢谢你帮我完成助力 </text>
+        <text>再送你一个红包</text>
+      </view>
+      <text class='prize-popup-text' wx:if='{{!tradeState}}'>送了你一个红包</text>
+      <view wx:if='{{tradeState}}' class='switch' catchtap='swichTap'></view>
+      <form bindsubmit="getForm" report-submit='true' wx:if='{{!tradeState}}'>
+        <button bindgetuserinfo="switchTap" open-type="getUserInfo" class='switch' hover-class="btn-hover" form-type="submit"></button>
+      </form>
+      <form bindsubmit="closeTap" report-submit='true' data-type='4'>
+        <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
+        </button>
+      </form>
+      <view class='newTxt'>水滴抽奖是完全免费，不会向你收取任何费用</view>
     </view>
+  </view>
 </template>

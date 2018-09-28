@@ -117,7 +117,6 @@ page {
   color: #f95959;
 }
 
-
 .prize-price {
   text-decoration: line-through;
   text-decoration-color: #f95959;
@@ -141,7 +140,7 @@ page {
   width: 30rpx;
   height: 30rpx;
   margin-left: 15rpx;
-  margin-right:10rpx
+  margin-right: 10rpx;
 }
 
 .sponsor-img {
@@ -537,11 +536,11 @@ page {
 }
 
 .zxLogo {
-  display: inline-block;
   width: 38rpx;
   height: 38rpx;
   vertical-align: middle;
   border-radius: 50%;
+  margin:0 10rpx
 }
 
 .font40 {

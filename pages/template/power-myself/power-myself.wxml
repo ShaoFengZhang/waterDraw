@@ -3,10 +3,10 @@
     <view class='row-between prize-list-info-top'>
       <view class='row-start'>
         <view class='power-rank'>
-          <text class='red'>1</text>
+          <text>1</text>
         </view>
         <image src='{{myHead}}' class='face-img'></image>
-        <view class='bold' style='width:400rpx'>{{nick_name}}</view>
+        <view  style='width:400rpx'>{{nick_name}}</view>
       </view>
       <view>
         <text class='red'>+</text>

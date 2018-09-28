@@ -73,7 +73,9 @@ image {
 .mgr15 {
   margin-right: 15rpx;
 }
-
+.mgt30 {
+  margin-top: 30rpx !important;
+}
 .mgb5 {
   margin-bottom: 5rpx;
 }
@@ -97,7 +99,9 @@ image {
 .mgb50 {
   margin-bottom: 50rpx !important;
 }
-
+.mgb70 {
+  margin-bottom: 70rpx !important;
+}
 .mgb90 {
   margin-bottom: 90rpx !important;
 }
@@ -119,7 +123,6 @@ image {
   border-top: 2px solid #00aeff;
   border-right: 2px solid #00aeff;
   transform: rotate(45deg);
-  margin-top: -6rpx;
   vertical-align: middle;
 }
 
@@ -430,6 +433,10 @@ image {
 .newBlack {
   color: #353535 !important;
 }
+.newdarkBlack {
+  color: #000 !important;
+}
+
 
 .newClor {
   color: #4d4d4d !important;
@@ -482,8 +489,8 @@ image {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: url('https://tp.datikeji.com/a/15338825205331/3eywXHysimF5F7ySEtYmyY9e4CHzOzjJw6MKMnrx.png') no-repeat;
-  background-size: 28px 28px;
+  background: url('https://tp.datikeji.com/a/15381036504101/DTLwrav8wfrpb7WKeb3zhrxeJS1FbZVSVlaVk05L.png') no-repeat;
+  background-size: 27px 29px;
   background-position: center center;
 }
 

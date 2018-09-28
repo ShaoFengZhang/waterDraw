@@ -4,16 +4,16 @@
       <view class='row-start'>
         <view class='power-rank'>
           <block wx:if='{{powerData.is_try_play==1}}'>
-            <text wx:if='{{idx<3}}' class='red'>{{idx+3}}</text>
+            <text wx:if='{{idx<3}}'>{{idx+3}}</text>
             <text wx:else>{{idx+3}}</text>
           </block>
           <block wx:if='{{powerData.is_try_play==0}}'>
-            <text wx:if='{{idx<3}}' class='red'>{{idx+2}}</text>
+            <text wx:if='{{idx<3}}'>{{idx+2}}</text>
             <text wx:else>{{idx+2}}</text>
           </block>
         </view>
         <image src='{{item.head_pic}}' class='face-img'></image>
-        <view class='bold' style='width:400rpx'>{{item.nick_name}}
+        <view  style='width:400rpx'>{{item.nick_name}}
           <block wx:if='{{item.is_new==0}}'> 【新用户】</block>
           <block wx:if='{{item.is_new==1}}'> 【活跃】</block>
         </view>

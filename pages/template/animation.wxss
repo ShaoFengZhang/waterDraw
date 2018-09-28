@@ -200,3 +200,18 @@
     transform: translate(-30rpx, -30px);
   }
 }
+
+
+@keyframes rotateYA{
+0% {
+    transform: translate(-0, -10px);
+  }
+
+  30% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(0, -10px);
+  }
+}

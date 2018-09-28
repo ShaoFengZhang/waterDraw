@@ -214,17 +214,17 @@ Page({
 	  return;
     } else {
 		if (this.data.is_put_forward == 1) {
-			this.setData({
-				ifShowFocusMask: true
-			});
-			setTimeout(function () {
-				that.setData({
-					foucssessionShow: true,
-					foucstxtnumShow: false,
-				})
-			}, 800)
-			return;
-		};
+		  this.setData({
+			  ifShowFocusMask: true
+		  });
+		  setTimeout(function () {
+			  that.setData({
+				  foucssessionShow: true,
+				  foucstxtnumShow:false,
+			  })
+		  }, 800)
+		  return;
+	  };
       wx.showModal({
         title: '请确认提现？',
         confirmText: "确定",

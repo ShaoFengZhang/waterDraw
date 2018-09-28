@@ -1,5 +1,79 @@
 <template name="circle-template">
-  <view class='circle-box row-between {{leftDirection?"moveLeft":""}} {{rightDirection?"moveRight":""}} {{leftDirection2?"moveLeft2":""}} {{rightDirection2?"moveRight2":""}}' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <swiper duration="1000" skip-hidden-item-layout='true' class='circle-box' current="{{currentTab}}" bindchange="switchSwiper">
+    <swiper-item class='row-start'>
+      <view class='ripples-box'>
+        <view class='ripples'>
+          <view class='center column-center'>
+            <view class='text light-gray'>等待</view>
+            <view class='text light-gray'>开奖</view>
+          </view>
+          <view class='pulse'></view>
+          <view class='pulse pulse2'></view>
+        </view>
+        <view class='t_c prize-rule-text row-center-a'>
+          <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
+          <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
+        </view>
+      </view>
+      <view class='row-between  circle-main-a'>
+        <view class='circle'></view>
+        <view class='circle circle2'></view>
+        <view class='circle circle3'></view>
+        <view class='circle circle4'></view>
+      </view>
+    </swiper-item>
+    <swiper-item class='row-between'>
+      <view class='circle-main-part'>
+        <view class='ripples-box'>
+          <form bindsubmit="getForm" report-submit='true'>
+            <button class='ripples' hover-class="btn-hover" open-type="share" form-type="submit" data-type='5'>
+              <view class='center column-center '>
+                <view class='text'>邀请</view>
+                <view class='text'>好友</view>
+              </view>
+              <view class='pulse'></view>
+              <view class='pulse pulse2'></view>
+              <image src='https://tp.datikeji.com/a/15344876529619/317FWAjpIR1ThY7Pb8a3XGVfYmp1unuWmNCalT87.png' hidden='{{!goldState2}}' class='gold-img2' catchtap='jumpTap' data-type='2'></image>
+              <image src='../../images/a18.png' class='point-top-img1'></image>
+            </button>
+          </form>
+          <view class='t_c prize-rule-text row-center-a'>
+            <block>邀请好友一起来抽奖</block>
+          </view>
+        </view>
+      </view>
+      <view class='row-between  circle-main-b'>
+        <view class='circle'></view>
+        <view class='circle circle2'></view>
+        <view class='circle circle3'></view>
+        <view class='circle circle4'></view>
+      </view>
+      <view class='circle-main-part'>
+        <view class='ripples-box'>
+          <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='ripples' catchtap='tOtherProgram'>
+            <view class='center column-center greenCenter '>
+              <view class='text'>
+                <block wx:if='{{allDetail.is_try_play==0}}'>试玩加</block>
+                <block wx:if='{{allDetail.is_try_play==1}}'>已经加</block>
+              </view>
+              <view class='text'>100码</view>
+            </view>
+            <block wx:if='{{powerData.is_try_play==0}}'>
+              <view class='pulse pulse-green'></view>
+              <view class='pulse pulse2 pulse-green'></view>
+            </block>
+            <image src='../../images/a20.png' class='point-top-img1' wx:if='{{powerData.is_try_play==0}}'></image>
+          </navigator>
+          <view class='t_c prize-rule-text row-center-a'>
+            赞助商：
+            <image class='zxLogo' src='{{detailData.sponsor_logo}}' /> {{detailData.sponsor}}
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- <view class='circle-box row-between {{leftDirection?"moveLeft":""}} {{rightDirection?"moveRight":""}} {{leftDirection2?"moveLeft2":""}} {{rightDirection2?"moveRight2":""}}' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
     <view class='ripples'>
       <view class='center column-center'>
         <view class='text light-gray'>等待</view>
@@ -27,7 +101,6 @@
           <view class='pulse pulse2 pulse-purple'></view>
         </block>
         <image src='https://tp.datikeji.com/a/15344876529619/317FWAjpIR1ThY7Pb8a3XGVfYmp1unuWmNCalT87.png' hidden='{{!goldState2}}' class='gold-img2' catchtap='jumpTap' data-type='2'></image>
-        <!-- <image src='https://tp.datikeji.com/a/15368201636654/nXmGsKA9hqV0Z765ucHsMPLjyDxdLgdQznYSTF3j.png' class='new-share-img'></image> -->
       </button>
     </form>
     <view class='row-between circle-main'>
@@ -48,7 +121,6 @@
         <view class='pulse pulse-green'></view>
         <view class='pulse pulse2 pulse-green'></view>
       </block>
-      <!-- <image src='https://tp.datikeji.com/a/15368203871465/aFf3XRnwjYM7IfkmIsTluL6Ojg1c8Xrhi6OSRuRy.png' class='new-share-img'></image> -->
     </navigator>
-  </view>
+  </view> -->
 </template>

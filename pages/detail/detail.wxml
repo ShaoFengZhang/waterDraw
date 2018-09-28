@@ -72,12 +72,13 @@
     <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='prize-sponsors-box'>
       <view class='sponsors-title row-between'>
         <view class='row-start'>
-        <image class='sponsor-img' src='{{detailData.sponsor_logo}}' />
-        <text class='newdarkBlack'>赞助商</text>
+          <image src='../../images/a17.png' class='sponsor-img'></image>
+          <text class='newdarkBlack'>赞助商</text>
         </view>
-        
-        <view class='row-start textGreen'>
+
+        <view class='row-start textGreen bold'>
           {{detailData.sponsor}}
+          <image class='sponsor-img2' src='{{detailData.sponsor_logo}}' />
           <image src='../../images/a16.png' class='sponsor-logo-img'></image>
           <text class='right-point black'></text>
         </view>
@@ -91,48 +92,39 @@
 
     <!-- 规则开始 -->
     <view class='prize-rule'>
-      <view class='prize-rule-title gray'>
-        <block wx:if='{{prizeStatus == 4&&leftDirection2}}'></block>
-      </view>
       <!-- 未开奖 -->
       <block wx:if='{{detailData.open_status==0}}'>
-
         <view class='circle-vessel-part' wx:if='{{prizeStatus == 4}}'>
-          <template is="circle-template" data='{{leftDirection,rightDirection,leftDirection2,rightDirection2,goldState2,detailData,allDetail}}' />
+          <template is="circle-template" data='{{goldState2,detailData,allDetail,countTime,powerData,currentTab}}' />
         </view>
         <view class='circle-vessel' wx:if='{{prizeStatus == 5}}'>
-          <view class='ripples'>
-            <!-- 未授权时按钮 -->
-            <form bindsubmit="getForm" report-submit='true' wx:if='{{loginState}}'>
-              <button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" class='loginBtn' hover-class="btn-hover" form-type="submit"></button>
-            </form>
-            <!-- 未授权时按钮 -->
-            <form bindsubmit="drawTap" report-submit='true'>
-              <button form-type="submit" class='ripple-main' hover-class="btn-hover">
-                <view class='center column-center'>
-                  <view class='text'>免费</view>
-                  <view class='text'>抽奖</view>
-                </view>
-                <view class='pulse'></view>
-                <view class='pulse pulse2'></view>
-              </button>
-            </form>
-            <image src='https://tp.datikeji.com/a/15367536581651/ye4zAZWcT7nCZcXmuIUrSG67lyV4N3n0aJl6BQ4o.png' class='cursor-point-img' wx:if='{{toView=="part"}}'></image>
+          <view class='ripples-box'>
+            <view class='ripples'>
+              <!-- 未授权时按钮 -->
+              <form bindsubmit="getForm" report-submit='true' wx:if='{{loginState}}'>
+                <button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" class='loginBtn' hover-class="btn-hover" form-type="submit"></button>
+              </form>
+              <!-- 未授权时按钮 -->
+              <form bindsubmit="drawTap" report-submit='true'>
+                <button form-type="submit" class='ripple-main' hover-class="btn-hover">
+                  <view class='center column-center'>
+                    <view class='text'>免费</view>
+                    <view class='text'>抽奖</view>
+                  </view>
+                  <view class='pulse'></view>
+                  <view class='pulse pulse2'></view>
+                </button>
+              </form>
+              <image src='https://tp.datikeji.com/a/15367536581651/ye4zAZWcT7nCZcXmuIUrSG67lyV4N3n0aJl6BQ4o.png' class='cursor-point-img' wx:if='{{toView=="part"}}'></image>
+              <image src='../../images/a19.png' class='point-top-img1'></image>
+            </view>
+            <view class='t_c prize-rule-text row-center-a'>
+              <block wx:if='{{prizeStatus == 5}}'>
+                <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
+                <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
+              </block>
+            </view>
           </view>
-        </view>
-        <view class='t_c prize-rule-text row-center-a'>
-          <block wx:if='{{prizeStatus == 5}}'>
-            <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
-            <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
-          </block>
-          <block wx:if='{{prizeStatus == 4&&rightDirection}}'>
-            <block wx:if='{{detailData.open_type==0}}'>{{countTime}}后 自动开奖</block>
-            <block wx:if='{{detailData.open_type==1}}'>满{{detailData.award_number}}人 自动开奖</block>
-          </block>
-          <block wx:if='{{prizeStatus == 4&&leftDirection || prizeStatus == 4&&rightDirection2 || prizeStatus == 4&&!leftDirection&&!leftDirection2&&!rightDirection&&!rightDirection2}}'>邀请好友一起来抽奖</block>
-
-          <block wx:if='{{prizeStatus == 4&&leftDirection2}}'>赞助商小程序：
-            <image class='zxLogo' src='{{detailData.sponsor_logo}}' /> {{detailData.sponsor}}</block>
         </view>
       </block>
       <!-- 已开奖 -->
@@ -203,9 +195,8 @@
       </block>
     </view>
     <!-- 规则结束 -->
-    <view class='height25'></view>
     <!-- 助力开始 -->
-    <view class='prize-power-list'>
+    <view class='prize-power-list mgb20'>
       <view class='power-list-title  t_c font36 bold newdarkBlack'>好友助力榜</view>
       <view class='power-code t_c'>本奖品，您拥有
         <text class='red'><block wx:if='{{helpState==0}}'>{{powerData.code_number}}</block>
@@ -242,7 +233,7 @@
       </view>
     </view>
     <!-- 助力结束 -->
-    <view class='height25'></view>
+
     <!-- 参与开始 -->
     <view class='prize-participate' wx:if='{{participant.length==0}}'>
       <!-- 无人参加 -->
@@ -269,7 +260,7 @@
     <!-- 参与结束 -->
   </view>
 
-    <!-- banner广告，按需引入 -->
+  <!-- banner广告，按需引入 -->
   <view class="xm_banner" style="width:100%">
     <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
     </xm-ad>
@@ -284,7 +275,7 @@
   </view>
   <!-- 底部结束 -->
 
- 
+
 
   <!-- 底部按钮开始 -->
   <view class='prize-bottom row-between' wx:if='{{detailData.open_status==0 && showbottombtn}}'>

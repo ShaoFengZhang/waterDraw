@@ -48,6 +48,7 @@ Page({
 			  data: '1',
 		  });
 		  this.setData({
+			  guideTop: wx.getStorageSync('topHeight'),
 			  ifShowWater_guide: true,
 		  })
 	  }

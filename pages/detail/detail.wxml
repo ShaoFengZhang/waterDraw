@@ -206,7 +206,7 @@
         <!-- 规则结束 -->
         <view class='height25'></view>
         <!-- 助力开始 -->
-        <!-- <view class='prize-power-list'>
+        <view class='prize-power-list'>
       <view class='power-list-title red t_c font36 bold'>好友助力榜</view>
       <view class='power-code t_c'>本奖品，您拥有
         <text class='red'><block wx:if='{{helpState==0}}'>{{powerData.code_number}}</block>
@@ -241,7 +241,7 @@
       </view>
       <view wx:else class='pdb30'>
       </view>
-    </view> -->
+    </view>
         <!-- 助力结束 -->
         <view class='height25'></view>
         <!-- 参与开始 -->

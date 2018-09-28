@@ -5,24 +5,11 @@
   z-index: 999;
   width: 142rpx;
   height: 120rpx;
-  background: #f95959;
-  border-radius: 0;
-  border-top-left-radius: 40rpx;
-  border-bottom-left-radius: 40rpx;
-  padding-left: 20rpx;
-  padding-top: 10rpx;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  animation: rotatex 2s infinite linear;
+  animation: magnify 5s infinite linear;
 }
-
-.back-index view {
-  font-size: 32rpx;
-  color: #fff;
-  line-height: 50rpx;
-  letter-spacing: 2px;
-}
-
-.btn2-hover {
-  color: #d5d5d5;
+.back-index-img{
+    width: 142rpx;
+  height: 120rpx;
 }

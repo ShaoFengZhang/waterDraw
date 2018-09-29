@@ -1,0 +1,11 @@
+.winner-imgPopup-box{
+  position: relative;
+  padding-top:80rpx
+}
+.king-imgPopup-img{
+  width:170rpx;
+height:153rpx;
+position:absolute;
+left:-13rpx;
+top:-22rpx;
+}

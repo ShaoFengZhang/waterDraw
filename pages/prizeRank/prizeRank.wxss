@@ -1,0 +1,64 @@
+page {
+  background: #F1F1F1;
+  padding-bottom:30rpx
+}
+
+.nav {
+  padding:40rpx 70rpx;
+  background:#E5E5E5;
+}
+
+.nav-item {
+  width: 50%;
+  text-align: center;
+  height: 76rpx;
+  line-height: 76rpx;
+  letter-spacing: 1px;
+  color:#353535;
+  font-size:32rpx;
+}
+.nav-menu{
+  border-radius: 38rpx;
+  overflow: hidden
+}
+
+.nav-item.active {
+  background:#FDDD4A;
+  color:#000;
+  border-radius: 38rpx;
+}
+
+.prize-item {
+  padding: 30rpx 50rpx;
+  background: #fff;
+  margin-bottom: 25rpx;
+  height:140rpx;
+  line-height:40rpx;
+  width:100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.adress-btn {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size:30rpx;
+  color:#fff;
+  background:#169BD5;
+  border-radius: 10rpx;
+  text-align: center;
+  letter-spacing: 1rpx;
+  padding:0 10rpx
+}
+.delivery-text{
+  display: inline-block;
+  margin-right:20rpx;
+  height:32rpx;
+  line-height:30rpx;
+  padding:0 8rpx;
+  background:#999;
+  color:#fff;
+  font-size:20rpx;
+  vertical-align: middle;
+  margin-top:-5rpx
+}

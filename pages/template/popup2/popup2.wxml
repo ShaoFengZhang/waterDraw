@@ -3,11 +3,14 @@
     <view class='popup-box column-center'>
       <view class='column-center popup-scale'>
         <view class='popup-new-title'>恭喜您，中奖啦！</view>
-        <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
-        <view class='popup-new-text'>奖品：{{detailData.name}}</view>
-        <view class='popup-text' >
+        <view class='winner-imgPopup-box'>
+          <image src='../../images/a22.png' class='king-imgPopup-img'></image>
+          <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
+        </view>
+        <view class='popup-new-text mgb20 mgt50'>奖品：{{detailData.name}}</view>
+        <view class='popup-text'>
           <block wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>
-          {{allDetail.express_company}}:{{allDetail.courier_number}}
+            {{allDetail.express_company}}:{{allDetail.courier_number}}
           </block>
         </view>
         <form bindsubmit="addressTap" report-submit='true' wx:if='{{allDetail.receive_or_not ==0}}'>

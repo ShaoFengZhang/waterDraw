@@ -9,12 +9,12 @@
                     <view class='popup-text'>
                         安慰奖：随机1-100个水滴币
                     </view>
-                    <view class='btn6 bg mgb50' catchtap='watercoin' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
-                    <view class='btn6 mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>提现水滴币</view>
+                    <view class='btn6 bg mgb50 font30' catchtap='watercoin' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
+                    <view class='btn6 mgb50 font30' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>赚取更多水滴币，马上提现</view>
                 </view>
 
-                <view class='btn6' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==0}}'>点我，再来一个抽奖</view>
-                <view class='btn6 bg mobile' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==1}}'>
+                <view class='btn6 font30' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==0}}'>点我，再来一个抽奖</view>
+                <view class='btn6 bg mobile font30' catchtap='jumpTap' data-type='9' wx:if='{{allDetail.convertible_or_not==1}}'>
                 <image class='handicon' src='/assets/handicon.png' />
                     点我，再来一个抽奖
                 </view>

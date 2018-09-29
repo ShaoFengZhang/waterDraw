@@ -7,6 +7,7 @@
     "pages/myself/myself",
     "pages/winRecord/winRecord",
     "pages/drawRecord/drawRecord",
+    "pages/prizeRank/prizeRank",
     "pages/trading/trading",
     "pages/posters/posters",
     "pages/jump/jump"

@@ -73,19 +73,25 @@ image {
 .mgr15 {
   margin-right: 15rpx;
 }
+
 .mgt30 {
   margin-top: 30rpx !important;
 }
+
+.mgt50 {
+  margin-top: 50rpx !important;
+}
+
 .mgb5 {
   margin-bottom: 5rpx;
 }
 
 .mgb10 {
-  margin-bottom: 10rpx;
+  margin-bottom: 10rpx !important;
 }
 
 .mgb20 {
-  margin-bottom: 20rpx;
+  margin-bottom: 20rpx !important;
 }
 
 .mgb30 {
@@ -99,9 +105,11 @@ image {
 .mgb50 {
   margin-bottom: 50rpx !important;
 }
+
 .mgb70 {
   margin-bottom: 70rpx !important;
 }
+
 .mgb90 {
   margin-bottom: 90rpx !important;
 }
@@ -200,11 +208,13 @@ image {
   height: 22rpx;
   background: #f1f1f1;
 }
+
 .newheight20 {
   width: 100%;
   height: 20rpx;
   background: #f1f1f1;
 }
+
 .height50 {
   height: 50rpx;
 }
@@ -437,10 +447,10 @@ image {
 .newBlack {
   color: #353535 !important;
 }
+
 .newdarkBlack {
   color: #000 !important;
 }
-
 
 .newClor {
   color: #4d4d4d !important;

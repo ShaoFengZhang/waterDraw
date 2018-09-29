@@ -9,6 +9,7 @@ page {
 .top-side-box {
   padding: 15rpx 25rpx;
   width: 700rpx;
+  margin-bottom:10rpx
 }
 
 .top-side {

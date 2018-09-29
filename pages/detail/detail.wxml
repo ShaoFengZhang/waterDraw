@@ -95,7 +95,7 @@
       <!-- 未开奖 -->
       <block wx:if='{{detailData.open_status==0}}'>
         <view class='circle-vessel-part' wx:if='{{prizeStatus == 4}}'>
-          <template is="circle-template" data='{{goldState2,detailData,allDetail,countTime,powerData,currentTab}}' />
+          <template is="circle-template" data='{{goldState2,detailData,allDetail,countTime,powerData,currentTab,shareFirst}}' />
         </view>
         <view class='circle-vessel' wx:if='{{prizeStatus == 5}}'>
           <view class='ripples-box'>
@@ -135,8 +135,7 @@
             <block wx:if='{{prizeStatus==1}}'>
               <view class='gray mgb50'>开奖时间：{{detailData.opening_time}}</view>
               <view class='win-remind column-center-a mgb40'>
-                <text>恭喜</text>
-                <text>中奖</text>
+                <text>中奖啦</text>
               </view>
               <view class='prize-content'>
                 <view class='text'>奖品</view>
@@ -145,7 +144,7 @@
               </view>
               <view class='after-win-btn'>
                 <view class='row-between'>
-                  <view class='return-btn bgred small' catchtap='addressTap' wx:if='{{allDetail.receive_or_not ==0}}'>请填写收货地址</view>
+                  <view class='return-btn bgred small' catchtap='addressTap' wx:if='{{allDetail.receive_or_not ==0}}'>填写收货地址</view>
                   <view class='return-btn bggray small' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==0}}'>奖品待发货</view>
                   <view class='return-btn bggray small' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>奖品已发货</view>
                   <button class='return-btn small' hover-class="btn-hover" open-type="share" wx:if='{{allDetail.receive_or_not ==0}}'>
@@ -158,20 +157,20 @@
                 <view class='address-ems' wx:if='{{allDetail.receive_or_not ==1&&allDetail.delivery_or_not==1}}'>{{allDetail.express_company}}:{{allDetail.courier_number}}</view>
 
               </view>
-              <view class='return-btn mgb50' catchtap='jumpTap' data-type='6'>去首页，查看更多抽奖</view>
             </block>
             <!-- 参与未中奖 -->
             <block wx:if='{{prizeStatus==2}}'>
               <view class='gray mgb50'>开奖时间：{{detailData.opening_time}}</view>
               <view class='win-remind gray-win-remind column-center-a mgb50'>
-                <text>未中奖</text>
+                <text>安慰奖</text>
               </view>
-              <view class='gray'> 安慰奖：随机1-100个水滴币</view>
-              <view class='return-btn bgred short mgb50' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='watercoin'>抽取安慰奖</view>
-              <view class='return-btn bgred short mgb50' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>
-                提现我的水滴币
+              <view class='gray mgb30'> 安慰奖：随机1-100个水滴币</view>
+              <view class='return-btn bgred short mgb30' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='watercoin'>抽取安慰奖</view>
+              <view class='return-btn short mgb30' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>
+               赚取更多水滴币，马上提现
               </view>
-              <view class='return-btn mgb50 short' catchtap='jumpTap' data-type='6'>去首页，查看更多抽奖</view>
+              <view class='return-btn mgb50 short' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==0}}'>去首页，查看更多抽奖</view>
+                <view class='return-btn bgred mgb50 short' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>去首页，查看更多抽奖</view>
             </block>
             <!-- 未参与未中奖 -->
             <block wx:if='{{prizeStatus==3}}'>
@@ -187,9 +186,12 @@
             <view class='winner-title'>
               中奖人名单
             </view>
-            <image src='{{winner_user.head_pic}}' class='winner-img mgb20'></image>
+            <view class='mgb20 winner-img-box'>
+              <image src='../../images/a21.png' class='king-img'></image>
+              <image src='{{winner_user.head_pic}}' class='winner-img'></image>
+            </view>
             <text class='mgb20'>{{winner_user.nick_name}}</text>
-            <text class=''>分享了{{winner_user.total_invitation}}人，拥有{{winner_user.code_number}}个概率码</text>
+            <text >分享了{{winner_user.total_invitation}}人，拥有{{winner_user.code_number}}个概率码</text>
           </view>
         </view>
       </block>
@@ -298,9 +300,9 @@
 <!-- 领取双倍安慰奖的弹窗 -->
 <view class='comfortMask' wx:if="{{comfortShow}}">
   <view class='comforBody column-center'>
-    <image src='../../images/a13.png' class='comforImg mgb40 mgt30'></image>
-    <view class='modleTxt mgb20'>你抽到{{comforNum || 0}}个水滴币</view>
-    <view class='modleTxt mgb70'>分享翻倍</view>
+    <image src='../../images/a13.png' class='comforImg mgb30 mgt30'></image>
+    <view class='modleTxt mgb10'>你抽到<text class='red'>{{comforNum || 0}}</text>个水滴币</view>
+    <view class='modleTxt mgb50'>分享翻倍</view>
     <view class='maskbtn row-between'>
       <view data-type='1' class='giveUptxt' bindtap='hideComfort'>残忍放弃</view>
       <form report-submit bindsubmit='doubleShare' data-type='2'>

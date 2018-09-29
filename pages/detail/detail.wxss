@@ -9,9 +9,11 @@
 @import "../template/prize-popup/prize-popup.wxss";
 @import "../template/prize-popup2/prize-popup2.wxss";
 @import "../template/animation.wxss";
-.header{
-  background:#fff
+
+.header {
+  background: #fff;
 }
+
 page {
   background: #f1f1f1;
 }
@@ -129,13 +131,13 @@ page {
 .prize-sponsors-box {
   background: #fff6e5;
   padding: 0 20rpx;
-  margin-bottom: 20rpx
+  margin-bottom: 20rpx;
 }
 
 .sponsors-title {
   line-height: 80rpx;
   color: #000;
-  background:url('https://tp.datikeji.com/a/15381219666175/7zkHfwZkYLoPqHbOC5vP142wXKZbBFehjZgb2rgB.png') repeat-x bottom;
+  background: url('https://tp.datikeji.com/a/15381219666175/7zkHfwZkYLoPqHbOC5vP142wXKZbBFehjZgb2rgB.png') repeat-x bottom;
 }
 
 .sponsor-logo-img {
@@ -154,8 +156,9 @@ page {
   width: 50rpx;
   height: 50rpx;
   margin-right: 5rpx;
-  margin-left:15rpx
+  margin-left: 15rpx;
 }
+
 .sponsors-text {
   font-size: 28rpx;
   line-height: 80rpx;
@@ -193,31 +196,45 @@ page {
   margin-bottom: 20rpx;
 }
 
+
+.winner-img-box{
+  padding-top:50rpx;
+  position: relative
+}
+.king-img{
+  width:128rpx;
+  height:128rpx;
+  position: absolute;
+  right:-22rpx;
+top:-11rpx;
+
+}
+
 /* 活动规则 */
 
 .prize-rule {
   width: 100%;
   padding: 0 0 10rpx;
   margin-bottom: 20rpx;
-  background:#fff
+  background: #fff;
 }
-
 
 .prize-rule-text {
   color: #818181;
   font-size: 30rpx;
-  height:60rpx;
-  line-height:60rpx;
-  margin-top:30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 30rpx;
 }
 
 .circle-vessel {
   position: relative;
   padding-top: 110rpx;
-  height:280rpx;
+  height: 280rpx;
 }
-.ripples-box{
-  width:100%;
+
+.ripples-box {
+  width: 100%;
 }
 
 .loginBtn {
@@ -393,6 +410,7 @@ page {
 .winner-info {
   width: 700rpx;
   border-top: 1px solid #aeaeae;
+  padding-bottom:20rpx;
 }
 
 .winner-title {
@@ -419,6 +437,7 @@ page {
   background: #fff4d6;
   text-align: center;
   padding-top: 15rpx;
+  border-radius: 20rpx
 }
 
 .prize-content .text {
@@ -431,8 +450,8 @@ page {
 }
 
 .after-win-btn {
-  width: 700rpx;
-  margin: 50rpx auto;
+  width: 660rpx;
+  margin: 50rpx auto 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -530,14 +549,14 @@ page {
   animation: rotateY 2s infinite linear;
 }
 
-.point-top-img1{
+.point-top-img1 {
   width: 320rpx;
-  height: 72rpx;
+  height: 86rpx;
   position: absolute;
   left: -70rpx;
-  top: -80rpx;
+  top: -90rpx;
   z-index: 99;
-   animation: rotateYA 1s infinite linear;
+  animation: rotateYA 1s infinite linear;
 }
 
 .scroll {
@@ -548,7 +567,7 @@ page {
   width: 38rpx;
   height: 38rpx;
   vertical-align: middle;
-  margin:0 10rpx
+  margin: 0 10rpx;
 }
 
 .font40 {
@@ -596,24 +615,28 @@ page {
   color: #000;
   font-size: 40rpx;
 }
+.modleTxt text{
+  margin:0 10rpx;
+  font-size:60rpx;
+}
 
 .maskbtn {
   width: 520rpx;
 }
 
 .giveUptxt {
-  width: 180rpx;
-  height: 50rpx;
-  line-height: 50rpx;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   background: #d0cfcf;
   color: #7b7a7a;
   text-align: center;
-  border-radius: 25rpx;
+  border-radius: 30rpx;
   letter-spacing: 1px;
 }
 
 .giveUptxt.double-btn {
-  width: 250rpx;
+  width: 270rpx;
   color: #fdfdfd;
   background: #ff4001;
 }

@@ -1,0 +1,12 @@
+<import src="../template/header/header.wxml" />
+<template is="headerItem" data="{{...header,statusBarHeight}}" />
+<view class='container' style='padding-top:{{topHeight}}'>
+  <view class=' nav'>
+    <view class='row-between white-bg nav-menu'>
+      <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>最近中奖者</view>
+      <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>中奖王者榜</view>
+    </view>
+  </view>
+  <view class='main column-center'>
+   </view>
+</view>

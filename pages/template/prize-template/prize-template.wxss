@@ -2,7 +2,7 @@
   width: 700rpx;
   border-radius: 8rpx;
   overflow: hidden;
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   box-shadow: 0 0 18rpx rgba(0, 0, 0, 0.26);
   position: relative;
 }

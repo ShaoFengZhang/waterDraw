@@ -2,6 +2,9 @@ page {
   background-size: 100% 100%;
   background-color: #F0F0F0;
 }
+.header{
+  background:#fff
+}
 .container{
   padding-bottom:150rpx
 }
@@ -10,25 +13,25 @@ page {
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
-  background: #FDDD4A;
+  background: #f75b5c;
   position: fixed;
   left: 0;
   bottom: 0;
   text-align: center;
-  color: #000;
-  font-size: 40rpx;
+  color: #fff;
+  font-size: 46rpx;
   letter-spacing: 1px;
 }
 
 .red-hover {
-  background:#deb80c
+  background: #ff9899;
 }
 
 .main {
   width: 700rpx;
   height:965rpx;
   margin: 45rpx auto 0;
-  background: url('https://tp.datikeji.com/a/15380359464609/rDolDTRNu0t92g9KrECvKMjujHFpZ22289VfzMHr.png');
+  background: url('https://tp.datikeji.com/a/15381884203558/l3vAm4YlVLtcsSqmrGBnrJMC7MVQl61JmfZRC9Pg.png');
   background-size: 100% 100%;
   position: relative;
 }
@@ -51,14 +54,14 @@ page {
 }
 
 .nick_name {
-  color: #000;
+  color: #fff;
   font-size: 50rpx;
   top: 40rpx;
   left: 190rpx;
   position: absolute;
 }
 .post-help{
-   color: #000;
+   color: #fff;
   font-size: 50rpx;
   top: 110rpx;
   left:400rpx;

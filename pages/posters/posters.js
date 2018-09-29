@@ -48,7 +48,7 @@ Page({
       codeImg: codeImg,
       currentInfo: currentInfo,
       widthRate: 750 / app.data.screenWidth,
-      backImg: 'https://tp.datikeji.com/a/15380359464609/rDolDTRNu0t92g9KrECvKMjujHFpZ22289VfzMHr.png'
+      backImg: 'https://tp.datikeji.com/a/15381884203558/l3vAm4YlVLtcsSqmrGBnrJMC7MVQl61JmfZRC9Pg.png'
     })
 
   },
@@ -60,7 +60,7 @@ Page({
       url: that.data.backImg,
       success: function(bgRes) {
         ctx.drawImage(bgRes.tempFilePath, 0, 0, 700 / that.data.widthRate,965 / that.data.widthRate);
-        ctx.setFillStyle('#000')
+        ctx.setFillStyle('#fff')
         ctx.setFontSize(50 / that.data.widthRate)
         ctx.fillText(that.data.nick_name + '喊你领红包', 190 / that.data.widthRate, 80 / that.data.widthRate);
 

@@ -216,3 +216,51 @@
 	line-height: 70rpx;
 }
 
+/* 试玩商城样式 */
+
+.MinMall{
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 30rpx;
+}
+
+.MinMallHead{
+	width: 100%;
+	font-size: 30rpx;
+	color: #545454;
+	text-align: center;
+	margin-bottom: 20rpx;
+}
+
+
+
+.MinMallBox{
+	width:100%;
+	box-sizing: border-box;
+	padding:  0 40rpx;
+	margin-bottom: 20rpx;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.MinMallItem{
+	width: 160rpx;
+	text-align: center;
+	margin-bottom: 10rpx;
+}
+
+.MinMall image{
+	display: block;
+	margin: 0 auto;
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.MinMallHead image{
+	display: inline-block;
+	width: 22rpx;
+	height: 40rpx;
+	vertical-align: middle;
+}
+

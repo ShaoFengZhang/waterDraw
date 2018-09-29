@@ -17,54 +17,73 @@
 <!-- 规则弹窗 -->
 <template is="rule2-template" data='{{ruleState}}' />
 <view class='container' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
-  <view class='column-center balance'>
-    <text class='font40 mgb20'>水滴币</text>
-    <view class='money mgb20'>{{myData.balance}}</view>
-    <image src='../../images/a11.png' catchtap='withdrawalTap' class='draw-img mgb20'></image>
-    <view class='newGray2 font22 mgb10 t_c'>1000水滴币=1元,初次满300水滴即可提现</view>
-    <view class='newGray2 font22 t_c'>后续提现需要满3000水滴币,每天提现限额10000币</view>
-  </view>
-  <ad unit-id="adunit-16dbcecf1e91a164"></ad>
-  <view class='bill-main'>
-    <view wx:for="{{transaction}}" wx:for-item="item" wx:key="property" class='column-center-a bill-item'>
-      <image src='{{item.pic_url}}' class='bill-img'></image>
-      <view class='row-between bill-right'>
-        <view class='column-center-b bill-info'>
-          <text class='font26 newBlack'>{{item.incentive_reasons}}</text>
-          <text class='newGray2 font24'>{{item.reward_time}}</text>
-        </view>
-        <text class='font30 {{item.symbol=="+"?"yellow":""}}'>{{item.symbol}}{{item.gold_amount}}</text>
-      </view>
+    <view class='column-center balance'>
+        <text class='font40 mgb20'>水滴币</text>
+        <view class='money mgb20'>{{myData.balance}}</view>
+        <image src='../../images/a11.png' catchtap='withdrawalTap' class='draw-img mgb20'></image>
+        <view class='newGray2 font22 mgb10 t_c'>1000水滴币=1元,初次满300水滴即可提现</view>
+        <view class='newGray2 font22 t_c'>后续提现需要满3000水滴币,每天提现限额10000币</view>
     </view>
-  </view>
-  <view class='gray font26 t_c pdb30' wx:if='{{total_pages == page}}'>到底了</view>
-  <view wx:if='{{transaction.length==0}}' class='column-center'>
-    <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
-    <view class='t_c font24 '>大爷，今天抢完了，明天再来哦！</view>
-  </view>
+
+    <view class='MinMall' wx:if="{{shoppingList}}">
+        <view class='MinMallHead'>赞助商奖励<image src='/assets/upfollow.png' />点击领取20~100个水滴币<image src='/assets/upfollow.png' /></view>
+        <view class='MinMallBox'>
+            <view class='MinMallItem' data-mallId="{{item.id}}" wx:for="{{shoppingList}}" wx:key="index" bindtap='MinMallClickEvent'>
+                <navigator class='dynamicAdviceNav' target="miniProgram" open-type="navigate" app-id="{{item.appid}}" path="{{ item.jump_address ||'/pages/index/index'}}" extra-data="" version="release">
+                    <image mode="aspectFill" src='{{item.logo_pic}}' />
+                </navigator>
+				<view>{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+
+    <ad unit-id="adunit-16dbcecf1e91a164"></ad>
+    <view class='bill-main'>
+        <view wx:for="{{transaction}}" wx:for-item="item" wx:key="property" class='column-center-a bill-item'>
+            <image src='{{item.pic_url}}' class='bill-img'></image>
+            <view class='row-between bill-right'>
+                <view class='column-center-b bill-info'>
+                    <text class='font26 newBlack'>{{item.incentive_reasons}}</text>
+                    <text class='newGray2 font24'>{{item.reward_time}}</text>
+                </view>
+                <text class='font30 {{item.symbol=="+"?"yellow":""}}'>{{item.symbol}}{{item.gold_amount}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='gray font26 t_c pdb30' wx:if='{{total_pages == page}}'>到底了</view>
+    <view wx:if='{{transaction.length==0}}' class='column-center'>
+        <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
+        <view class='t_c font24 '>大爷，今天抢完了，明天再来哦！</view>
+    </view>
 </view>
 
 <!-- 关注公众号弹窗 -->
 <view class='focusOnMask' wx:if="{{ifShowFocusMask}}">
 
-	<view class='focusBody'>
-		<view class='focusBodyTxtOne txt'>需要关注公众号才可以提现</view>
-		<view class='focusBodyTxTwo txt'>在客服会话中回复2给客服</view>
-		<view class='focusBodyTxtThree txt'>获得公众号二维码</view>
-		<view class='focusBodyTxtFour'>示意图</view>
-		<view class='foucsBig'>
-			<image wx:if="{{foucssessionShow}}" bindload='foucssessionEvent' class='foucssession' src='/assets/foucssession.png' />
-			<image wx:if="{{foucsQrShow}}" bindload='foucsQrEvent' class='foucsQr' src='/assets/foucsQr.png' />
-			<view class='foucstxtnum' wx:if="{{foucstxtnumShow}}">1</view>
-		</view>
-		<view class='foucsBtnOk' bindtap='closeFocusOnMask'><button style='height:80rpx;background-color:rgba(253,221,74,1);font-size:40rpx;line-height:80rpx;' open-type='contact'>好的</button></view>
-		<view class='foucsBtnError' bindtap='closeFocusOnMask'>取消</view>
-	</view>
+    <view class='focusBody'>
+        <view class='focusBodyTxtOne txt'>需要关注公众号才可以提现</view>
+        <view class='focusBodyTxTwo txt'>在客服会话中回复2给客服</view>
+        <view class='focusBodyTxtThree txt'>获得公众号二维码</view>
+        <view class='focusBodyTxtFour'>示意图</view>
+        <view class='foucsBig'>
+            <image wx:if="{{foucssessionShow}}" bindload='foucssessionEvent' class='foucssession' src='/assets/foucssession.png' />
+            <image wx:if="{{foucsQrShow}}" bindload='foucsQrEvent' class='foucsQr' src='/assets/foucsQr.png' />
+            <view class='foucstxtnum' wx:if="{{foucstxtnumShow}}">1</view>
+        </view>
+        <view class='foucsBtnOk' bindtap='closeFocusOnMask'>
+            <button style='height:80rpx;background-color:rgba(253,221,74,1);font-size:40rpx;line-height:80rpx;' open-type='contact'>好的</button>
+        </view>
+        <view class='foucsBtnError' bindtap='closeFocusOnMask'>取消</view>
+    </view>
 
 </view>
 
 <!-- 引导弹窗 -->
 <view class='water_guide' wx:if="{{ifShowWater_guide}}" style='margin-top:{{guideTop}}'>
-	<view class='guide_zhiyin'><image src='/assets/zhiyin.png' /></view>
-	<view bindtap='closeGuide' class='guide_btn'><image src='/assets/IKnow.png' /></view>
+    <view class='guide_zhiyin'>
+        <image src='/assets/zhiyin.png' />
+    </view>
+    <view bindtap='closeGuide' class='guide_btn'>
+        <image src='/assets/IKnow.png' />
+    </view>
 </view>

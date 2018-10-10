@@ -27,7 +27,6 @@ Page({
     tradeState: false,
     shareBottom: false,
     shareFirst: true,
-    toView: '',
     is_new: 1,
     header: {
       title: '奖品详情',
@@ -37,7 +36,8 @@ Page({
     timeNum: 0,
     tOhterSatus: false,
     showbottombtn: false,
-    currentTab: 1
+    currentTab: 1,
+    noshareFriend: false
   },
   onShow() {
     var that = this;
@@ -45,10 +45,18 @@ Page({
       clearInterval(that.data.timeClock)
     }
     if (that.data.tOhterSatus) {
-      if (that.data.timeNum <= 20) {
-        util.noData('需试玩超过20秒才能加码', 5000)
+      if (that.data.timeNum <= 8) {
+        wx.showModal({
+          title: '',
+          confirmText: "好的",
+          content: '试玩8秒以上才能获得奖励',
+          showCancel: false,
+          success: function(res) {
+            if (res.confirm) {}
+          }
+        })
       }
-      if (that.data.timeNum > 20) {
+      if (that.data.timeNum > 8) {
         util.loading('加码中');
         util.postHttp(
           'api/is_played', {
@@ -57,12 +65,10 @@ Page({
           },
           function(res) {
             if (res.data.status == 0) {
-              util.noData(res.data.msg);
-              setTimeout(function() {
-                btnBgm.play()
-              }, 500)
+              util.noData(res.data.msg, 3000);
+
               //详情
-              that.detailRender(that.data.user_id);
+              that.detailRender(that.data.user_id, 'noLoad');
               //助力
               that.powerRender(that.data.user_id);
 
@@ -73,8 +79,12 @@ Page({
                   redbao: 1,
                 });
                 wx.navigateTo({
-                  url: `../trading/trading?isnewuser=1`,
+                  url: `../trading/trading?isnewuser=1&sponer=true`,
                 })
+              } else {
+                setTimeout(function() {
+                  btnBgm.play()
+                }, 500)
               }
             }
           }
@@ -103,6 +113,7 @@ Page({
   },
   onHide() {
     var that = this;
+    console.log(that.data.tOhterSatus)
     if (that.data.tOhterSatus) {
       var timeClock = setInterval(function() {
         that.data.timeNum++
@@ -149,6 +160,12 @@ Page({
     that.userInfo()
     util.loading('数据加载中')
 
+    var randomMath = util.random(0, 3);
+
+    that.setData({
+      randomMath: randomMath
+    })
+    console.log(randomMath)
     if (!app.data.user_id || !util.checkNumber(app.data.user_id)) {
       util.login(
         function(uid, is_new) {
@@ -207,9 +224,11 @@ Page({
     var that = this;
     console.log(res)
     if (res.detail.errMsg == "getUserInfo:ok") {
+      util.loading('正在参与')
       util.author(res.detail, that.drawTap)
       that.setData({
-        loginState: false
+        loginState: false,
+        authorState: true
       })
     } else {
       util.showMsg('温馨提示', '需授权头像、昵称后，才能参与抽奖')
@@ -256,7 +275,6 @@ Page({
   // 抽奖
   drawTap(e) {
     var that = this;
-    btnBgm.play()
     var token = util.md5Fun(that.data.rid, that.data.user_id, that.data.detailData.open_type)
     if (!app.data.nick_name) {
       wx.getUserInfo({
@@ -284,18 +302,19 @@ Page({
                     showbottombtn: true,
                   })
                   if (res.data.status == 0) {
-                    //详情
-                    that.detailRender(that.data.user_id, 'draw')
-                    //助力
-                    that.powerRender(that.data.user_id)
-
-                    that.choujiangfenxiang();
-                  } else {
-                    util.noData(res.data.msg);
+                    btnBgm.play()
                     //详情
                     that.detailRender(that.data.user_id)
                     //助力
                     that.powerRender(that.data.user_id)
+
+                  } else {
+                    util.noData(res.data.msg);
+                    //详情
+                    that.detailRender(that.data.user_id, 'noLoad')
+                    //助力
+                    that.powerRender(that.data.user_id)
+
                   }
                 }
               )
@@ -308,7 +327,12 @@ Page({
       } else {
         var formId = ''
       }
-      util.loading('正在参与')
+      if (that.data.authorState) {
+
+      } else {
+        util.loading('正在参与')
+      }
+
       util.postHttp(
         'api/luck_draw', {
           invited_user_id: that.data.user_id,
@@ -324,18 +348,26 @@ Page({
             showbottombtn: true,
           })
           if (res.data.status == 0) {
-            //详情
-            that.detailRender(that.data.user_id, 'draw')
-            //助力
-            that.powerRender(that.data.user_id)
-
-            that.choujiangfenxiang();
-          } else {
-            util.noData(res.data.msg);
+            btnBgm.play()
             //详情
             that.detailRender(that.data.user_id)
             //助力
             that.powerRender(that.data.user_id)
+            if (that.data.is_new == 0) {
+              that.choujiangfenxiang();
+            }
+
+          } else {
+            util.noData(res.data.msg);
+            //详情
+            that.detailRender(that.data.user_id, 'noLoad')
+            //助力
+            that.powerRender(that.data.user_id)
+            if (that.data.is_new == 0) {
+              that.setData({
+                newState2: false
+              })
+            }
           }
         }
       )
@@ -354,21 +386,11 @@ Page({
         if (use == 'noLoad') {
 
         } else {
-          setTimeout(function() {
-            util.hideLoad();
-          }, 300)
+          util.hideLoad();
         }
 
         if (use == 'refresh') {
           wx.stopPullDownRefresh();
-        }
-
-        if (use == 'draw') {
-          if (util.getNowFormatDate(app.data.oldDate)) {
-            that.setData({
-              //   shareState: true
-            })
-          }
         }
 
         // 册数
@@ -383,6 +405,7 @@ Page({
         allDetail.my_sons = res.data.data.my_sons;
         allDetail.myHead = app.data.head_pic;
         allDetail.nick_name = app.data.nick_name;
+        allDetail.myself_code_number = res.data.data.myself_code_number
 
         var detailData = res.data.data.prize;
         if (detailData.opening_time) {
@@ -443,7 +466,6 @@ Page({
         if (res.data.data.status == 3 || res.data.data.status == 5) {
           that.setData({
             showbottombtn: false,
-
           })
         } else {
           that.setData({
@@ -458,32 +480,29 @@ Page({
 
   choujiangfenxiang() {
     let that = this;
-    if (that.data.is_new == 0) {
-      var token = util.md5Toke(that.data.user_id)
-      util.postHttp(
-        'api/new_big_gift', {
-          user_id: that.data.user_id,
-          type: 2,
-          token: token,
-          parent_id: that.data.otherUid
-        },
-        function(res) {
-          if (res.data.status == 0) {
-            btnBgm.play();
-            util.hideLoad();
-            var gift = res.data.data.gift
-            that.setData({
-              gift: gift,
-              redbao: 2,
-              newState2: true,
-              tradeState: false,
-            })
-          } else {
-            util.noData(res.data.msg)
-          }
+    var token = util.md5Toke(that.data.user_id)
+    util.postHttp(
+      'api/new_big_gift', {
+        user_id: that.data.user_id,
+        type: 2,
+        token: token,
+        parent_id: that.data.otherUid
+      },
+      function(res) {
+        if (res.data.status == 0) {
+          btnBgm.play();
+          var gift = res.data.data.gift
+          that.setData({
+            gift: gift,
+            redbao: 2,
+            newState2: true
+          })
+        } else {
+          util.noData(res.data.msg)
         }
-      )
-    }
+      }
+    )
+
   },
   // 助力榜
   powerRender(user) {
@@ -519,6 +538,7 @@ Page({
     if (e.target && e.target.dataset.type) {
       var type = e.target.dataset.type;
     }
+    console.log(type)
 
     return {
       title: that.data.share_detail_writing,
@@ -526,56 +546,13 @@ Page({
       imageUrl: that.data.share_detail_pic,
       success: function(res) {
         // 转发成功
-        util.postHttp(
-          'api/share_first', {
-            user_id: that.data.user_id
-          },
-          function(res) {
-            console.log(res)
-            if (res.data.status == 0) {
-              if (that.data.is_new == 0) {
-                util.noData('分享成功', 3000)
-                setTimeout(function() {
-                  btnBgm.play()
-                }, 500)
-              } else {
-                util.noData('分享成功', 3000)
-                setTimeout(function() {
-                  btnBgm.play()
-                }, 500)
-                if (type == 5 && that.data.shareFirst) {
-                  that.setData({
-                    shareFirst: false
-                  })
-                }
-                that.setData({
-                  goldState2: true
-                })
-              }
-            } else {
-              if (that.data.is_new == 0) {
-                util.noData(res.data.msg, 3000)
-                setTimeout(function() {
-                  btnBgm.play()
-                }, 500)
-              }
-              util.success('分享成功');
-              setTimeout(function() {
-                btnBgm.play()
-              }, 500)
-              if (type == 5 && that.data.shareFirst) {
-                that.setData({
-                  shareFirst: false
-                })
-              }
-            }
-          }
-        );
-        if (e.target && e.target.id == "doubleShare") {
-          that.exchangeTap(that.doubleShareData, 1)
-        };
-        if (that.newUserShareDoubleRedBao && that.data.is_new == 0) {
-          that.newUserShareDoubleRedBao = false;
+        if (type == 5) {
+          that.setData({
+            shareFirst: false
+          })
+        }
+
+        if (type == '邀请' && that.data.is_new == 0) {
           util.postHttp(
             'api/newer_share', {
               user_id: that.data.user_id,
@@ -583,20 +560,42 @@ Page({
             },
             function(res) {
               if (res.data.status == 0) {
-                btnBgm.play()
-                util.hideLoad();
+                setTimeout(function() {
+                  btnBgm.play()
+                }, 600)
                 var gift = res.data.data.gift
                 that.setData({
                   gift: gift,
                   redbao: 3,
-                  newState2: true,
-                  tradeState: false,
+                  noshareFriend: true
                 })
               } else {
                 util.noData(res.data.msg)
               }
             }
           )
+        } else if (e.target && e.target.id == "doubleShare") {
+          console.log(that.data.randomMath)
+          if (that.data.randomMath == 2) {
+            util.noData('分享失败，需分享到不同的群', 3000);
+            var randomMath = 1
+
+          } else if (that.data.randomMath == 1) {
+            util.noData('分享失败，需分享到不同的群', 3000);
+
+            var randomMath = 0
+          } else {
+            that.exchangeTap(that.doubleShareData, 1)
+            var randomMath = 0
+          }
+          that.setData({
+            randomMath: randomMath
+          })
+        } else {
+          util.success('分享成功');
+          setTimeout(function() {
+            btnBgm.play()
+          }, 600)
         }
 
       },
@@ -637,14 +636,15 @@ Page({
     } else if (type == 4) {
       that.getForm(e)
       wx.showModal({
-        title: '您确定放弃四个红包吗？',
+        title: '您确定放弃所有红包吗？',
         confirmText: "确定",
         content: '机会只有一次',
         showCancel: true,
         success: function(res) {
           if (res.confirm) {
             that.setData({
-              newState: false
+              newState: false,
+              is_new: 1
             })
           }
         }
@@ -652,25 +652,38 @@ Page({
     } else if (type == 5) {
       that.getForm(e)
       that.setData({
-        newState2: false,
-        toView: 'part'
+        newState2: false
       })
     } else if (type == 6) {
       that.getForm(e);
-      that.setData({
-        newState2: true,
-        redbao: 3,
-        tradeState: false,
-        noshareFriend: true
-      });
-    } else if (type == 7) {
-      that.getForm(e)
-      that.setData({
-        newState2: false,
-        toView: 'part',
-        newUserShareDoubleRedBao: true,
+      wx.showModal({
+        title: '确定放弃这个红包吗？',
+        confirmText: "确定",
+        content: '新手礼包以后将永远不会出现',
+        showCancel: true,
+        success: function(res) {
+          if (res.confirm) {
+            that.setData({
+              redbao: 3,
+              noshareFriend: false
+            });
+          }
+        }
       })
-      that.newUserShareDoubleRedBao = true;
+    } else if (type == 7) {
+      wx.showModal({
+        title: '确定放弃这个红包吗？',
+        confirmText: "确定",
+        content: '新手礼包以后将永远不会出现',
+        showCancel: true,
+        success: function(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: `../trading/trading?isnewuser=1`,
+            })
+          }
+        }
+      })
     }
   },
   // 阻止向下捕捉
@@ -691,7 +704,10 @@ Page({
   exchangeTap(e) {
     var that = this;
     var type = e.currentTarget.dataset.type;
-    btnBgm.play();
+    if (type == 1) {
+      btnBgm.play();
+    }
+
     util.loading('兑换金币中');
     util.postHttp(
       'api/currency_exchange', {
@@ -706,7 +722,19 @@ Page({
           comfortShow: false,
         })
         if (res.data.status == 0) {
-          util.noData(res.data.msg, 3000);
+          if (type == 1) {
+            that.setData({
+              comfortShow: true,
+              comforNum: res.data.data.water_coin,
+            });
+          } else if (type == 2) {
+            setTimeout(function() {
+              btnBgm.play();
+            }, 500)
+
+
+            util.noData(res.data.msg, 3000);
+          }
           that.data.allDetail.convertible_or_not = 1;
           that.setData({
             allDetail: that.data.allDetail,
@@ -714,12 +742,7 @@ Page({
         } else {
           util.noData(res.data.msg, 3000);
         };
-        if (type == 1) {
-          that.setData({
-            comfortShow: true,
-            comforNum: res.data.data.water_coin,
-          });
-        }
+
       }
     )
 
@@ -848,15 +871,11 @@ Page({
   },
   onPullDownRefresh: function() {
     var that = this;
-
     util.loading('刷新数据中');
     //详情
     that.detailRender(that.data.user_id, 'refresh')
     //助力
     that.powerRender(that.data.user_id)
-    //参与
-    that.partRender(that.data.user_id)
-
   },
   navBack: function() {
     if (getCurrentPages().length == 1) {
@@ -870,6 +889,7 @@ Page({
   //授权开红包
   switchTap(res) {
     var that = this;
+    btnBgm.play()
     if (res.detail.errMsg == "getUserInfo:ok") {
       util.loading('开启红包中');
       util.author(res.detail, function() {
@@ -883,14 +903,13 @@ Page({
           },
           function(res) {
             if (res.data.status == 0) {
-              btnBgm.play()
               util.hideLoad();
               var gift = res.data.data.gift
               that.setData({
                 newState: false,
                 newState2: true,
                 gift: gift,
-                // shareBottom: true
+                loginState: false
               })
             } else {
               util.noData(res.data.msg)
@@ -901,8 +920,6 @@ Page({
       that.setData({
         loginState: false
       })
-
-
     } else {
       util.loading('开启红包中');
       var token = util.md5Toke(that.data.user_id)
@@ -915,14 +932,12 @@ Page({
         },
         function(res) {
           if (res.data.status == 0) {
-            btnBgm.play()
             util.hideLoad();
             var gift = res.data.data.gift
             that.setData({
               newState: false,
               newState2: true,
-              gift: gift,
-              //   shareBottom: true
+              gift: gift
             })
           } else {
             util.noData(res.data.msg)

@@ -11,7 +11,8 @@ Page({
     header: {
       title: '中奖纪录',
       navBack: true
-    }
+    },
+    isEmpty:false
   },
   onLoad: function() {
     var that = this;
@@ -62,6 +63,11 @@ Page({
             })
           }
 
+          if (that.data.prizeData.length==0){
+            that.setData({
+              isEmpty:true
+            })
+          }
           that.setData({
             total_pages: res.data.data.total_pages
           })
@@ -79,7 +85,7 @@ Page({
         active: 1,
         category: 0,
         page: 1,
-        prizeData: that.data.prizeData1
+        prizeData: []
       })
       that.dataRender()
     } else {
@@ -87,7 +93,7 @@ Page({
         active: 2,
         category: 1,
         page: 1,
-        prizeData: that.data.prizeData2
+        prizeData: []
       })
       that.dataRender()
     }

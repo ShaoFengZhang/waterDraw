@@ -1,69 +1,83 @@
 <template name="prize-popup2">
-    <view wx:if='{{newState2}}' class='popup-bg'>
+  <view wx:if='{{newState2 && !tradeState && redbao==1}}' class='popup-bg'>
+    <view class='prize-popup2-new column-center'>
+      <view class='prize-popup2-text column-center' style='margin-bottom:60rpx'>
+        <text class='newPrizePopup-text1'>已打开第一个红包</text>
+        <text class='newPrizePopup-text2'>获得￥{{gift}}元</text>
+      </view>
+      <view class='column-center prize-popup2-center'>
+        <view class='text1 mgb10'>参与抽奖后</view>
+        <view class='text2' style='margin-bottom:60rpx'>再送你下一个红包</view>
+      </view>
+      <form bindsubmit="getForm" report-submit='true' wx:if='{{loginState}}'>
+        <button bindgetuserinfo="bindGetUserInfo" open-type="getUserInfo" class='btn6 big bg' hover-class="btn-hover" form-type="submit">免费抽奖</button>
+      </form>
+       <form bindsubmit="drawTap" report-submit='true'  wx:if='{{!loginState}}'>
+        <button class='btn6 bg big' hover-class="btn-hover" form-type="submit">免费抽奖</button>
+      </form>
+      <view class='fullzerothree'>满0.3元即可提现</view>
+    </view>
+  </view>
 
-        <view class='prize-popup2 column-center' wx:if="{{redbao==2}}">
-            <text class='prize-popup2-text' style='margin-bottom:40rpx;'>已打开第二个红包 获得￥{{gift}}元</text>
-			<view class='column-center prize-popup2-center' wx:if='{{!tradeState}}'>
-                <view class='text1'>点击
-                    <image src='/assets/friendshare.png' class='prize-popup2-img'></image>
-                    后</view>
-                <view class='text2'>再送你下一个红包</view>
-            </view>
-            <form bindsubmit="closeTap" report-submit='true' data-type='7'>
-                <button  id='friendDouble' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
-                    好的
-                </button>
-            </form>
+  <view wx:if='{{newState2 &&  redbao!=1}}' class='popup-bg'>
+    <view class='prize-popup2 column-center' wx:if="{{redbao==2}}">
+      <view class='prize-popup2-text'>
+        <view class='newPrizePopup-text1'>已打开第二个红包</view>
+        <view class='newPrizePopup-text2'>获得￥{{gift}}元</view>
+      </view>
+      <view class='column-center prize-popup2-center' wx:if='{{!tradeState}}'>
+        <view class='text1 mgb10'>邀请好友后</view>
+        <view class='text2'>还有一个红包哦</view>
+      </view>
+      <form bindsubmit="getForm" report-submit='true'>
+        <button class='btn6 bg big' hover-class="btn-hover" open-type="share" form-type="submit" data-type='邀请'>邀请好友</button>
+      </form>
 
-			<view bindtap='closeTap' data-type='6'  class='giveUpDouble' style='margin-top:40rpx;'>放弃这个红包</view>
-			<view class='fullzerothree'>满0.3元即可提现</view>
-			<form bindsubmit="closeTap" report-submit='true' data-type='6'>
-                <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
-                </button>
-            </form>
-        </view>
-
-        <view class='prize-popup2 column-center' wx:if="{{redbao==1 || redbao==3 ||redbao==4}}">
-            <text class='prize-popup2-text' wx:if='{{!tradeState && redbao==1}}'>已打开第一个红包 获得￥{{gift}}元</text>
-            <text class='prize-popup2-text' wx:if='{{!tradeState && redbao==3 && !noshareFriend}}'>分享好友，红包翻倍 获得￥{{gift}}元</text>
-            <text class='prize-popup2-text' wx:if='{{tradeState && redbao==4}}' style='font-size:67rpx;'>试玩加码成功 获得￥{{gift}}元</text>
-            <view class='column-center prize-popup2-center' wx:if='{{tradeState && redbao==4}}' style='margin-bottom:80rpx'>
-                <text>红包已进入</text>
-                <text>您的水滴币账户</text>
-            </view>
-            <view style='margin-top:{{noshareFriend?"200rpx":"0rpx"}}' class='column-center prize-popup2-center' wx:if='{{!tradeState}}' >
-                <view class='text1'>点击
-                    <image src='/assets/nocoin.png' class='prize-popup2-img' wx:if='{{!tradeState&&redbao==1}}'></image>
-                    <image src='/assets/add100.png' class='prize-popup2-img' wx:if='{{!tradeState&&redbao==3}}'></image>
-                    后</view>
-                <view class='text2'>再送你下一个红包</view>
-            </view>
-            <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{tradeState}}'>
-                <button hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:40rpx;'>
-                    立即查看
-                </button>
-            </form>
-            <form bindsubmit="closeTap" report-submit='true' data-type='5' wx:if='{{!tradeState}}'>
-                <button wx:if='{{!tradeState&&redbao==1}}' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:54rpx;'>
-                    去抽奖
-                </button>
-                <button wx:if='{{!tradeState&&redbao==3}}' hover-class="btn-hover" form-type="submit" class='btn6 bg' style='height:94rpx;line-height:94rpx;font-size:54rpx;'>
-                    去试玩
-                </button>
-            </form>
-
-            <form bindsubmit="closeTap" report-submit='true' data-type='5'>
-                <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
-                </button>
-            </form>
-
-
-
-
-
-
-            <view class='fullzerothree'>满0.3元即可提现</view>
-        </view>
+      <view bindtap='closeTap' data-type='6' class='giveUpDouble ' style='margin-top:40rpx; '>放弃这个红包</view>
     </view>
 
+    <view class='prize-popup2 column-center ' wx:if="{{redbao==3 ||redbao==4}}">
+      <view class='prize-popup2-text' style='{{noshareFriend?"margin-bottom:30rpx":"margin-bottom:50rpx"}}' wx:if='{{redbao==3}}'>
+        <block wx:if='{{noshareFriend}}'>
+          <view class='newPrizePopup-text1 '>打开第三个红包</view>
+          <view class='newPrizePopup-text2 '>获得￥{{gift}}元</view>
+        </block>
+      </view>
+      <block wx:if='{{tradeState && redbao==4}}'>
+        <view class='prize-popup2-text' style='{{sponer?"margin-bottom:30rpx":"margin-bottom:50rpx"}}'>
+          <block wx:if='{{sponer}}'>
+            <view class='newPrizePopup-text1 '>试玩加码成功</view>
+            <view class='newPrizePopup-text2 '>获得￥{{gift}}元</view>
+          </block>
+        </view>
+        <view class='column-center prize-popup2-center ' style='{{sponer?"":"margin-bottom:150rpx;margin-top:60rpx"}}'>
+          <view class='text1 '>红包已进入</view>
+          <view class='text2 '  style='{{sponer?"margin-bottom:100rpx":"margin-bottom:60rpx"}}'>您的水滴币账户</view>
+        </view>
+      </block>
+      <view class='column-center prize-popup2-center ' wx:if='{{redbao==3}}' style='{{noshareFriend?"":"margin-bottom:60rpx;margin-top:60rpx"}}'>
+        <view class='text1 '>试玩赞助商小程序后</view>
+        <view class='text2 ' style='{{noshareFriend?"margin-bottom:40rpx":"margin-bottom:60rpx"}}'>再额外送你一个红包</view>
+      </view>
+      <form bindsubmit="closeTap" report-submit='true ' data-type='5' wx:if='{{tradeState}}'>
+        <button hover-class="btn-hover" form-type="submit" class='btn6 bg big'>
+          立即查看
+        </button>
+      </form>
+      <block wx:if='{{redbao==3}}'>
+        <view class='row-start mgb10'>
+          <image class='sponsor-img2' src='{{detailData.sponsor_logo}}' style='margin-right:20rpx;' /> {{detailData.sponsor}}
+        </view>
+        <navigator target="miniProgram" open-type="navigate" app-id="{{detailData.sponsor_appid}}" path="{{detailData.sponsor_link}}" extra-data="" version="release" class='btn6 bg big' style='width:550rpx;' catchtap='tOtherProgram'>
+          试玩赞助商小程序
+        </navigator>
+        <view bindtap='closeTap' data-type='7' class='giveUpDouble' style='margin-top:40rpx'>放弃这个红包</view>
+      </block>
+      <form bindsubmit="closeTap" report-submit='true ' data-type='5' wx:if='{{redbao!=3}}'>
+        <button hover-class="btn-hover" form-type="submit" class='prize-popup-close '>
+        </button>
+      </form>
+      <view class='fullzerothree' wx:if='{{redbao!=3}}'>满0.3元即可提现</view>
+    </view>
+  </view>
 </template>

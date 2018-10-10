@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   left: 0;
   top: 0;
   z-index: 9999;
@@ -17,8 +17,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -400rpx;
+  margin-top: -360rpx;
   margin-left: -350rpx;
+   border-radius: 20rpx;
+
 }
 
 .switch {
@@ -44,10 +46,12 @@
   color: #eff3d9;
   font-size: 38rpx;
   letter-spacing: 2px;
+  height:40rpx;
+  line-height:40rpx
 }
 
 .prize-popup-text {
-  color: #eff3d9;
+  color: #EDE3CB;
   font-size: 56rpx;
   margin: 100rpx auto 90rpx;
   letter-spacing: 2px;
@@ -77,4 +81,5 @@
 	color: #EDE3CB;
 	position: absolute;
 	bottom: 20rpx;
+  opacity: .6
 }

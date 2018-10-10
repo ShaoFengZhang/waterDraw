@@ -21,8 +21,8 @@ function login(callback, parentid) {
 
                     app.data.nick_name = firstData.nick_name;
                     app.data.head_pic = firstData.head_pic;
-                    // app.data.share_writing = firstData.share_writing;
-                    // app.data.share_pic = firstData.share_pic;
+                    app.data.share_writing = firstData.share_writing;
+                     app.data.share_pic = firstData.share_pic;
 
                     wx.setStorageSync('app.data', app.data);
                   //测试
@@ -110,7 +110,9 @@ function postHttp(url, data, callBack) {
         success(res) {
             callBack(res)
         },
-        fail(error) {}
+        fail(error) {
+          noData('您的网络有问题，请稍后重试',5000)
+        }
     })
 }
 
@@ -297,6 +299,9 @@ function md5Toke(a) {
     return returnData
 }
 
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
 module.exports = {
@@ -316,5 +321,6 @@ module.exports = {
     md5Toke: md5Toke,
     filterStr: filterStr,
     getNowFormatDate,
-  checkNumber
+  checkNumber,
+  random
 }

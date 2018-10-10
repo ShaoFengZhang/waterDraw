@@ -4,6 +4,7 @@
 <import src="../template/bottom/bottomItem.wxml" />
 <template is="headerItem" data="{{...header,statusBarHeight}}" />
 <template is="bottomItem" data='{{bottomList,newDateNum}}' />
+
 <view class='container column-center' style='padding-top:{{topHeight}};padding-bottom:120rpx'>
   <view class='top-side-box'>
     <view class='row-between top-side'>
@@ -22,16 +23,19 @@
       <view class='t_c font24'>大爷，今天抢完了，明天早上再来哦~</view>
     </view>
   </view>
+  <block wx:if='{{adShow}}'>
 
+    <!-- banner广告，按需引入 -->
+    <view class="xm_banner mgb10" style="width:100%">
+      <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
+      </xm-ad>
+    </view>
 
-  <!-- banner广告，按需引入 -->
-  <view class="xm_banner mgb20" style="width:100%">
-    <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
-    </xm-ad>
-  </view>
-
-  <ad unit-id="adunit-bb3d2310e0e98a9d"></ad>
-
+    <view class='row-start mgb10' style='width:100%'>点下面图片，抽奖运气更好哦！
+      <image src='../../images/a28.png' class='down-point'></image>
+    </view>
+    <ad unit-id="adunit-bb3d2310e0e98a9d"></ad>
+  </block>
   <view class='prompt' wx:if='{{page==total_pages&&prizes.length>0}}'>稍后会有新奖品上架</view>
   <!-- 悬浮窗广告，按需引入 -->
   <!-- <view class="xm_fixed">

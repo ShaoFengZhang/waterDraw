@@ -15,7 +15,7 @@
   line-height:48rpx;
   border-radius: 24rpx;
   padding-right:10rpx;
-  background:#BDBDBD;
+  background:rgba(119,123,126,0.8);
   color:#fff;
   font-size:24rpx;
   letter-spacing: 1px;

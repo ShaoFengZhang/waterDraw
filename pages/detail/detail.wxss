@@ -217,6 +217,8 @@ top:-11rpx;
   padding: 0 0 10rpx;
   margin-bottom: 20rpx;
   background: #fff;
+  padding-bottom:35rpx;
+
 }
 
 .prize-rule-text {
@@ -255,7 +257,7 @@ top:-11rpx;
 
 .prize-power-list {
   background: #fff;
-  padding: 40rpx 0 25rpx;
+  padding: 40rpx 0 0;
 }
 
 .power-list-main {
@@ -264,7 +266,6 @@ top:-11rpx;
 
 .power-code {
   color: #818181;
-  padding: 20rpx 0;
 }
 
 .view-more {
@@ -608,7 +609,8 @@ top:-11rpx;
 
 .comforImg {
   width: 233rpx;
-  height: 276rpx;
+  height: 176rpx;
+  margin-top:100rpx
 }
 
 .modleTxt {
@@ -626,12 +628,12 @@ top:-11rpx;
 
 .giveUptxt {
   width: 200rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   background: #d0cfcf;
   color: #7b7a7a;
   text-align: center;
-  border-radius: 30rpx;
+  border-radius: 40rpx;
   letter-spacing: 1px;
 }
 

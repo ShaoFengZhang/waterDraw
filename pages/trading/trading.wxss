@@ -7,8 +7,9 @@
 .balance {
   width: 100%;
   padding: 30rpx 0;
-  background: url('https://tp.datikeji.com/a/15380410272232/NclfVzu6FB55iePfAFGRuJTaGE5sB7C8phYrghxq.png') no-repeat bottom;
-  background-size: 750rpx 150rpx;
+  background: url('https://tp.datikeji.com/a/15382114819055/AnCi0Z23PAhEtKPYkB06tFgIHtLIdt1VSGw5kyE4.png') no-repeat top;
+  background-size: 750rpx 395rpx;
+  background-color: #f1f1f1;
 }
 
 .draw-img {
@@ -17,10 +18,10 @@
 }
 
 .money {
-  font-size: 60rpx;
-  color: #000;
-  height: 60rpx;
-  line-height: 60rpx;
+  font-size: 80rpx;
+  color: #fa413e;
+  height: 100rpx;
+  line-height: 100rpx;
   font-weight: bold;
 }
 
@@ -77,190 +78,215 @@
 }
 
 .bill-item {
-  padding-left: 120rpx;
+  padding-left: 150rpx;
   position: relative;
 }
 
 .bill-img {
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 100%;
   position: absolute;
-  left: 35rpx;
+  left: 30rpx;
   top: 30rpx;
 }
 
 .bill-right {
   width: 100%;
-  height: 120rpx;
+  height: 140rpx;
   padding-right: 45rpx;
   border-bottom: 1px solid #d9d9d9;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.bill-info {
-  line-height: 40rpx;
-}
+
 
 /* 关注公众号弹窗 */
 
-.focusOnMask{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.6);
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 999;
-	overflow: hidden;
+.focusOnMask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
 }
 
-.focusBody{
-	width: 700rpx;
-	height: 1050rpx;
-	background-color:rgba(255,255,255,1);
-	border-radius: 12rpx;
-	position: absolute;
-	bottom: 144rpx;
-	left: 25rpx;
-	overflow: hidden;
+.focusBody {
+  width: 700rpx;
+  height: 1050rpx;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 12rpx;
+  position: absolute;
+  bottom: 144rpx;
+  left: 25rpx;
+  overflow: hidden;
 }
 
-.focusBody .txt{
-	width: 100%;
-	text-align: center;
+.focusBody .txt {
+  width: 100%;
+  text-align: center;
 }
 
-.focusBodyTxtOne{
-	font-size: 36rpx;
-	color: #010101;
-	margin-top: 34rpx;
+.focusBodyTxtOne {
+  font-size: 36rpx;
+  color: #010101;
+  margin-top: 34rpx;
 }
 
-.focusBodyTxTwo{
-	font-size: 30rpx;
-	color: #4E4E4E;
-	margin-top: 34rpx;
+.focusBodyTxTwo {
+  font-size: 30rpx;
+  color: #4e4e4e;
+  margin-top: 34rpx;
 }
 
-.focusBodyTxtThree{
-	font-size: 30rpx;
-	color: #4E4E4E;
-	margin-top: 10rpx;
+.focusBodyTxtThree {
+  font-size: 30rpx;
+  color: #4e4e4e;
+  margin-top: 10rpx;
 }
 
-.focusBodyTxtFour{
-	width: 600rpx;
-	font-size: 30rpx;
-	color: #353535;
-	margin: 30rpx auto 0;
+.focusBodyTxtFour {
+  width: 600rpx;
+  font-size: 30rpx;
+  color: #353535;
+  margin: 30rpx auto 0;
 }
 
-.foucsBig{
-	width: 600rpx;
-	height: 556rpx;
-	box-sizing: border-box;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    position: relative;
-	background-image: url('https://tp.datikeji.com/a/15381222508049/XTbSLOvH6vyl9zQyCw6xbqU82e0wXINwVaLymaf8.png');
-	margin: 0 auto;
+.foucsBig {
+  width: 600rpx;
+  height: 556rpx;
+  box-sizing: border-box;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  position: relative;
+  background-image: url('https://tp.datikeji.com/a/15381222508049/XTbSLOvH6vyl9zQyCw6xbqU82e0wXINwVaLymaf8.png');
+  margin: 0 auto;
 }
 
-.foucsBtnOk,.foucsBtnError{
-	width: 600rpx;
-	height: 80rpx;
-	font-size: 36rpx;
-	line-height: 80rpx;
-	text-align: center;
-	margin: 0 auto;
+.foucsBtnOk, .foucsBtnError {
+  width: 600rpx;
+  height: 80rpx;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.foucsBtnOk{
-	color: #040000;
-	background:rgba(253,221,74,1);
-	margin-top: 26rpx;
+.foucsBtnOk {
+  color: #040000;
+  background: rgba(253, 221, 74, 1);
+  margin-top: 26rpx;
 }
 
-.foucsBtnError{
-	margin-top: 16rpx;
-	color: #5E5E5E;
+.foucsBtnError {
+  margin-top: 16rpx;
+  color: #5e5e5e;
 }
 
-.foucssession{
-	width:160rpx;
-	height:66rpx;
-	position: absolute;
-	right: 0;
-	top: 124rpx;
+.foucssession {
+  width: 160rpx;
+  height: 66rpx;
+  position: absolute;
+  right: 0;
+  top: 124rpx;
 }
 
-.foucsQr{
-	width:353rpx;
-	height:218rpx;
-	position: absolute;
-	left: 0;
-	top: 210rpx;
+.foucsQr {
+  width: 353rpx;
+  height: 218rpx;
+  position: absolute;
+  left: 0;
+  top: 210rpx;
 }
 
-.foucstxtnum{
-	width: 100rpx;
-	height: 70rpx;
-	text-align: left;
-	position: absolute;
-	bottom: 0;
-	left: 30rpx;
-	font-size: 36rpx;
-	line-height: 70rpx;
+.foucstxtnum {
+  width: 100rpx;
+  height: 70rpx;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  font-size: 36rpx;
+  line-height: 70rpx;
 }
 
 /* 试玩商城样式 */
 
-.MinMall{
-	width: 100%;
-	box-sizing: border-box;
-	padding-top: 30rpx;
+.MinMall {
+  width: 100%;
+  padding: 30rpx 30rpx 0;
+   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.MinMallHead{
-	width: 100%;
-	font-size: 30rpx;
-	color: #545454;
-	text-align: center;
-	margin-bottom: 20rpx;
+.upfollow-img {
+  width: 22rpx;
+  height: 39rpx;
+  margin:0 10rpx
 }
 
-
-
-.MinMallBox{
-	width:100%;
-	box-sizing: border-box;
-	padding:  0 40rpx;
-	margin-bottom: 20rpx;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+.MinMallBox {
+  width: 100%;
 }
 
-.MinMallItem{
-	width: 160rpx;
-	text-align: center;
-	margin-bottom: 10rpx;
+.MinMallItem {
+  width: 25%;
+  text-align: center;
+  margin-bottom: 10rpx;
 }
 
-.MinMall image{
-	display: block;
-	margin: 0 auto;
-	width: 90rpx;
-	height: 90rpx;
+.sponer-item-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
 }
 
-.MinMallHead image{
-	display: inline-block;
-	width: 22rpx;
-	height: 40rpx;
-	vertical-align: middle;
+.draw-box {
+  width: 650rpx;
+  height: 175rpx;
+  background: #fff;
+  border-radius: 10rpx;
 }
 
+.draw-btn {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 30rpx;
+  color: #e66347 !important;
+  letter-spacing: 1px;
+  font-size: 32rpx;
+  border: 1px solid #e66347;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: -30rpx;
+}
+
+.draw-box view {
+  color: #727272;
+}
+
+.share-btn-box {
+  padding: 50rpx 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.share-btn {
+  width: 650rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: rgba(255, 202, 54, 1);
+  border-radius: 35px;
+  box-shadow: 0px 2px 12px 1px rgba(238, 148, 37, 0.56);
+  color: #353535;
+  font-size: 36rpx;
+  letter-spacing: 1px;
+    animation: magnify2 3s infinite linear;
+}

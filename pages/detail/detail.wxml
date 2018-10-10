@@ -32,7 +32,7 @@
 <template is="prize-popup" data='{{newState,inviterInfo}}' />
 
 <!-- 新手指引2-->
-<template is="prize-popup2" data='{{newState2,gift,tradeState,redbao}}' />
+<template is="prize-popup2" data='{{newState2,gift,tradeState,redbao,noshareFriend,detailData,loginState}}' />
 
 <view class='container' style='padding-top:{{topHeight}}'>
   <view class='prize-info'>
@@ -115,7 +115,6 @@
                   <view class='pulse pulse2'></view>
                 </button>
               </form>
-              <image src='https://tp.datikeji.com/a/15367536581651/ye4zAZWcT7nCZcXmuIUrSG67lyV4N3n0aJl6BQ4o.png' class='cursor-point-img' wx:if='{{toView=="part"}}'></image>
               <image src='../../images/a19.png' class='point-top-img1'></image>
             </view>
             <view class='t_c prize-rule-text row-center-a'>
@@ -164,13 +163,16 @@
               <view class='win-remind gray-win-remind column-center-a mgb50'>
                 <text>安慰奖</text>
               </view>
-              <view class='gray mgb30'> 安慰奖：随机1-100个水滴币</view>
-              <view class='return-btn bgred short mgb30' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='watercoin'>抽取安慰奖</view>
+              <view class='gray mgb30'> 安慰奖：随机1-20个水滴币</view>
+              <view class='return-btn bgred short mgb30 row-center-a' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1' catchtap='watercoin'>
+                <image src='../../images/a27.png' class='rotary-img'></image>抽取安慰奖
+                <image src='../../images/a27.png' class='rotary-img'></image>
+              </view>
               <view class='return-btn short mgb30' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>
-               赚取更多水滴币，马上提现
+                赚取更多水滴币，马上提现
               </view>
               <view class='return-btn mgb50 short' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==0}}'>去首页，查看更多抽奖</view>
-                <view class='return-btn bgred mgb50 short' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>去首页，查看更多抽奖</view>
+              <view class='return-btn bgred mgb50 short' catchtap='jumpTap' data-type='6' wx:if='{{allDetail.convertible_or_not==1}}'>去首页，查看更多抽奖</view>
             </block>
             <!-- 未参与未中奖 -->
             <block wx:if='{{prizeStatus==3}}'>
@@ -191,7 +193,7 @@
               <image src='{{winner_user.head_pic}}' class='winner-img'></image>
             </view>
             <text class='mgb20'>{{winner_user.nick_name}}</text>
-            <text >分享了{{winner_user.total_invitation}}人，拥有{{winner_user.code_number}}个概率码</text>
+            <text>分享了{{winner_user.total_invitation}}人，拥有{{winner_user.code_number}}个概率码</text>
           </view>
         </view>
       </block>
@@ -199,16 +201,16 @@
     <!-- 规则结束 -->
     <!-- 助力开始 -->
     <view class='prize-power-list mgb20'>
-      <view class='power-list-title  t_c font36 bold newdarkBlack'>好友助力榜</view>
-      <view class='power-code t_c'>本奖品，您拥有
-        <text class='red'><block wx:if='{{helpState==0}}'>{{powerData.code_number}}</block>
-      <block wx:if='{{helpState==1}}'>0</block></text>个概率码
+      <view class='power-list-title  t_c font32 bold newdarkBlack'>好友助力榜</view>
+      <view class='power-code t_c font26'>本奖品，您有
+        <text class='red'><block wx:if='{{helpState==0}}'>{{allDetail.myself_code_number}}</block>
+      <block wx:if='{{helpState==1}}'>0</block></text>个概率码，码数越多，中奖几率越高
         <image src='https://tp.datikeji.com/a/15355139604269/l5UGn1iEkQ1at8jekCUmilsC0n9Bnrz7V4vtt6Lw.png' class='question-mark' catchtap='ruleTap'></image>
       </view>
       <view class='power-list-main'>
         <block wx:if='{{prizeStatus ==1 || prizeStatus ==2 || prizeStatus ==4}}'>
           <template is="power-myself" data='{{myHead,nick_name,powerData}}' />
-          <block wx:if='{{powerData.is_try_play==1}}'>
+          <block wx:if='{{allDetail.is_try_play==1}}'>
             <template is="power-myself" data='{{powerData}}' />
           </block>
         </block>
@@ -267,6 +269,9 @@
     <xm-ad data-id="{{xmad.ad.banner}}" adData="{{xmad.adData}}" bindclick="appoIntView" bindclose="xmadClose" class="xm_component">
     </xm-ad>
   </view>
+  <view class='row-start mgb10 mgt10' style='width:100%'>点下面图片，抽奖运气更好哦！
+    <image src='../../images/a28.png' class='down-point'></image>
+  </view>
   <ad unit-id="adunit-936cbb7cb6c6d420"></ad>
   <!-- 底部开始 -->
   <view class='row-center bottom-link'>
@@ -300,11 +305,11 @@
 <!-- 领取双倍安慰奖的弹窗 -->
 <view class='comfortMask' wx:if="{{comfortShow}}">
   <view class='comforBody column-center'>
-    <image src='../../images/a13.png' class='comforImg mgb30 mgt30'></image>
-    <view class='modleTxt mgb10'>你抽到<text class='red'>{{comforNum || 0}}</text>个水滴币</view>
-    <view class='modleTxt mgb50'>分享翻倍</view>
+    <image src='../../images/a13.png' class='comforImg mgb30'></image>
+    <view class='modleTxt mgb90'>你抽到
+      <text class='red'>{{comforNum || 0}}</text>个水滴币</view>
     <view class='maskbtn row-between'>
-      <view data-type='1' class='giveUptxt' bindtap='hideComfort'>残忍放弃</view>
+      <view data-type='1' class='giveUptxt' bindtap='hideComfort'>取消</view>
       <form report-submit bindsubmit='doubleShare' data-type='2'>
         <button id='doubleShare' open-type='share' formType="submit" class='giveUptxt double-btn'>翻倍领取</button>
       </form>

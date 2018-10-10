@@ -141,9 +141,10 @@ Page({
                             filePath: resImage.tempFilePath,
                             success: function(saveRes) {
                               wx.showModal({
-                                title: '温馨提示',
-                                content: '将图片发给好友看看吧',
-                                showCancel: false,
+                                title: '分享图片给朋友，可提高中奖概率',
+                                content: '图片已经成功保存到相册',
+                                showCancel: true,
+                                confirmText: "好的",
                                 success: function(resd) {
                                   if (resd.confirm) {
                                     wx.previewImage({

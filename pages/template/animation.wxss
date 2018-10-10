@@ -58,6 +58,28 @@
   }
 }
 
+@keyframes magnify2 {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes scalePopup {
   0% {
     transform: scale(0.5);
@@ -213,5 +235,17 @@
 
   100% {
     transform: translate(0, -10px);
+  }
+}
+
+/*旋转一周 */
+
+@keyframes newrotation {
+    from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -73,6 +73,15 @@ image {
 .mgr15 {
   margin-right: 15rpx;
 }
+.mgt10 {
+  margin-top: 10rpx !important;
+}
+.mgt20 {
+  margin-top: 20rpx !important;
+}
+.mgt25 {
+  margin-top: 25rpx !important;
+}
 
 .mgt30 {
   margin-top: 30rpx !important;
@@ -92,6 +101,10 @@ image {
 
 .mgb20 {
   margin-bottom: 20rpx !important;
+}
+
+.mgb25 {
+  margin-bottom: 25rpx !important;
 }
 
 .mgb30 {
@@ -248,6 +261,14 @@ image {
   align-items: center; /*垂直居中*/
 }
 
+.row-start-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; /*垂直居中*/
+  flex-wrap: wrap;
+}
+
 .row-around {
   display: flex;
   flex-direction: row;
@@ -265,6 +286,14 @@ image {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.row-between-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /*垂直居中*/
+  flex-wrap: wrap;
 }
 
 .column-center {
@@ -394,6 +423,16 @@ image {
   color: #fff;
 }
 
+.btn6.big {
+  width: 476rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 54rpx;
+  border-radius: 10rpx;
+  animation:magnify2 3s infinite linear;
+
+}
+
 /* 颜色样式 */
 
 .red {
@@ -402,6 +441,10 @@ image {
 
 .yellow {
   color: #ffa400;
+}
+
+.orange {
+  color: #ff4d4d !important;
 }
 
 .blue {
@@ -521,31 +564,36 @@ image {
 
 /* zhang引导样式 */
 
-.water_guide{
-	width: 100%;
-	height: 100vh;
-	position: fixed;
-	top:0;
-	left: 0;
-	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.8); 
-	z-index: 999;
+.water_guide {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
 }
 
-.guide_zhiyin,.guide_zhiyin image{
-	width: 658rpx;
-	height: 676rpx;
+.guide_zhiyin, .guide_zhiyin image {
+  width: 658rpx;
+  height: 676rpx;
 }
 
-.guide_zhiyin{
-	margin: 0 auto;
+.guide_zhiyin {
+  margin: 0 auto;
 }
 
-.guide_btn,.guide_btn image{
-	width: 293rpx;
-	height: 80rpx;
+.guide_btn, .guide_btn image {
+  width: 293rpx;
+  height: 80rpx;
 }
 
-.guide_btn{
-	margin: 80rpx auto;
+.guide_btn {
+  margin: 80rpx auto;
+}
+
+.down-point{
+  width:30rpx;
+  height:20rpx;
 }

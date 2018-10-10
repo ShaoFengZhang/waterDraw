@@ -1,50 +1,61 @@
 .prize-popup2 {
-    background: #fff;
-    width: 700rpx;
-    height: 890rpx;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -400rpx;
-    margin-left: -350rpx;
+  background: #fff;
+ width: 700rpx;
+  height: 726rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -360rpx;
+  margin-left: -350rpx;
+  border-radius: 20rpx;
+}
+
+.prize-popup2-new {
+  background: #fff;
+  width: 700rpx;
+  height: 726rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -360rpx;
+  margin-left: -350rpx;
+  border-radius: 20rpx;
 }
 
 .prize-popup2-text {
-    width: 466rpx;
-    color: #E6A63A;
-    font-size: 54rpx;
-    letter-spacing: 1px;
-    margin-top: 80rpx;
-    margin-bottom: 80rpx;
-	text-align: center;
+  color: #e6a63a;
+  font-size: 54rpx;
+  letter-spacing: 1px;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
 }
 
 .prize-popup2-center .text1 {
-    letter-spacing: 2px;
-    font-size: 66rpx;
-	font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 54rpx;
+  font-weight: 700;
 }
 
 .prize-popup2-center text {
-    font-size: 66rpx;
-    line-height: 130rpx;
-    letter-spacing: 2px;
-	color: #383838;
+  line-height: 130rpx;
+  letter-spacing: 2px;
+  color: #383838;
 }
 
 .prize-popup2-center .text2 {
-    letter-spacing: 2px;
-    font-size: 66rpx;
-    margin-bottom: 80rpx;
-	font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 50rpx;
+  margin-bottom: 60rpx;
+  font-weight: 700;
 }
 
 .prize-popup2-img {
-    width: 150rpx;
-    height: 150rpx;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10rpx;
 }
 
 /* 
@@ -58,19 +69,28 @@
   top: -150rpx;
 } */
 
-
-.fullzerothree{
-	width: 100%;
-	text-align: center;
-	font-size: 26rpx;
-	color: #868686;
-	position: absolute;
-	bottom: 20rpx;
+.fullzerothree {
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #868686;
+  position: absolute;
+  bottom: 10rpx;
 }
 
-.giveUpDouble{
-	width:100%;
-	text-align: center;
-	font-size: 44rpx;
-	color: #616161;
+.giveUpDouble {
+  width: 100%;
+  text-align: center;
+  font-size: 44rpx;
+  color: #616161;
+}
+
+.newPrizePopup-text1 {
+  font-size: 52rpx;
+  color: #e6a63a;
+}
+
+.newPrizePopup-text2 {
+  font-size: 66rpx;
+  color: #e6a63a;
 }

@@ -1,11 +1,10 @@
+@import "../template/bottom/bottomItem.wxss";
 page {
-  background: #F1F1F1;
-  padding-bottom:30rpx
+  background: #e5e5e5;
 }
 
 .nav {
-  padding:40rpx 70rpx;
-  background:#E5E5E5;
+  padding: 40rpx 70rpx;
 }
 
 .nav-item {
@@ -14,51 +13,128 @@ page {
   height: 76rpx;
   line-height: 76rpx;
   letter-spacing: 1px;
-  color:#353535;
-  font-size:32rpx;
+  color: #353535;
+  font-size: 32rpx;
+  position: relative
 }
-.nav-menu{
+.nav-item .icon-img{
+width:77rpx;
+height:39rpx;
+top:-25rpx;
+left:120rpx;
+
+}
+
+.nav-menu {
   border-radius: 38rpx;
-  overflow: hidden
 }
 
 .nav-item.active {
-  background:#FDDD4A;
-  color:#000;
+  background: #fddd4a;
+  color: #000;
   border-radius: 38rpx;
 }
 
-.prize-item {
-  padding: 30rpx 50rpx;
-  background: #fff;
-  margin-bottom: 25rpx;
-  height:140rpx;
-  line-height:40rpx;
-  width:100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.main {
+  padding: 0 20rpx 130rpx;
 }
 
-.adress-btn {
-  height: 60rpx;
-  line-height: 60rpx;
-  font-size:30rpx;
-  color:#fff;
-  background:#169BD5;
-  border-radius: 10rpx;
-  text-align: center;
-  letter-spacing: 1rpx;
-  padding:0 10rpx
+.winner-info {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 35rpx 20rpx 25rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  background: #fff;
 }
-.delivery-text{
-  display: inline-block;
-  margin-right:20rpx;
-  height:32rpx;
-  line-height:30rpx;
-  padding:0 8rpx;
-  background:#999;
-  color:#fff;
-  font-size:20rpx;
-  vertical-align: middle;
-  margin-top:-5rpx
+
+.winner-info2 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+
+.prize-img {
+  width: 400rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.right-con {
+  width: 270rpx;
+}
+
+.name-text {
+  width: 270rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.name-text2 {
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.icon-img {
+  width: 115rpx;
+  height: 58rpx;
+  position: absolute;
+  top: -40rpx;
+  left: -8rpx;
+}
+
+.icon-img2 {
+  width: 40rpx;
+  height: 59rpx;
+}
+
+.index-text {
+  text-align: center;
+  width: 40rpx;
+}
+
+.img-box {
+  position: relative;
+}
+
+.head-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.head-img2 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.left-con {
+  width: 360rpx;
+}
+
+.right-text {
+  width: 310rpx;
+}
+.right-text text{
+  margin-left:5rpx;
+  margin-right:5rpx
+}
+.right-text text.num{
+margin:0 10rpx
 }

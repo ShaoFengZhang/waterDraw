@@ -29,7 +29,7 @@
     <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
       <image src='../../images/a5.png' class='link-row-img'></image>
       <text class='font28'>加红包群</text>
-      <text class='font28'>点击我，回复1</text>
+      <text class='font28'>点击我，回复6</text>
       <view class='link-row-line'></view>
     </button>
     <button class='column-center-a  link-item' open-type='contact' hover-class="btn-hover">
@@ -60,12 +60,21 @@
         </view>
       </view>
     </navigator>
-    <ad unit-id="adunit-15c74523dfcd6678"></ad>
+   
+      <view class='row-start mgb10' style='width:100%'>点下面图片，抽奖运气更好哦！
+        <image src='../../images/a28.png' class='down-point'></image>
+      </view>
+      <ad unit-id="adunit-15c74523dfcd6678"></ad>
+   
   </view>
 </view>
 
 <!-- 引导弹窗 -->
 <view class='water_guide' wx:if="{{ifShowWater_guide}}" style='margin-top:{{guideTop}}'>
-	<view class='guide_zhiyin'><image src='/assets/zhiyin.png' /></view>
-	<view bindtap='closeGuide' class='guide_btn'><image src='/assets/IKnow.png' /></view>
+  <view class='guide_zhiyin'>
+    <image src='/assets/zhiyin.png' />
+  </view>
+  <view bindtap='closeGuide' class='guide_btn'>
+    <image src='/assets/IKnow.png' />
+  </view>
 </view>

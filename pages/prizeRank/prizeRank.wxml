@@ -1,12 +1,57 @@
 <import src="../template/header/header.wxml" />
 <template is="headerItem" data="{{...header,statusBarHeight}}" />
+<import src="../template/bottom/bottomItem.wxml" />
+<template is="bottomItem" data='{{bottomList,newDateNum}}' />
 <view class='container' style='padding-top:{{topHeight}}'>
   <view class=' nav'>
     <view class='row-between white-bg nav-menu'>
       <view class='nav-item font36 {{active==1?"active":""}}' data-type='1' catchtap='changeNav'>最近中奖者</view>
-      <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>中奖王者榜</view>
+      <view class='nav-item font36 {{active==2?"active":""}}' data-type='2' catchtap='changeNav'>中奖王者榜
+        <image class='icon-img' src='../../images/a23.png'></image>
+      </view>
     </view>
   </view>
   <view class='main column-center'>
-   </view>
+    <block wx:for="{{prizeData1}}" wx:for-item="item" wx:key="property" wx:for-index="idx" wx:if='{{active==1}}'>
+      <view class='winner-info'>
+        <view class='row-between mgb10'>
+          <image class='prize-img' src='{{item.prize_pic}}'></image>
+          <view class='right-con column-center'>
+            <text class='mgb50'>中奖者</text>
+            <view class='img-box'>
+              <image class='icon-img' src='../../images/a23.png'></image>
+              <image class='head-img' src='{{item.head_pic}}'></image>
+            </view>
+
+          </view>
+        </view>
+        <view class='row-between mgb10'>
+          <view class='newClor'>奖品：{{item.win_prize}}</view>
+          <view class='name-text'>{{item.nick_name}}</view>
+        </view>
+        <view class='row-between'>
+          <text class='font26 gray'>{{item.province}}{{item.city}}</text>
+          <text class='font26 gray'>{{item.gen_time}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:for="{{prizeData2}}" wx:for-item="item" wx:key="property" wx:for-index="idx" wx:if='{{active==2}}'>
+      <view class='winner-info2 row-between'>
+        <view class='row-start left-con'>
+          <image wx:if='{{idx==0}}' src='../../images/a24.png' class='icon-img2'></image>
+          <image wx:if='{{idx==1}}' src='../../images/a25.png' class='icon-img2'></image>
+          <image wx:if='{{idx==2}}' src='../../images/a26.png' class='icon-img2'></image>
+          <view wx:if='{{idx>2}}' class='index-text'>{{idx+1}}</view>
+          <image class='head-img2' src='{{item.head_pic}}'></image>
+          <view class='name-text2'>{{item.nick_name}}</view>
+        </view>
+        <view class='right-text column-center-b'>
+          <view class='font22 t_r mgb10'>中了
+            <text class='bold font40 num'>{{item.winners_number}}</text>次奖</view>
+          <view class='font22 t_r gray'>抽了<text class='font28 gray'>{{item.participate_number}}</text>次奖，分享了<text class='font28 gray'>{{item.sons}}</text>人</view>
+        </view>
+      </view>
+    </block>
+    <text class='gray font22 t_c'>只显示最近30条数据</text>
+  </view>
 </view>

@@ -6,7 +6,7 @@
           <text>1</text>
         </view>
         <image src='{{myHead}}' class='face-img'></image>
-        <view  style='width:400rpx'>{{nick_name}}</view>
+        <view  style='width:400rpx'  class='font28'>{{nick_name}}</view>
       </view>
       <view>
         <text class='red'>+</text>
@@ -17,10 +17,10 @@
     <view class='row-between prize-list-info-top'>
       <view class='row-start'>
         <view class='power-rank'>
-          <text class='red'>2</text>
+          <text >2</text>
         </view>
         <image src='{{powerData.sponsor_logo}}' class='face-img'></image>
-        <view class='bold'>赞助商试玩</view>
+        <view  class='font28'>赞助商试玩</view>
       </view>
       <view>
         <text class='red'>+</text>

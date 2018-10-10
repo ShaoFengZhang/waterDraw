@@ -7,9 +7,9 @@
                     <image class='popup-new-img' src='{{allDetail.myHead}}'></image>
                     <view class='popup-new-text'>只要坚持，终有幸运</view>
                     <view class='popup-text'>
-                        安慰奖：随机1-100个水滴币
+                        安慰奖：随机1-20个水滴币
                     </view>
-                    <view class='btn6 bg mgb50 font30' catchtap='watercoin' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'>抽取安慰奖</view>
+                    <view class='btn6 bg mgb50 font30 row-center-a' catchtap='watercoin' wx:if='{{allDetail.convertible_or_not==0}}' data-type='1'><image src='../../images/a27.png' class='rotary-img'></image>抽取安慰奖<image src='../../images/a27.png' class='rotary-img'></image></view>
                     <view class='btn6 mgb50 font30' catchtap='jumpTap' data-type='2' wx:if='{{allDetail.convertible_or_not==1}}'>赚取更多水滴币，马上提现</view>
                 </view>
 

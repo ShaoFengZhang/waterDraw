@@ -2,21 +2,30 @@ const ald = require('./utils/ald-stat.js')
 var App = require('./utils/xmadx_sdk.min.js').xmad(App, 'App').xmApp;
 App({
   data: {
-    api: 'https://xcx6.datikeji.com/',
-	//   api: 'https://xcx11.datikeji.com/', //目前线上
+    //api: 'https://xcx6.datikeji.com/',//目前线上
+    api: 'https://xcx11.datikeji.com/', 
     currentInfo: '',
     bottomImg: [{
-        img: "https://tp.datikeji.com/a/15380441446103/et2IusRgglcVKcYFYV7gastM46Ystn0oAW42EG8i.png",
+      img: "https://tp.datikeji.com/a/15382106238542/LriMCtuiNIaoyuWiMDgUlUKG4r4ViLaTTBtEYHFN.png",
+        activeImg: 'https://tp.datikeji.com/a/15382070326586/GSXFDgeukaS55deIly06Ncenprq9GfGEPdiiuPqB.png',
         text: '首页',
         done: false
       },
       {
-        img: "https://tp.datikeji.com/a/15380442229350/waQwhw8A47yWS5tHNmuEr55JpesxHDxNld3CDvhJ.png",
-        text: '水滴商城',
+        img: "https://tp.datikeji.com/a/15382106434482/5TXsPamYgwD1wYwHvPZXZkv8xX4RzcVAhYyy0BYk.png",
+        activeImg: "https://tp.datikeji.com/a/15382070551012/VpASB9qUc1DQOMAUo1kSFIYraymv8cLkTZGeNL3w.png",
+        text: '水滴币',
         done: false
       },
       {
-        img: "https://tp.datikeji.com/a/15380442346021/A4UVujeGsm6blPlx2mriRTHoCSPUIZ6kk3J2bzY7.png",
+        img: "https://tp.datikeji.com/a/15382106606922/5SM1xCVIl5YV0hZay4JKAMdowkZr3HHIrlcqZ8xg.png",
+        activeImg: 'https://tp.datikeji.com/a/15382070789025/MAe1lJl4BnFennAMnwjuCvQeIX8KAKdfhQed3QxA.png',
+        text: '中奖榜',
+        done: false
+      },
+      {
+        img: "https://tp.datikeji.com/a/15382106525619/W49Cj1myLq8qPTHhQmwmwS1A8nMH1pVwft78LtzO.png",
+        activeImg: 'https://tp.datikeji.com/a/15382070975862/SxYmf0Y5ncQSFHUrQ4KMI6CDd6cRg6BjhGgEDS3P.png',
         text: '我的',
         done: false
       }

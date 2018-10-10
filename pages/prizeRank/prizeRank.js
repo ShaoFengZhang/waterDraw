@@ -3,7 +3,7 @@ let util = require('../../utils/util');
 Page({
   data: {
     active: 1,
-    url: 'api/winning_list',
+    url: 'api/recent_award',
     prizeData1: [],
     prizeData2: [],
     header: {
@@ -12,12 +12,19 @@ Page({
   },
   onLoad: function() {
     var that = this;
+    var bottomList = app.data.bottomImg;
+    bottomList[0].done = false;
+    bottomList[1].done = false;
+    bottomList[3].done = false;
+    bottomList[2].done = true
     that.setData({
       topHeight: app.data.topHeight,
-      statusBarHeight: app.data.statusBarHeight
+      statusBarHeight: app.data.statusBarHeight,
+      bottomList
     })
     util.loading('数据加载中')
     that.dataRender()
+    that.newData()
   },
   dataRender(nooad) {
     var that = this;
@@ -29,8 +36,12 @@ Page({
         util.hideLoad()
         if (res.data.status == 0) {
           if (that.data.active == 1) {
+            var prizeData1 = res.data.data;
+            prizeData1.forEach(function(item) {
+              item.gen_time = util.format(item.gen_time * 1000, "yyyy年MM月dd日")
+            })
             that.setData({
-              prizeData1: res.data.data
+              prizeData1
             })
           } else if (that.data.active == 2) {
             that.setData({
@@ -49,14 +60,14 @@ Page({
     util.loading('数据加载中')
     if (type == 1) {
       that.setData({
-        url: 'api/winning_list',
+        url: 'api/recent_award',
         active: 1
       })
       that.dataRender()
     } else {
       that.setData({
         active: 2,
-        url: 'api/recent_award'
+        url: 'api/winning_list'
       })
       that.dataRender()
     }
@@ -75,6 +86,48 @@ Page({
       fail: function(res) {
         // 转发失败
         util.noData('取消分享')
+      }
+    }
+  },
+  newData() {
+    var that = this;
+    util.postHttp(
+      'api/message_number', {
+        user_id: app.data.user_id
+      },
+      function (res) {
+        if (res.data.status == 0) {
+          if (res.data.status == 0) {
+            var newDateNum = res.data.data;
+            if (newDateNum > 99) {
+              newDateNum = 99
+            }
+            that.setData({
+              newDateNum: newDateNum
+            })
+            console.log(newDateNum)
+          }
+        }
+      }
+    )
+  },
+  bottomSwitch(e) {
+    var index = e.currentTarget.dataset.idx;
+    console.log(index)
+    if (index != 2) {
+      if (index == 0) {
+        console.log(index)
+        wx.redirectTo({
+          url: '../index/index'
+        })
+      } else if (index == 1) {
+        wx.redirectTo({
+          url: '../trading/trading'
+        })
+      } else if (index == 3) {
+        wx.redirectTo({
+          url: '../myself/myself'
+        })
       }
     }
   }

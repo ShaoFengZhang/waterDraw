@@ -30,12 +30,14 @@ Page({
       noticeData: []
     })
   },
-  onLoad(options) {
+  onLoad(options) {   
     var that = this;
     var bottomList = app.data.bottomImg;
     bottomList[1].done = false;
     bottomList[2].done = false;
-    bottomList[0].done = true
+    bottomList[3].done = false;
+    bottomList[0].done = true;
+
     that.setData({
       topHeight: app.data.topHeight,
       statusBarHeight: app.data.statusBarHeight,
@@ -115,9 +117,7 @@ Page({
       },
       function(res) {
         if (hide) {
-          setTimeout(function() {
-            util.hideLoad();
-          }, 300)
+          util.hideLoad();
         }
         if (hide == 'refresh') {
           wx.stopPullDownRefresh();
@@ -153,6 +153,12 @@ Page({
             prizes: []
           })
         }
+        setTimeout(function() {
+          that.setData({
+            adShow: true
+          })
+        }, 500)
+
       }
     )
   },
@@ -215,6 +221,10 @@ Page({
           url: '../trading/trading'
         })
       } else if (index == 2) {
+        wx.redirectTo({
+          url: '../prizeRank/prizeRank'
+        })
+      } else if (index == 3) {
         wx.redirectTo({
           url: '../myself/myself'
         })

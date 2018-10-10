@@ -38,7 +38,7 @@
       </view>
     </block>
     <view class='gray font26' wx:if='{{total_pages == page&&prizeData.length>0}}' catchtap='toIndexTap'>没有了，快去参加其他抽奖吧</view>
-    <view wx:if='{{prizeData.length==0}}' class='column-center'>
+    <view wx:if='{{isEmpty}}' class='column-center'>
       <image src='https://tp.datikeji.com/a/15332650901745/Ycq0pNKWxz1fb7GhWZE2GXKkkc6rlyrB8IKjFTxY.png' class='none-img'></image>
       <view class='t_c font24' catchtap='toIndexTap'>您还没有中奖记录，快去首页抽个奖吧</view>
     </view>

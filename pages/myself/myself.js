@@ -17,7 +17,8 @@ Page({
     var bottomList = app.data.bottomImg;
     bottomList[0].done = false;
     bottomList[1].done = false;
-    bottomList[2].done = true
+    bottomList[2].done = false;
+    bottomList[3].done = true
     that.setData({
       topHeight: app.data.topHeight,
       statusBarHeight: app.data.statusBarHeight,
@@ -139,7 +140,7 @@ Page({
   bottomSwitch(e) {
     var index = e.currentTarget.dataset.idx;
     console.log(index)
-    if (index != 2) {
+    if (index != 3) {
       if (index == 0) {
         console.log(index)
         wx.redirectTo({
@@ -148,6 +149,10 @@ Page({
       } else if (index == 1) {
         wx.redirectTo({
           url: '../trading/trading'
+        })
+      } else if (index == 2) {
+        wx.redirectTo({
+          url: '../prizeRank/prizeRank'
         })
       }
     }

@@ -7,7 +7,8 @@
         <text>谢谢你帮我完成助力 </text>
         <text>再送你一个红包</text>
       </view>
-      <text class='prize-popup-text' wx:if='{{!tradeState}}'>送了你一个红包</text>
+      <text class='prize-popup-text mgb10' wx:if='{{!tradeState}}' style='margin-top:70rpx'>送了你三个红包</text>
+      <text class='prize-popup-text mgb70' wx:if='{{!tradeState}}' style='margin-top:0rpx;font-size:40rpx'>请依次打开</text>
       <view wx:if='{{tradeState}}' class='switch' catchtap='swichTap'></view>
       <form bindsubmit="getForm" report-submit='true' wx:if='{{!tradeState}}'>
         <button bindgetuserinfo="switchTap" open-type="getUserInfo" class='switch' hover-class="btn-hover" form-type="submit"></button>
@@ -16,7 +17,7 @@
         <button hover-class="btn-hover" form-type="submit" class='prize-popup-close'>
         </button>
       </form>
-      <view class='newTxt'>水滴抽奖是完全免费，不会向你收取任何费用</view>
+      <view class='newTxt'>水滴抽奖是完全免费的，不会向你收取任何费用</view>
     </view>
   </view>
 </template>
